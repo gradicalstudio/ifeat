@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ad aute ad consequat aute adipisicing exercitation anim. Ullamco reprehenderit mollit nostrud nisi."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Id fugiat officia esse. Fugiat id labore reprehenderit consectetur ad veniam eiusmod consectetur ea. Veniam pariatur nulla amet eiusmod irure laborum officia non velit laboris voluptate cupidatat ex."
+						}
+					}
+				]
+			},
+			"faqs": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ullamco non dolor veniam dolor proident laboris ut veniam commodo laborum."
+											}
+										}
+									]
+								}
+							],
+							[
+								"info",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aute sunt cillum aliquip Lorem. Irure velit nisi ad nisi consectetur in sint minim. Cupidatat deserunt laboris aliqua cupidatat fugiat dolore adipisicing eu consectetur non pariatur qui irure aliquip."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,106 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt aliqua anim nostrud anim ipsum ea non dolor ex qui labore amet cupidatat aliquip. Proident occaecat sunt incididunt quis eiusmod. Voluptate voluptate in tempor non aute sunt commodo sunt non esse magna minim."
+						}
+					}
+				]
+			},
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit consectetur irure aute. Do eiusmod laboris proident enim cillum minim."
+						}
+					}
+				]
+			},
+			"short_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Fugiat irure voluptate ut nulla voluptate labore ipsum minim veniam aliqua."
+						}
+					}
+				]
+			},
+			"categories": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"medal_icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+										"width": 4000,
+										"height": 6000
+									},
+									"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+									"width": 4000,
+									"height": 6000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "engine",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"position",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Cillum sit magna consequat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"bullet_points",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Fugiat in excepteur commodo cillum pariatur occaecat cupidatat ea nisi minim esse nostrud magna irure enim. Esse incididunt eiusmod est quis fugiat dolore eu ipsum culpa id fugiat eu consectetur."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

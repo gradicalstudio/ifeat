@@ -1,0 +1,229 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"top_section": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"eyebrow_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Cupidatat ipsum nisi id deserunt sunt. Irure mollit amet magna minim ex dolore aliqua consequat nisi eiusmod cupidatat culpa reprehenderit pariatur adipisicing. Consectetur laboris ipsum magna mollit nulla laborum enim sint ut Lorem et enim do sit incididunt."
+											}
+										}
+									]
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Et officia ipsum amet pariatur nulla voluptate esse fugiat et occaecat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"short_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Nulla irure nulla excepteur amet mollit tempor esse. Nostrud laboris reprehenderit id cillum veniam proident nisi est dolore laboris id."
+											}
+										}
+									]
+								}
+							],
+							[
+								"button",
+								{
+									"key": "6cfd8b1a-90d2-4e13-8822-57f8ec3b7fc5",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "naturally"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"top_right_card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Laboris esse tempor minim cillum duis enim exercitation. Aliquip ea velit veniam consectetur veniam pariatur. Officia non magna minim irure cillum nulla esse do amet."
+											}
+										}
+									]
+								}
+							],
+							[
+								"info",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Reprehenderit consequat in minim reprehenderit culpa esse Lorem sunt laborum voluptate."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"bottom_section": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"eyebrow_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Quis minim aliqua irure amet adipisicing eiusmod sunt tempor sint ex dolore ullamco do."
+											}
+										}
+									]
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Esse officia eu tempor amet et eu reprehenderit irure ipsum laboris veniam sunt. Deserunt aliquip incididunt culpa exercitation nisi irure et labore cupidatat elit adipisicing duis minim pariatur."
+											}
+										}
+									]
+								}
+							],
+							[
+								"sub_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Lorem pariatur in consequat sit nisi."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Incididunt amet ex et laboris cupidatat qui non ex nisi qui amet aliquip incididunt eu. Consequat nulla occaecat excepteur."
+											}
+										}
+									]
+								}
+							],
+							[
+								"last_date",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Dolore commodo commodo sint Lorem voluptate commodo veniam non eu id ex incididunt eu consectetur."
+											}
+										}
+									]
+								}
+							],
+							[
+								"button_one",
+								{
+									"key": "033c5122-29ef-4dcf-a828-b23c99ac1bf2",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://prismic.io",
+										"text": "environment"
+									}
+								}
+							],
+							[
+								"button_two",
+								{
+									"key": "2f1bf613-4506-420b-9506-c8299dc391cf",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "feathers"
+									}
+								}
+							],
+							[
+								"eyebrow_heading_two",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Mollit elit do tempor anim occaecat fugiat id. Aliquip sunt minim aliquip et occaecat irure."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

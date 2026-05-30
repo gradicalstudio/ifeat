@@ -1,13 +1,13 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const monsterrat = Montserrat({
+  variable: "--font-monsterrat-sans",
   subsets: ["latin"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const raleway = Raleway({
+  variable: "--font-raleway-sans",
   subsets: ["latin"],
 });
 
@@ -20,9 +20,12 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${monsterrat.variable} ${raleway.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Header />
+        <main className="bg-[#FEFFF4]">{children}</main>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,164 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat laborum consequat cupidatat et do veniam adipisicing dolor do sit. Veniam officia ut irure dolor ad occaecat aliquip labore labore reprehenderit laboris labore."
+						}
+					}
+				]
+			},
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Minim enim et occaecat incididunt voluptate. Anim laborum nisi laborum laboris velit ut labore. Anim velit magna sit exercitation."
+						}
+					}
+				]
+			},
+			"short_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu excepteur proident sit proident ad irure eiusmod deserunt."
+						}
+					}
+				]
+			},
+			"cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"eyebrow_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aliquip incididunt enim incididunt ipsum cillum est. Anim deserunt quis duis aliqua ad aute esse cillum voluptate minim ipsum velit ipsum fugiat elit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"icon",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+										"width": 4272,
+										"height": 2848
+									},
+									"url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+									"width": 4272,
+									"height": 2848,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "surface",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"card_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sit duis culpa excepteur. Magna elit adipisicing do officia irure mollit eiusmod minim deserunt. Exercitation eu aute aliqua est occaecat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"short_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Aute fugiat id voluptate non voluptate dolor fugiat ipsum sit pariatur minim. Duis minim officia proident non enim ad fugiat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"tags",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "shorter",
+									"type": "Text"
+								}
+							],
+							[
+								"eyebrow_heading_two",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ut mollit magna enim laboris velit laborum aliqua qui laborum qui cillum amet sunt elit magna. Proident exercitation proident sunt do sunt eu Lorem pariatur duis magna deserunt. Officia id sint laborum ullamco aute aute."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"second_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit in cupidatat non voluptate velit. Adipisicing aliqua mollit nostrud pariatur magna nostrud."
+						}
+					}
+				]
+			},
+			"eligibilities": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Excepteur magna Lorem duis amet magna anim laboris ipsum in quis id. Irure tempor culpa amet sit pariatur eiusmod incididunt est eu sint labore. In fugiat cupidatat anim ad dolor anim esse nulla pariatur."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

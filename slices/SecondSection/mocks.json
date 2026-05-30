@@ -1,0 +1,53 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eu cillum consequat exercitation tempor do."
+						}
+					}
+				]
+			},
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa sit qui pariatur occaecat consectetur consequat exercitation ipsum nisi consectetur commodo. Mollit voluptate aliqua tempor occaecat do sint sunt consequat sit sit."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Tempor sunt laborum proident sit fugiat eu consectetur elit sit aute exercitation id enim officia. Cillum aute velit in est mollit dolore. Id in ut ex ea consequat sint sint non est non consectetur."
+						}
+					}
+				]
+			},
+			"quote_field": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse est est eiusmod fugiat deserunt Lorem commodo laboris sint in irure labore esse. Commodo sunt incididunt quis nulla ut esse aliqua exercitation. Quis nisi consectetur eiusmod proident labore pariatur veniam magna commodo mollit ea labore adipisicing commodo."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,153 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"eyebrow_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliqua minim irure ipsum excepteur eiusmod labore qui anim magna. Labore quis est dolor laboris nisi."
+						}
+					}
+				]
+			},
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing ad aliquip est adipisicing consequat nulla do dolore laborum. Quis elit enim adipisicing id veniam ut exercitation eiusmod. In ut amet aliquip nostrud labore elit fugiat ex id sit Lorem in commodo laboris."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Consectetur duis non ad irure consequat et incididunt ipsum ea officia cupidatat velit."
+						}
+					}
+				]
+			},
+			"image_and_link": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+										"width": 4752,
+										"height": 3168
+									},
+									"url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+									"width": 4752,
+									"height": 3168,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "chair",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"link",
+								{
+									"key": "e117742d-6fe1-4156-b0b5-12b2422ace13",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "surprise"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"cards": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"percentage",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Nisi labore velit aute minim duis mollit dolor eu non laboris consequat esse consectetur. Mollit non ut laboris nisi veniam ex sit amet."
+											}
+										}
+									]
+								}
+							],
+							[
+								"card_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Duis eu amet veniam dolor magna anim proident. Proident enim deserunt amet fugiat commodo nulla id exercitation. Magna aliquip ad tempor aute sit elit mollit anim consectetur velit cillum duis consequat fugiat anim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"card_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "In magna est velit adipisicing voluptate sunt sint non sint velit dolore dolore fugiat. Qui esse id do minim qui ullamco adipisicing."
+											}
+										}
+									]
+								}
+							]
+						]
+					}
+				]
+			},
+			"bottom_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate est do minim minim elit fugiat magna officia qui ipsum fugiat sit. Consequat tempor tempor qui consectetur fugiat nulla reprehenderit incididunt duis reprehenderit."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
