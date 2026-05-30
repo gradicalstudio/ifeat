@@ -19,7 +19,13 @@ export default function HeaderClient({ data }) {
     <header className="fixed top-0 z-50 w-full">
       {/* Desktop */}
       <div className="hidden xl:flex xl:max-w-385 xl:mx-auto items-center justify-between px-21 py-5 bg-black/10">
-        <PrismicNextLink href="/">
+        <PrismicNextLink
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
+        >
           <PrismicNextImage
             field={data.logo}
             className="h-8 w-auto mix-blend-difference object-contain"

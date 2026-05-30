@@ -11,6 +11,7 @@ import { PrismicRichText } from "@prismicio/react";
 const SubmissionSection = ({ slice }) => {
   return (
     <section
+      id="webinar"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="w-full xl:max-w-385 xl:mx-auto  px-3 "
@@ -71,7 +72,7 @@ const SubmissionSection = ({ slice }) => {
           ))}
         </div>
         {/* BOTTOM */}
-        <div className="xl:px-67.75 flex bg-[#0E1219] rounded-2xl flex-col items-center text-center pt-63.75">
+        <div id="applysection" className="xl:px-67.75 flex bg-[#0E1219] rounded-2xl flex-col items-center text-center pt-63.75">
           {slice.primary.bottom_section.map((item, i) => (
             <div key={i} className="flex flex-col items-center">
               <div

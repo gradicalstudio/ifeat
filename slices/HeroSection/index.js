@@ -9,7 +9,7 @@ import { PrismicRichText } from "@prismicio/react";
  * @typedef {import("@prismicio/react").SliceComponentProps<HeroSectionSlice>} HeroSectionProps
  * @type {import("react").FC<HeroSectionProps>}
  */
-const HeroSection = ({ slice }) => {
+const HeroSection = ({ slice,context }) => {
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -44,7 +44,7 @@ const HeroSection = ({ slice }) => {
             <PrismicRichText field={slice.primary.short_description} />
           </div>
           <div className="mt-10 xl:w-[75%]">
-            <CountdownTimer />
+            <CountdownTimer targetDate={context.eventDate} />
           </div>
           {/* Buttons */}
           <div className="flex flex-col pb-10 lg:pb-0 lg:flex-row gap-5 mt-10">

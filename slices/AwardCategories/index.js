@@ -9,9 +9,10 @@ import { PrismicRichText } from "@prismicio/react";
 const AwardCategories = ({ slice }) => {
   return (
     <section
+    id="awardcategories"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto px-3 xl:px-4"
+      className="w-full xl:max-w-385 xl:mx-auto px-3 xl:px-4 "
     >
       {/* Main container */}
       <div className="bg-[#263B33] font-medium rounded-2xl px-3 xl:px-17.5 py-3 xl:py-25">

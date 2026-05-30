@@ -2,10 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const EVENT_DATE = new Date("2026-07-18T20:00:00");
-
-function calculateTimeLeft() {
-  const difference = EVENT_DATE.getTime() - new Date().getTime();
+function calculateTimeLeft(targetDate) {
+  const difference = targetDate.getTime() - new Date().getTime();
   if (difference <= 0) return { days: 0, hours: 0, mins: 0, secs: 0 };
   return {
     days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -23,7 +21,6 @@ function Segment({ value, label }) {
         style={{
           fontFamily: "'Montserrat', sans-serif",
           fontWeight: 500,
-
           letterSpacing: "-0.02em",
         }}
       >
@@ -34,7 +31,6 @@ function Segment({ value, label }) {
         style={{
           fontFamily: "'Raleway', sans-serif",
           fontWeight: 500,
-       
           letterSpacing: "0.2em",
           opacity: 0.85,
         }}
@@ -58,15 +54,19 @@ function Divider() {
   );
 }
 
-export default function CountdownTimer() {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+export default function CountdownTimer({ targetDate }) {
+  const date = targetDate ? new Date(targetDate) : new Date("2026-07-18T20:00:00");
+  const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(date));
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft()), 1000);
+    const timer = setInterval(
+      () => setTimeLeft(calculateTimeLeft(date)),
+      1000
+    );
     return () => clearInterval(timer);
-  }, []);
+  }, []); // empty array — no loop risk, date is stable
 
   if (!mounted) return null;
 

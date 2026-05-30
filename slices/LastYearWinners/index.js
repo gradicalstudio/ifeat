@@ -53,6 +53,7 @@ const LastYearWinners = ({ slice }) => {
   };
   return (
     <section
+      id="winners-2025"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className=" xl:max-w-385 px-3 xl:mx-auto xl:mt-30 xl:px-21 mt-15"

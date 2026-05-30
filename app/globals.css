@@ -4,3 +4,22 @@
   --font-monsterrat: var(--font-monsterrat-sans);
   --font-raleway: var(--font-raleway-sans);
 }
+
+#prizes {
+  scroll-margin-top: 100px;
+}
+#jury {
+  scroll-margin-top: 100px;
+}
+#webinar {
+  scroll-margin-top: 120px;
+}
+#applysection {
+  scroll-margin-top: -140px;
+}
+#winners-2025 {
+  scroll-margin-top: 100px;
+}
+#faq {
+  scroll-margin-top: 105px;
+}

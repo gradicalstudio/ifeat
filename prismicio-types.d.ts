@@ -150,6 +150,17 @@ type HomepageDocumentDataSlicesSlice =
  */
 interface HomepageDocumentData {
   /**
+   * Event Date field in *Homepage*
+   *
+   * - **Field Type**: Timestamp
+   * - **Placeholder**: Set your date here
+   * - **API ID Path**: homepage.event_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/timestamp
+   */
+  event_date: prismic.TimestampField;
+
+  /**
    * Slice Zone field in *Homepage*
    *
    * - **Field Type**: Slice Zone

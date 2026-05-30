@@ -6,6 +6,13 @@
   "format": "page",
   "json": {
     "Main": {
+      "event_date": {
+        "type": "Timestamp",
+        "config": {
+          "label": "Event Date",
+          "placeholder": "Set your date here"
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

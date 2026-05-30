@@ -8,6 +8,7 @@ import { PrismicRichText } from "@prismicio/react";
 const SecondSection = ({ slice }) => {
   return (
     <section
+      id="about"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="py-15  px-3 xl:py-30 xl:px-21 xl:max-w-385 mx-auto "

@@ -10,6 +10,7 @@ import { PrismicRichText } from "@prismicio/react";
 const ThePrizes = ({ slice }) => {
   return (
     <section
+    id="prizes"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="mt-15 lg:mt-34.5 px-3 xl:max-w-385 xl:mx-auto"

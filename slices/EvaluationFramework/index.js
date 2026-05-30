@@ -9,6 +9,7 @@ import { PrismicRichText } from "@prismicio/react";
 const EvaluationFramework = ({ slice }) => {
   return (
     <section
+      id="evaluation"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="w-full px-3 xl:max-w-385 xl:px-3.5 xl:mx-auto font-medium "
@@ -87,8 +88,10 @@ const EvaluationFramework = ({ slice }) => {
           ))}
         </div>
         {/* Bottom Text */}
-        <div className="mt-10 xl:mt-17.5 pb-4 xl:pb-25 text-[#FEFFF4] text-[15px] md:text-base lg:text-lg
-font-raleway lg:w-[70%]">
+        <div
+          className="mt-10 xl:mt-17.5 pb-4 xl:pb-25 text-[#FEFFF4] text-[15px] md:text-base lg:text-lg
+font-raleway lg:w-[70%]"
+        >
           <PrismicRichText field={slice.primary.bottom_description} />
         </div>
       </div>
