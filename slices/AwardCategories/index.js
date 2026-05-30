@@ -11,29 +11,29 @@ const AwardCategories = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full max-w-385 mx-auto  px-4"
+      className="w-full xl:max-w-385 xl:mx-auto px-3 xl:px-4"
     >
       {/* Main container */}
-      <div className="bg-[#263B33] font-medium rounded-2xl px-17.5 py-25">
+      <div className="bg-[#263B33] font-medium rounded-2xl px-3 xl:px-17.5 py-3 xl:py-25">
         {/* Top section */}
         <div className="2xl:w-[35%]">
-          <div className="text-base font-raleway text-[#A59653] uppercase">
+          <div className="text-xs md:text-sm lg:text-base font-raleway text-[#A59653] uppercase">
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
-          <div className="text-[50px] font-monsterrat my-3.5 text-[#FEFFF4]">
+          <div className="text-[28px] md:text-[38px] lg:text-[50px] font-monsterrat  my-4 lg:my-3.5 text-[#FEFFF4]">
             <PrismicRichText field={slice.primary.main_heading} />
           </div>
-          <div className="text-lg text-[#FEFFF4] font-raleway">
+          <div className="text-[15px] md:text-base lg:text-lg text-[#FEFFF4] font-raleway">
             <PrismicRichText field={slice.primary.short_description} />
           </div>
         </div>
         {/* Cards */}
-        <div className="mt-18.25">
-          <div className="grid grid-cols-2 gap-6">
+        <div className="mt-10 lg:mt-18.25">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
             {slice.primary.cards.map((item, i) => (
               <div
                 key={i}
-                className="py-9 px-7.5 rounded-2xl relative"
+                className="py-3 lg:py-9 px-3 lg:px-7.5 rounded-2xl relative"
                 style={{
                   background:
                     "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",
@@ -43,7 +43,7 @@ const AwardCategories = ({ slice }) => {
                 }}
               >
                 {/* Eyebrow heading */}
-                <div className="flex items-center font-raleway uppercase gap-2 text-[#A59653] mb-7.5">
+                <div className="flex items-center font-raleway uppercase gap-2 text-[#A59653] mb-4 xl:mb-7.5 text-xs md:text-sm lg:text-base">
                   <div>
                     <PrismicRichText field={item.eyebrow_heading} />
                   </div>
@@ -53,19 +53,19 @@ const AwardCategories = ({ slice }) => {
                   </div>
                 </div>
                 {/* Icon & Heading */}
-                <div className="flex items-center gap-8 text-[#FEFFF4] mb-7.5">
+                <div className="flex items-center gap-2 lg:gap-8 text-[#FEFFF4] mb-4 xl:mb-7.5">
                   <div>
                     <PrismicNextImage field={item.icon} />
                   </div>
-                  <div className="text-[25px] font-monsterrat">
+                  <div className="text-lg md:text-xl lg:text-[25px] font-monsterrat">
                     <PrismicRichText field={item.card_heading} />
                   </div>
                 </div>
-                <div className="text-[#FEFFF4] mb-7.5 font-raleway">
+                <div className="text-[#FEFFF4] text-sm md:text-[15px] lg:text-base mb-4 xl:mb-7.5 font-raleway">
                   <PrismicRichText field={item.short_description} />
                 </div>
                 {/* Line below */}
-                <div className="border mb-7.5 border-[#677479]" />
+                <div className="border mb-5  xl:mb-7.5 border-[#677479]" />
 
                 <div className="flex flex-wrap items-center gap-2 w-[60%]">
                   {item.tags?.split(",").map((tag, i) => {
@@ -82,7 +82,7 @@ const AwardCategories = ({ slice }) => {
                     return (
                       <span
                         key={i}
-                        className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full font-raleway text-sm font-medium tracking-[10%] uppercase"
+                        className="inline-flex items-center justify-center gap-1.5 px-3 py-1 rounded-full font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-[10%] uppercase"
                         style={{ border: `1px solid ${color}`, color }}
                       >
                         <span
@@ -100,7 +100,7 @@ const AwardCategories = ({ slice }) => {
         </div>
         {/* Eligibility */}
         <div
-          className="mt-5 w-full rounded-2xl px-7.5 py-9"
+          className="mt-5 w-full rounded-2xl px-3 py-3 xl:px-7.5 xl:py-9"
           style={{
             background:
               "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",
@@ -109,7 +109,7 @@ const AwardCategories = ({ slice }) => {
             border: "1px solid rgba(255,255,255,0.15)",
           }}
         >
-          <div className="text-[25px] font-monsterrat text-[#FEFFF4] mb-5">
+          <div className="text-lg md:text-xl lg:text-[25px] font-monsterrat text-[#FEFFF4] mb-5">
             <PrismicRichText field={slice.primary.second_heading} />
           </div>
           <div className="border border-[#677479] mb-7.5" />
@@ -117,7 +117,7 @@ const AwardCategories = ({ slice }) => {
             field={slice.primary.eligibilities}
             components={{
               list: ({ children }) => (
-                <ul className="grid grid-cols-3 gap-x-8 gap-y-3 list-none w-full">
+                <ul className="grid xl:grid-cols-3 gap-x-8 gap-y-3 list-none w-full">
                   {children}
                 </ul>
               ),

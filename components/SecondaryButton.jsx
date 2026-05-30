@@ -15,7 +15,7 @@ export default function SecondaryButton({ field }) {
     <PrismicNextLink
       field={field}
       onClick={handleClick}
-      className="inline-block px-9 py-3.5 rounded-xl font-monsterrat font-bold text-base tracking-light uppercase border border-[#FEFFF4] text-[#FEFFF4] cursor-pointer bg-transparent"
+      className="inline-block w-full text-center px-3 py-3 xl:px-9 xl:py-4 rounded-xl font-monsterrat font-bold text-sm xl:text-base tracking-light uppercase border border-[#FEFFF4] text-[#FEFFF4] cursor-pointer bg-transparent"
     >
       {field?.text}
     </PrismicNextLink>

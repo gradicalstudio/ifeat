@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 
-// Set your event date here
 const EVENT_DATE = new Date("2026-07-18T20:00:00");
 
 function calculateTimeLeft() {
@@ -18,11 +17,28 @@ function calculateTimeLeft() {
 
 function Segment({ value, label }) {
   return (
-    <div className="flex flex-col items-center gap-4 px-13 py-5">
-      <span className="text-[50px] font-monsterrat tabular-nums leading-none text-[#A59653]">
+    <div className="flex flex-col flex-1 items-center justify-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 py-3 sm:py-4 md:py-5 lg:py-6 xl:py-7 px-2 sm:px-3 md:px-4 xl:px-6">
+      <span
+        className="tabular-nums text-[28px] md:text-[38px] lg:text-[50px] leading-none text-[#A59653]"
+        style={{
+          fontFamily: "'Montserrat', sans-serif",
+          fontWeight: 500,
+
+          letterSpacing: "-0.02em",
+        }}
+      >
         {String(value).padStart(2, "0")}
       </span>
-      <span className="text-[18px] tracking-[0.2em] font-raleway uppercase font-medium text-[#FEFFF4]">
+      <span
+        className="uppercase text-[13px] md:text-base lg:text-lg tracking-widest text-[#FEFFF4]"
+        style={{
+          fontFamily: "'Raleway', sans-serif",
+          fontWeight: 500,
+       
+          letterSpacing: "0.2em",
+          opacity: 0.85,
+        }}
+      >
         {label}
       </span>
     </div>
@@ -32,8 +48,12 @@ function Segment({ value, label }) {
 function Divider() {
   return (
     <div
-      className="self-stretch w-px my-5 bg-[#A59653]"
-      
+      className="self-stretch shrink-0"
+      style={{
+        width: "1px",
+        background: "rgba(165, 150, 83, 0.45)",
+        margin: "clamp(10px, 2.5vw, 22px) 0",
+      }}
     />
   );
 }
@@ -52,12 +72,13 @@ export default function CountdownTimer() {
 
   return (
     <div
-      className="inline-flex items-stretch rounded-xl"
+      className="inline-flex w-full items-stretch overflow-hidden"
       style={{
+        borderRadius: "clamp(10px, 2vw, 18px)",
         background: "rgba(255, 255, 255, 0.06)",
         backdropFilter: "blur(12px)",
         WebkitBackdropFilter: "blur(12px)",
-        border: "1px solid rgba(255, 255, 255, 0.12)",
+        border: "1px solid rgba(165, 150, 83, 0.35)",
         boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
       }}
     >

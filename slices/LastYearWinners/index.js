@@ -55,24 +55,33 @@ const LastYearWinners = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" max-w-385 mx-auto mt-30 px-21"
+      className=" xl:max-w-385 px-3 xl:mx-auto xl:mt-30 xl:px-21 mt-15"
     >
       <div className="font font-medium">
         {/* Top secton */}
-        <div className="mb-17.5">
-          <div className="text-[38px] font-monsterrat ">
+        <div className="mb-10 xl:mb-17.5">
+          <div
+            className="text-[22px] md:text-[28px] lg:text-[38px]
+ font-monsterrat "
+          >
             <PrismicRichText field={slice.primary.main_heading} />
           </div>
-          <div className="text-lg font-raleway w-[74%] mt-3.5">
+          <div
+            className="text-[15px] md:text-base lg:text-lg
+ font-raleway w-[74%] mt-3.5"
+          >
             <PrismicRichText field={slice.primary.short_description} />
           </div>
         </div>
         {/* Middle section */}
         <div>
-          <div className="font-raleway text-[22px] uppercase text-[#A59653] mb-5">
+          <div
+            className="font-raleway text-lg md:text-xl lg:text-[25px]
+ uppercase text-[#A59653] mb-5"
+          >
             <PrismicRichText field={slice.primary.cateory_one_title} />
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
             {slice.primary.categoryone.map((item, i) => (
               <div
                 key={i}
@@ -103,20 +112,26 @@ const LastYearWinners = ({ slice }) => {
                   {/* Gold / Silver / Bronze badge */}
 
                   <div
-                    className={`my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
+                    className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
                   >
                     <span
                       className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
                     ></span>
-                    <span className="font-raleway text-[14px] font-medium tracking-wider uppercase">
+                    <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
                       {item.position}
                     </span>
                   </div>
 
-                  <div className="font-raleway text-[22px]">
+                  <div
+                    className="font-raleway text-lg md:text-xl lg:text-[25px]
+"
+                  >
                     <PrismicRichText field={item.name} />
                   </div>
-                  <div className="text-base font-raleway my-5 h-14">
+                  <div
+                    className="text-sm md:text-[15px] lg:text-base
+font-raleway my-3 xl:my-5 lg:h-14"
+                  >
                     <PrismicRichText field={item.project} />
                   </div>
                 </div>
@@ -125,12 +140,18 @@ const LastYearWinners = ({ slice }) => {
                 <div className="border-b border-[#677479]" />
 
                 {/* Description grows to fill remaining space */}
-                <div className="font-raleway text-base mt-7.5 flex-1">
+                <div
+                  className="font-raleway text-sm md:text-[15px] lg:text-base
+ mt-7.5 flex-1"
+                >
                   <PrismicRichText field={item.description} />
                 </div>
 
                 {/* Learn more pinned to bottom */}
-                <div className="py-5 flex gap-2 text-[#A59653] ">
+                <div
+                  className="py-5 flex text-sm md:text-[15px] lg:text-base
+ gap-2 text-[#A59653] "
+                >
                   <PrismicNextLink field={item.learn_more} />
                   <span className="font-bold">→</span>
                 </div>
@@ -139,11 +160,14 @@ const LastYearWinners = ({ slice }) => {
           </div>
         </div>
         {/* Last section */}
-        <div className="mt-17.5">
-          <div className="font-raleway text-[22px] uppercase text-[#A59653] mb-5">
+        <div className="mt-10 xl:mt-17.5">
+          <div
+            className="font-raleway text-lg md:text-xl lg:text-[25px]
+ uppercase text-[#A59653] mb-5"
+          >
             <PrismicRichText field={slice.primary.category_two_title} />
           </div>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
             {slice.primary.category_two.map((item, i) => (
               <div
                 key={i}
@@ -174,20 +198,26 @@ const LastYearWinners = ({ slice }) => {
                   {/* Gold / Silver / Bronze badge */}
 
                   <div
-                    className={`my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
+                    className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
                   >
                     <span
                       className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
                     ></span>
-                    <span className="font-raleway text-[14px] font-medium tracking-wider uppercase">
+                    <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
                       {item.position}
                     </span>
                   </div>
 
-                  <div className="font-raleway text-[22px]">
+                  <div
+                    className="font-raleway text-lg md:text-xl lg:text-[25px]
+"
+                  >
                     <PrismicRichText field={item.name} />
                   </div>
-                  <div className="text-base font-raleway my-5 h-14">
+                  <div
+                    className="text-sm md:text-[15px] lg:text-base
+ font-raleway my-3 xl:my-5 lg:h-14"
+                  >
                     <PrismicRichText field={item.project} />
                   </div>
                 </div>
@@ -196,12 +226,18 @@ const LastYearWinners = ({ slice }) => {
                 <div className="border-b border-[#677479]" />
 
                 {/* Description grows to fill remaining space */}
-                <div className="font-raleway text-base mt-7.5 flex-1">
+                <div
+                  className="font-raleway text-sm md:text-[15px] lg:text-base
+ mt-7.5 flex-1"
+                >
                   <PrismicRichText field={item.description} />
                 </div>
 
                 {/* Learn more pinned to bottom */}
-                <div className="py-5 flex gap-2 text-[#A59653] ">
+                <div
+                  className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
+text-[#A59653] "
+                >
                   <PrismicNextLink field={item.link} />
                   <span className="font-bold">→</span>
                 </div>

@@ -15,27 +15,28 @@ export default function FaqAccordion({ faqs }) {
         <div key={i} className="border-b border-[#0E1219]/30">
           <button
             onClick={() => toggle(i)}
-            className="w-full flex items-center justify-between py-5 text-left"
+            className="w-full flex items-center gap-1 cursor-pointer justify-between py-3 lg:py-5 text-left"
           >
-            <span className="font-raleway text-2xl font-medium">
+            <span className="font-raleway text-lg md:text-xl lg:text-[25px]
+ font-medium">
               <PrismicRichText field={item.title} />
             </span>
             <img
               src="/Chevron-dimgold.svg"
               alt="chevron"
-              width={20}
-              height={20}
-              className={`shrink-0 transition-transform duration-500 ease-in-out ${
+              
+              className={`shrink-0 transition-transform w-3 h-3 xl:w-5 xl:h-5 duration-500 ease-in-out ${
                 openItems[i] ? "rotate-0" : "rotate-180"
               }`}
             />
           </button>
           <div
             className={`overflow-hidden transition-[max-height] duration-300 ease-in-out ${
-              openItems[i] ? "max-h-[800px]" : "max-h-0"
+              openItems[i] ? "max-h-200" : "max-h-0"
             }`}
           >
-            <div className="font-raleway text-base text-[#0E1219]">
+            <div className="font-raleway text-sm md:text-[15px] lg:text-base
+ text-[#0E1219]">
               <PrismicRichText field={item.info} />
             </div>
           </div>

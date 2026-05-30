@@ -20,11 +20,14 @@ export default function PrizeAccordion({ item }) {
     <div>
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between mb-6.25 cursor-pointer"
+        className="w-full flex items-center justify-between mb-3 xl:mb-6.25 cursor-pointer"
       >
         <div className="flex items-center gap-3">
-          <PrismicNextImage field={item.medal_icon} />
-          <div className="font-monsterrat text-xl text-[#0E1219]">
+          <PrismicNextImage field={item.medal_icon} className="w-5 md:w-6" />
+          <div
+            className="font-monsterrat text-lg md:text-xl lg:text-[25px]
+ text-[#0E1219]"
+          >
             <PrismicRichText field={item.position} />
           </div>
         </div>
@@ -55,7 +58,7 @@ export default function PrizeAccordion({ item }) {
                 <ul className="flex flex-col gap-3">{children}</ul>
               ),
               listItem: ({ children }) => (
-                <li className="flex items-center gap-2 font-raleway text-sm list-none">
+                <li className="flex items-center gap-2 font-raleway text-sm md:text-[15px] lg:text-base list-none">
                   <span className="w-2 shrink-0" style={{ color }}>
                     ●
                   </span>
@@ -67,7 +70,7 @@ export default function PrizeAccordion({ item }) {
         </div>
       )}
 
-      <div className="border my-7.5 border-[#0E1219]/20" />
+      <div className="border mb-3 xl:my-7.5 border-[#0E1219]/20" />
     </div>
   );
 }
