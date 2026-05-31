@@ -14,7 +14,7 @@ const SubmissionSection = ({ slice, context }) => {
       id="webinar"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto md:px-5 px-3 mb-15 lg:mb-25 xl:mb-30 "
+      className="w-full xl:max-w-385 xl:mx-auto md:px-4 lg:px-5 xl:px-4 px-3 mb-15 lg:mb-25 xl:mb-30 "
     >
       <div>
         {/* TOP */}

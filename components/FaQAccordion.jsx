@@ -15,7 +15,7 @@ export default function FaqAccordion({ faqs }) {
         <div key={i} className="border-b border-[#0E1219]/30">
           <button
             onClick={() => toggle(i)}
-            className={`w-full flex items-center gap-4 cursor-pointer justify-between py-3  text-left ${i === 0 ? "lg:pt-0 lg:pb-3 xl:pb-5 " : "lg:py-3 xl:py-5"}`}
+            className={`w-full flex items-center gap-4 cursor-pointer justify-between py-3  text-left ${i === 0 ? "lg:pt-0 lg:pb-5 xl:pb-5 " : "lg:py-5 xl:py-5"}`}
           >
             <span className="font-raleway text-lg md:text-xl lg:text-[25px] font-medium">
               <PrismicRichText field={item.title} />

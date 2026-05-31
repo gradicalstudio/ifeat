@@ -1,6 +1,7 @@
 import { Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const monsterrat = Montserrat({
   variable: "--font-monsterrat-sans",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
       <body className="min-h-full flex flex-col">
         <Header />
         <main className="bg-[#FEFFF4]">{children}</main>
+        <Footer />
       </body>
     </html>
   );

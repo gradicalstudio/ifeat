@@ -12,7 +12,7 @@ const EvaluationFramework = ({ slice }) => {
       id="evaluation"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full px-4 md:px-5 xl:max-w-385 xl:px-3.5 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 font-medium "
+      className="w-full px-4 md:px-5 xl:max-w-385 xl:px-4 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 font-medium "
     >
       <div className=" px-4 py-4  lg:p-17.5 xl:pt-25 bg-[#0E1219] rounded-3xl">
         {/* TOP */}
@@ -53,7 +53,7 @@ const EvaluationFramework = ({ slice }) => {
           </div>
         </div>
         {/* Middle cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1  pt-4  lg:pt-17.5 xl:pt-25  md:grid-cols-2 xl:grid-cols-4 gap-5">
           {slice.primary.cards.map((item, i) => (
             <div
               key={i}

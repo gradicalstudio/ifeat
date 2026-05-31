@@ -82,11 +82,11 @@ const LastYearWinners = ({ slice }) => {
           >
             <PrismicRichText field={slice.primary.cateory_one_title} />
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
             {slice.primary.categoryone.map((item, i) => (
               <div
                 key={i}
-                className="border border-[#A59653] px-2.5 pt-2.5  flex flex-col"
+                className="   flex flex-col"
               >
                 <div>
                   <div className="relative h-79.25">
@@ -165,7 +165,7 @@ font-raleway my-3 xl:my-5 "
             {slice.primary.category_two.map((item, i) => (
               <div
                 key={i}
-                className="border border-[#A59653] px-2.5 pt-2.5  flex flex-col"
+                className="flex flex-col"
               >
                 <div>
                   <div className="relative h-79.25">
