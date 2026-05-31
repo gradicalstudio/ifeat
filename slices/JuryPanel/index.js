@@ -49,7 +49,7 @@ const JuryPanel = ({ slice }) => {
               >
                 <PrismicRichText field={item.name} />
               </div>
-              <div className="font-bold text-sm md:text-[15px] lg:text-base font-raleway md:w-[60%] lg:w-fit leading-tight text-balance">
+              <div className="font-bold text-sm md:text-[15px] lg:text-base font-raleway w-[60%] lg:w-fit leading-tight text-balance">
                 <PrismicRichText field={item.title} />
               </div>
               <div className="font-raleway text-sm md:text-[15px] lg:text-basetext-base">

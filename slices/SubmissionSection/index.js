@@ -70,7 +70,7 @@ const SubmissionSection = ({ slice, context }) => {
           className="xl:px-67.75 flex bg-[#0E1219] rounded-2xl flex-col items-center text-center pt-63.75"
         >
           {slice.primary.bottom_section.map((item, i) => (
-            <div key={i} className="flex flex-col items-center">
+            <div key={i} className="flex flex-col items-center px-4 lg:px-0">
               <div
                 className="flex items-center text-center text-xs md:text-sm lg:text-base
  uppercase gap-2 text-[#A59653] font-raleway"
