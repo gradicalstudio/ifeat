@@ -27,13 +27,13 @@ export default function HeaderClient({ data }) {
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        atTop ? " xl:px-4" : " lg:px-5 xl:px-6 xl:pt-3"
+      className={`fixed top-0 z-50  w-full transition-all duration-300 ${
+        atTop ? " xl:px-4" : " 2xl:px-14 lg:px-5 xl:px-6 xl:pt-3"
       }`}
     >
       {/* Desktop */}
       <div
-        className={`hidden lg:flex xl:max-w-385 xl:mx-auto  rounded-xl items-center justify-between px-10 lg:px-5  py-5 transition-colors duration-300 bg-[#282828]  `}
+        className={`hidden lg:flex xl:max-w-376 xl:mx-auto  rounded-xl items-center justify-between px-10 lg:px-5  py-5 transition-colors duration-300 bg-[#282828]  `}
       >
         <PrismicNextLink
           href="/"
