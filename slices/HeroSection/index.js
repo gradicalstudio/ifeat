@@ -9,18 +9,18 @@ import { PrismicRichText } from "@prismicio/react";
  * @typedef {import("@prismicio/react").SliceComponentProps<HeroSectionSlice>} HeroSectionProps
  * @type {import("react").FC<HeroSectionProps>}
  */
-const HeroSection = ({ slice,context }) => {
+const HeroSection = ({ slice, context }) => {
   return (
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" w-full xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30  lg:px-4 rounded-xl  "
+      className=" w-full xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-b-xl  "
     >
       <div className="relative h-dvh xl:h-full  w-full  ">
         <div className="abolute w-full  h-full ">
           <PrismicNextImage
             field={slice.primary.hero_image}
-            className=" object-cover w-full h-full rounded-xl "
+            className=" object-cover w-full h-full rounded-b-xl "
           />
         </div>
         <div className="absolute inset-0 rounded-xl bg-linear-to-r from-black/30 via-black/40 to-black/20" />
@@ -48,8 +48,12 @@ const HeroSection = ({ slice,context }) => {
           </div>
           {/* Buttons */}
           <div className="flex flex-col pb-10 justify-center lg:justify-normal  md:flex-row gap-5 mt-10">
-            <div><PrimaryButton field={slice.primary.link}/></div>
-            <div><SecondaryButton field={slice.primary.button_two}/></div>
+            <div>
+              <PrimaryButton field={slice.primary.link} />
+            </div>
+            <div>
+              <SecondaryButton field={slice.primary.button_two} />
+            </div>
           </div>
         </div>
       </div>
