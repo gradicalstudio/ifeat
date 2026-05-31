@@ -3,7 +3,7 @@ import { PrismicRichText } from "@prismicio/react";
 
 export default function FooterClient({ data }) {
   return (
-    <footer className="rounded-xl px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto xl:mb-4 w-full font-raleway">
+    <footer className="rounded-xl px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto xl:mb-4 mb-2.25 w-full font-raleway">
       <div className="bg-[#263B33] rounded-xl lg:pt-21 px-6.25 md:px-19 pt-16 pb-5 lg:px-21.25 lg:pb-10.5">
         {/* Top */}
         <div className="w-full text-white lg:mb-40">
