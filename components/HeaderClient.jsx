@@ -27,13 +27,11 @@ export default function HeaderClient({ data }) {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "lg:px-4" : "lg:px-7 xl:px-7"} transition-all duration-300`}
+      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5" : "px-6 md:px-7  lg:px-7 xl:px-7"} transition-all duration-300`}
     >
       {/* Desktop */}
       <div
-        className={`hidden lg:flex  xl:mx-auto items-center  rounded-2xl  justify-between px-10 lg:px-5 transition-all duration-300 bg-[#282828] ${
-          atTop ? " py-5" : "py-5 mt-3"
-        }`}
+        className={`hidden lg:flex  xl:mx-auto items-center  rounded-2xl py-5 justify-between px-10 lg:px-5 transition-all duration-300 bg-[#282828] $`}
       >
         <PrismicNextLink
           href="/"
@@ -72,7 +70,7 @@ export default function HeaderClient({ data }) {
 
       {/* Mobile/Tablet */}
       <div
-        className={`lg:hidden w-full bg-[#282828]  backdrop-blur-sm transition-colors duration-500 `}
+        className={`lg:hidden w-full bg-[#282828] rounded-2xl backdrop-blur-sm transition-colors duration-500 `}
       >
         <div className="flex items-center justify-between px-4 py-4">
           {/* Hamburger on left */}

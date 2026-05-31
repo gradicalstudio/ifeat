@@ -50,7 +50,7 @@ export default function PrizeAccordion({ item, index }) {
       </button>
 
       {open && (
-        <div className="ml-2 mb-2">
+        <div className="ml-2 mb-4 md:mb-">
           <PrismicRichText
             field={item.bullet_points}
             components={{
