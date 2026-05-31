@@ -8,7 +8,7 @@ export default function FooterClient({ data }) {
         {/* Top */}
         <div className="w-full text-white ">
           <div className="w-full  flex flex-col-reverse md:flex-row  lg:max-w-full md:gap-10    lg:gap-30 justify-between">
-            <div className="flex flex-col items-center justify-between">
+            <div className="flex flex-col items-center md:items-start justify-between">
               <div className="mb-7.5 lg:mb-0">
                 <PrismicNextImage
                   className="h-21.5 w-auto  lg:h-28 xl:h-26"
