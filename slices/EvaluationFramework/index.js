@@ -14,7 +14,7 @@ const EvaluationFramework = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full px-4 md:px-5 xl:max-w-385 xl:px-4 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 font-medium "
     >
-      <div className=" px-4 py-4  lg:p-17.5 xl:pt-25 bg-[#0E1219] rounded-3xl">
+      <div className=" px-4 py-10  lg:p-17.5 xl:pt-25 bg-[#0E1219] rounded-3xl">
         {/* TOP */}
         <div className="flex flex-col lg:flex-row lg:justify-between ">
           {/* left */}

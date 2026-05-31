@@ -14,7 +14,7 @@ const HeroSection = ({ slice, context }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" w-full lg:mt-25 mt-18 xl:mt-25 px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
+      className=" w-full xl:mt-4 px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
     >
       <div className="relative h-screen xl:h-full  w-full  ">
         <div className="abolute w-full  h-full ">

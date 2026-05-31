@@ -14,7 +14,7 @@ const SubmissionSection = ({ slice, context }) => {
       id="webinar"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto md:px-4 lg:px-5 xl:px-4 px-3 mb-15 lg:mb-25 xl:mb-30 "
+      className="w-full xl:max-w-385 xl:mx-auto md:px-4 lg:px-5 xl:px-4 px-3 mb-15 lg:mb-25 xl:mb-30  "
     >
       <div>
         {/* TOP */}
@@ -22,7 +22,7 @@ const SubmissionSection = ({ slice, context }) => {
           {slice.primary.top_section.map((item, i) => (
             <div
               key={i}
-              className="flex flex-col w-full  lg:gap-10 lg:flex-row xl:justify-between rounded-3xl bg-[#263B33] xl:py-15.5 xl:px-16.75 lg:px-6 lg:py-6 px-4 py-4 font-medium "
+              className="flex flex-col w-full  lg:gap-10 lg:flex-row xl:justify-between rounded-3xl bg-[#263B33] xl:py-15.5 xl:px-16.75 lg:px-6 lg:py-6 px-4 py-4 pt-10 font-medium "
             >
               {/* Top Left */}
               <div className=" flex flex-col justify-between lg:w-full h-full  xl:w-[40%]">

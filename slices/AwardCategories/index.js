@@ -12,10 +12,10 @@ const AwardCategories = ({ slice }) => {
     id="awardcategories"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto px-4 md:px-5 xl:px-4 mb-15 lg:mb-25 xl:mb-30 "
+      className="w-full xl:max-w-385 xl:mx-auto px-4 md:px-5 xl:px-4 mb-15 lg:mb-25 xl:mb-30  "
     >
       {/* Main container */}
-      <div className="bg-[#263B33] font-medium rounded-2xl px-4 xl:px-17.5 py-4 xl:py-25">
+      <div className="bg-[#263B33] font-medium rounded-2xl px-4 xl:px-17.5 py-10 xl:py-25">
         {/* Top section */}
         <div className="2xl:w-[35%]">
           <div className="text-xs md:text-sm lg:text-base font-raleway text-[#A59653] uppercase">
