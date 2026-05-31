@@ -10,7 +10,7 @@ const PeopleChoiceAward = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="xl:px-21 px-3 mt-13 mb-15 xl:my-17.5 xl:max-w-385 xl:mx-auto font-medium"
+      className="xl:px-21 px-4 md:px-5 mt-13 mb-15 lg:mt-25 xl:mt-30 xl:mb-17.5 xl:max-w-385 xl:mx-auto font-medium"
     >
       <div className="w-full bg-[#263B33] rounded-tl-[100px] rounded-br-[100px]">
         <div className=" flex flex-col gap-4 w-full justify-between px-10 py-14 xl:px-16.75 xl:py-16.5 rounded-tl-full rounded-br-2xl">

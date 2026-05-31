@@ -11,13 +11,13 @@ const SectionThree = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mb-15 px-3 xl:px-21 xl:max-w-385 xl:mx-auto font-medium"
+      className="mb-15 px-4 md:px-5 lg:mb-25 xl:mb-30 xl:px-21 xl:max-w-385 xl:mx-auto font-medium"
     >
       <div>
         <div className="font-monsterrat text-[28px] md:text-[38px] leading-[1.15] lg:leading-tight 2xl:text-[50px] mb-10 lg:mb-18.25">
           <PrismicRichText field={slice.primary.main_heading} />
         </div>
-        <div className="grid grid-cols-1 gap-10 xl:grid-cols-3 lg:gap-10 font-raleway">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-10 lg:gap-10 font-raleway">
           {slice.primary.content_columns.map((item, i) => (
             <div
               key={i}

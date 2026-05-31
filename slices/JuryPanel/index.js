@@ -12,7 +12,7 @@ const JuryPanel = ({ slice }) => {
       id="jury"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full px-3 xl:max-w-385 xl:mx-auto my-15 xl:my-30 "
+      className="w-full px-3 md:px-5 xl:max-w-385 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 "
     >
       <div className="xl:px-41 font-medium">
         {/* top */}
@@ -37,7 +37,7 @@ const JuryPanel = ({ slice }) => {
           </div>
         </div>
         {/* bottom */}
-        <div className="grid grid-cols-1 gap-10 lg:gap-0 xl:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-10 xl:gap-4 xl:grid-cols-4">
           {slice.primary.jury_cards.map((item, i) => (
             <div key={i} className=" flex flex-col items-center text-center">
               <div className="mb-2 xl:mb-2.5 w-50">
@@ -49,7 +49,7 @@ const JuryPanel = ({ slice }) => {
               >
                 <PrismicRichText field={item.name} />
               </div>
-              <div className="font-bold text-sm md:text-[15px] lg:text-base font-raleway leading-tight text-balance">
+              <div className="font-bold text-sm md:text-[15px] lg:text-base font-raleway md:w-[60%] lg:w-fit leading-tight text-balance">
                 <PrismicRichText field={item.title} />
               </div>
               <div className="font-raleway text-sm md:text-[15px] lg:text-basetext-base">

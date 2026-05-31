@@ -66,7 +66,7 @@ export default function CountdownTimer({ targetDate }) {
       1000
     );
     return () => clearInterval(timer);
-  }, []); // empty array — no loop risk, date is stable
+  }, []); 
 
   if (!mounted) return null;
 

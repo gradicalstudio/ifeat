@@ -15,7 +15,7 @@ export default function PrimaryButton({ field }) {
     <PrismicNextLink
       field={field}
       onClick={handleClick}
-      className="flex items-center justify-center w-full h-full px-3 py-3 xl:px-9 xl:py-4 rounded-xl leading-tight font-monsterrat font-bold text-sm xl:text-base tracking-light uppercase text-black cursor-pointer border border-[#A59653]"   
+      className="flex items-center justify-center w-full md:w-fit h-full px-3 py-3 md:px-20 lg:px-9 lg:py-4 rounded-xl leading-tight font-monsterrat font-bold text-sm xl:text-base tracking-light uppercase text-black cursor-pointer border border-[#A59653]"   
       style={{ background: "#A59653" }}
     >
       {field?.text}

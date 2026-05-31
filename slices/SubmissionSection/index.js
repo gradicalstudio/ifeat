@@ -8,48 +8,41 @@ import { PrismicRichText } from "@prismicio/react";
  * @typedef {import("@prismicio/react").SliceComponentProps<SubmissionSectionSlice>} SubmissionSectionProps
  * @type {import("react").FC<SubmissionSectionProps>}
  */
-const SubmissionSection = ({ slice }) => {
+const SubmissionSection = ({ slice, context }) => {
   return (
     <section
       id="webinar"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto  px-3 "
+      className="w-full xl:max-w-385 xl:mx-auto md:px-5 px-3 mb-15 lg:mb-25 xl:mb-30 "
     >
       <div>
         {/* TOP */}
-        <div className="flex flex-col lg:flex-row  xl:px-23.75 z-10 -mb-50 ">
+        <div className="flex flex-col w-full lg:flex-row lg:px-15 xl:px-23.75 z-10 -mb-50 ">
           {slice.primary.top_section.map((item, i) => (
             <div
               key={i}
-              className="flex flex-col lg:flex-row justify-between rounded-3xl bg-[#263B33] xl:py-15.5 xl:px-16.75 px-4 py-4 font-medium "
+              className="flex flex-col w-full  lg:gap-10 lg:flex-row xl:justify-between rounded-3xl bg-[#263B33] xl:py-15.5 xl:px-16.75 lg:px-6 lg:py-6 px-4 py-4 font-medium "
             >
               {/* Top Left */}
-              <div className="xl:w-[40%]">
-                <div
-                  className="text-[#A59653] uppercase text-xs md:text-sm lg:text-base
- font-raleway"
-                >
-                  <PrismicRichText field={item.eyebrow_heading} />
+              <div className=" flex flex-col justify-between lg:w-full h-full  xl:w-[40%]">
+                <div>
+                  <div className="text-[#A59653] uppercase text-xs md:text-sm lg:text-base font-raleway">
+                    <PrismicRichText field={item.eyebrow_heading} />
+                  </div>
+                  <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat leading-tight text-[#FEFFF4] my-3.5">
+                    <PrismicRichText field={item.heading} />
+                  </div>
+                  <div className="text-[15px] md:text-base lg:text-lg font-raleway leading-snug text-[#FEFFF4]">
+                    <PrismicRichText field={item.short_description} />
+                  </div>
                 </div>
-                <div
-                  className="text-[22px] md:text-[28px] lg:text-[38px]
- font-monsterrat leading-tight text-[#FEFFF4] my-3.5"
-                >
-                  <PrismicRichText field={item.heading} />
-                </div>
-                <div
-                  className="text-[15px] md:text-base lg:text-lg
- font-raleway leading-snug text-[#FEFFF4]"
-                >
-                  <PrismicRichText field={item.short_description} />
-                </div>
-                <div className=" mt-5 mb-10 xl:mt-11.5">
+                <div className=" mt-5 mb-10 lg:mb-0 lg:mt-auto xl:mt-11.5">
                   <PrimaryButton field={item.button} />
                 </div>
               </div>
               {/* Top Right */}
-              <div className="xl:w-[40%]">
+              <div className=" lg:w-[90%] xl:w-[40%]">
                 <div className="rounded-2xl bg-linear-to-t from-transparent to-white/5 border border-white/10 px-7 py-9 flex flex-col gap-6">
                   {slice.primary.top_right_card.map((item, i) => (
                     <div key={i} className="flex flex-col gap-6">
@@ -72,7 +65,10 @@ const SubmissionSection = ({ slice }) => {
           ))}
         </div>
         {/* BOTTOM */}
-        <div id="applysection" className="xl:px-67.75 flex bg-[#0E1219] rounded-2xl flex-col items-center text-center pt-63.75">
+        <div
+          id="applysection"
+          className="xl:px-67.75 flex bg-[#0E1219] rounded-2xl flex-col items-center text-center pt-63.75"
+        >
           {slice.primary.bottom_section.map((item, i) => (
             <div key={i} className="flex flex-col items-center">
               <div
@@ -112,7 +108,7 @@ const SubmissionSection = ({ slice }) => {
                 <PrismicRichText field={item.last_date} />
               </div>
               <div>
-                <CountdownTimer />
+                <CountdownTimer targetDate={context.eventDate} />
               </div>
               {/* Buttons */}
               <div className="flex flex-col lg:flex-row gap-5 mt-10 pb-10 xl:pb-21">

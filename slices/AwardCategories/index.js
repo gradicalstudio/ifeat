@@ -12,10 +12,10 @@ const AwardCategories = ({ slice }) => {
     id="awardcategories"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto px-3 xl:px-4 "
+      className="w-full xl:max-w-385 xl:mx-auto px-4 md:px-5 xl:px-4 mb-15 lg:mb-25 xl:mb-30 "
     >
       {/* Main container */}
-      <div className="bg-[#263B33] font-medium rounded-2xl px-3 xl:px-17.5 py-3 xl:py-25">
+      <div className="bg-[#263B33] font-medium rounded-2xl px-4 xl:px-17.5 py-4 xl:py-25">
         {/* Top section */}
         <div className="2xl:w-[35%]">
           <div className="text-xs md:text-sm lg:text-base font-raleway text-[#A59653] uppercase">
@@ -30,7 +30,7 @@ const AwardCategories = ({ slice }) => {
         </div>
         {/* Cards */}
         <div className="mt-10 lg:mt-18.25">
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1  md:grid-cols-2 gap-6">
             {slice.primary.cards.map((item, i) => (
               <div
                 key={i}
@@ -54,11 +54,11 @@ const AwardCategories = ({ slice }) => {
                   </div>
                 </div>
                 {/* Icon & Heading */}
-                <div className="flex items-center gap-2 lg:gap-8 text-[#FEFFF4] mb-4 xl:mb-7.5">
+                <div className="flex items-center md:h-10 lg:h-15 xl:h-10 gap-2 lg:gap-4 xl:gap-7.5 text-[#FEFFF4] mb-4 md:my-6 xl:mb-7.5">
                   <div>
                     <PrismicNextImage field={item.icon} />
                   </div>
-                  <div className="text-lg md:text-xl lg:text-[25px] font-monsterrat">
+                  <div className="text-lg md:text-xl lg:text-[25px]  font-monsterrat">
                     <PrismicRichText field={item.card_heading} />
                   </div>
                 </div>
@@ -68,7 +68,7 @@ const AwardCategories = ({ slice }) => {
                 {/* Line below */}
                 <div className="border mb-5  xl:mb-7.5 border-[#677479]" />
 
-                <div className="flex flex-wrap items-center gap-2 w-[60%]">
+                <div className="flex flex-wrap items-center gap-2 lg:w-[80%] xl:w-[80%]">
                   {item.tags?.split(",").map((tag, i) => {
                     const t = tag.trim().toLowerCase();
                     const color =
@@ -101,7 +101,7 @@ const AwardCategories = ({ slice }) => {
         </div>
         {/* Eligibility */}
         <div
-          className="mt-5 w-full rounded-2xl px-3 py-3 xl:px-7.5 xl:py-9"
+          className="mt-5 w-full rounded-2xl px-3 py-3  xl:px-7.5 xl:py-9"
           style={{
             background:
               "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",
@@ -113,12 +113,12 @@ const AwardCategories = ({ slice }) => {
           <div className="text-lg md:text-xl lg:text-[25px] font-monsterrat text-[#FEFFF4] mb-5">
             <PrismicRichText field={slice.primary.second_heading} />
           </div>
-          <div className="border border-[#677479] mb-7.5" />
+          <div className="border border-[#677479] mb-7.5 " />
           <PrismicRichText
             field={slice.primary.eligibilities}
             components={{
               list: ({ children }) => (
-                <ul className="grid xl:grid-cols-3 gap-x-8 gap-y-3 list-none w-full">
+                <ul className="grid md:grid-cols-2  xl:grid-cols-3 gap-x-8 gap-y-3 list-none w-full">
                   {children}
                 </ul>
               ),

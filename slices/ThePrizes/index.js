@@ -13,7 +13,7 @@ const ThePrizes = ({ slice }) => {
     id="prizes"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="mt-15 lg:mt-34.5 px-3 xl:max-w-385 xl:mx-auto"
+      className="mb-15 lg:mb-25 xl:mb-30 px-4 md:px-5 xl:max-w-385 xl:mx-auto"
     >
       <div className="font-medium xl:px-48.25">
         <div className="mb-10 xl:mb-12.5">

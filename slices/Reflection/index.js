@@ -11,25 +11,22 @@ const Reflection = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="xl:max-w-385 px-3 xl:mx-auto mt-15 xl:mt-30 xl:px-21"
+      className="xl:max-w-385 px-4 md:px-5 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 xl:px-21"
     >
-      <div className="flex flex-col lg:flex-row xl:gap-22.25 font-medium">
+      <div className="flex flex-col lg:flex-row lg:gap-20 xl:gap-22.25 font-medium">
         {/* Left */}
         <div>
           <div
-            className="text-[#A59653] font-raleway text-xs md:text-sm lg:text-base
- uppercase "
+            className="text-[#A59653] font-raleway text-xs md:text-sm lg:text-base uppercase "
           >
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
           <div
-            className="text-[22px] md:text-[28px] lg:text-[38px]
- font-monsterrat my-3 xl:my-3.5"
+            className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat my-3.5 xl:my-3.5"
           >
             <PrismicRichText field={slice.primary.main_heading} />
           </div>
-          <div className="text-[15px] md:text-base lg:text-lg
- font-raleway tracking-tight">
+          <div className="text-[15px] md:text-base lg:text-lg font-raleway tracking-tight">
             <PrismicRichText field={slice.primary.description} />
           </div>
           <div>
@@ -43,8 +40,8 @@ const Reflection = ({ slice }) => {
           </div>
         </div>
         {/* Right */}
-        <div className="mt-10 md:mt-0">
-          <div className="grid lg:grid-cols-2 gap-5">
+        <div className="mt-10 lg:mt-0">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-10 lg:gap-5">
             {slice.primary.categories.map((item, i) => (
               <div
                 key={i}

@@ -12,13 +12,13 @@ const EvaluationFramework = ({ slice }) => {
       id="evaluation"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full px-3 xl:max-w-385 xl:px-3.5 xl:mx-auto font-medium "
+      className="w-full px-4 md:px-5 xl:max-w-385 xl:px-3.5 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 font-medium "
     >
-      <div className=" px-4 pt-4 lg:px-17.5 xl:pt-25 bg-[#0E1219] rounded-3xl">
+      <div className=" px-4 pt-4  lg:p-17.5 xl:pt-25 bg-[#0E1219] rounded-3xl">
         {/* TOP */}
         <div className="flex flex-col lg:flex-row lg:justify-between ">
           {/* left */}
-          <div className="xl:w-[70%] mb-6.5">
+          <div className="lg:w-[65%] xl:w-[70%] mb-6.5">
             <div
               className="text-xs md:text-sm lg:text-base
  font-raleway uppercase text-[#A59653]"
@@ -39,13 +39,13 @@ const EvaluationFramework = ({ slice }) => {
             </div>
           </div>
           {/* right */}
-          <div className=" mt-5 mb-10 lg:my-0 lg:mt-20">
+          <div className=" mt-5 mb-10 lg:my-0 lg:mt-20 w-fit lg:w-fit  ">
             {slice.primary.image_and_link.map((item, i) => (
               <div key={i}>
                 <PrismicNextLink field={item.link}>
                   <PrismicNextImage
                     field={item.image}
-                    className="h-10  xl:h-12.75 w-auto object-contain"
+                    className="h-10  lg:h-12.75 w-auto object-contain"
                   />
                 </PrismicNextLink>
               </div>
@@ -89,7 +89,7 @@ const EvaluationFramework = ({ slice }) => {
         </div>
         {/* Bottom Text */}
         <div
-          className="mt-10 xl:mt-17.5 pb-4 xl:pb-25 text-[#FEFFF4] text-[15px] md:text-base lg:text-lg
+          className="mt-10 xl:mt-17.5  text-[#FEFFF4] text-[15px] md:text-base lg:text-lg
 font-raleway lg:w-[70%]"
         >
           <PrismicRichText field={slice.primary.bottom_description} />

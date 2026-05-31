@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
 
@@ -14,11 +14,54 @@ function handleSmoothScroll(e, url) {
 
 export default function HeaderClient({ data }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [visible, setVisible] = useState(true);
+  const lastScrollY = useRef(0);
+  const pauseTimer = useRef(null);
+  const [atTop, setAtTop] = useState(true);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      const diff = currentY - lastScrollY.current;
+      setAtTop(window.scrollY < 105);
+
+      if (diff > 5) {
+        // Scrolling down → hide
+        setVisible(false);
+      } else if (diff < -5) {
+        // Scrolling up → show
+        setVisible(true);
+      }
+
+      lastScrollY.current = currentY;
+
+      // Clear existing pause timer
+      clearTimeout(pauseTimer.current);
+
+      // Show after 2s pause
+      pauseTimer.current = setTimeout(() => {
+        setVisible(true);
+      }, 1000);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(pauseTimer.current);
+    };
+  }, []);
   return (
-    <header className="fixed top-0 z-50 w-full">
+    <header
+      className={`fixed top-0 z-50 w-full transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       {/* Desktop */}
-      <div className="hidden xl:flex xl:max-w-385 xl:mx-auto items-center justify-between px-21 py-5 bg-black/10">
+      <div
+        className={`hidden lg:flex xl:max-w-385 xl:mx-auto items-center justify-between px-4 xl:px-21 py-5 transition-colors duration-500 ${
+          atTop ? "bg-transparent" : "bg-black"
+        }`}
+      >
         <PrismicNextLink
           href="/"
           onClick={(e) => {
@@ -32,13 +75,13 @@ export default function HeaderClient({ data }) {
           />
         </PrismicNextLink>
 
-        <nav className="flex items-center gap-8">
+        <nav className="flex items-center gap-5 xl:gap-8">
           {data.nav_links.map((item, i) => (
             <PrismicNextLink
               key={i}
               field={item}
               onClick={(e) => handleSmoothScroll(e, item?.url)}
-              className="font-montserrat text-[13px] font-medium tracking-widest font-raleway uppercase text-[#A2A2A2] hover:text-white transition-colors duration-200"
+              className="font-montserrat lg:text-[10px] xl:text-[13px] font-medium tracking-widest font-raleway uppercase text-[#A2A2A2] hover:text-white transition-colors duration-200"
             >
               {item.text}
             </PrismicNextLink>
@@ -56,12 +99,22 @@ export default function HeaderClient({ data }) {
       </div>
 
       {/* Mobile/Tablet */}
-      <div className="xl:hidden w-full bg-black/10 backdrop-blur-sm">
+      <div
+        className={`lg:hidden w-full backdrop-blur-sm transition-colors duration-500 ${
+          atTop ? "bg-transparent" : "bg-black/10"
+        }`}
+      >
         <div className="flex items-center justify-between px-5 py-4">
           {/* Hamburger on left */}
 
           {/* Logo centered */}
-          <PrismicNextLink href="/">
+          <PrismicNextLink
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
             <PrismicNextImage
               field={data.logo}
               className="h-7 w-auto mix-blend-difference object-contain"
