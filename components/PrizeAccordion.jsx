@@ -4,8 +4,8 @@ import { useState } from "react";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 
-export default function PrizeAccordion({ item }) {
-  const [open, setOpen] = useState(true);
+export default function PrizeAccordion({ item, index }) {
+  const [open, setOpen] = useState(index === 0);
 
   const positionText = item.position?.[0]?.text?.toLowerCase() ?? "";
   const color = positionText.includes("gold")
@@ -17,10 +17,10 @@ export default function PrizeAccordion({ item }) {
         : "#FEFFF4";
 
   return (
-    <div>
+    <div className="border-b border-[#0E1219]/20">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between mb-3 xl:mb-6.25 cursor-pointer"
+        className="w-full flex items-center justify-between pb-3 xl:py-6.25 cursor-pointer"
       >
         <div className="flex items-center gap-3">
           <PrismicNextImage field={item.medal_icon} className="w-5 md:w-6" />
@@ -69,8 +69,6 @@ export default function PrizeAccordion({ item }) {
           />
         </div>
       )}
-
-      <div className="border mb-3 xl:my-7.5 border-[#0E1219]/20" />
     </div>
   );
 }

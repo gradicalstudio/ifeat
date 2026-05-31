@@ -14,13 +14,13 @@ const HeroSection = ({ slice, context }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" w-full xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-b-xl  "
+      className=" w-full xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
     >
       <div className="relative h-dvh xl:h-full  w-full  ">
         <div className="abolute w-full  h-full ">
           <PrismicNextImage
             field={slice.primary.hero_image}
-            className=" object-cover w-full h-full rounded-b-xl "
+            className=" object-cover w-full h-full rounded-xl "
           />
         </div>
         <div className="absolute inset-0 rounded-xl bg-linear-to-r from-black/30 via-black/40 to-black/20" />

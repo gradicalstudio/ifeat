@@ -4,7 +4,9 @@
   --font-monsterrat: var(--font-monsterrat-sans);
   --font-raleway: var(--font-raleway-sans);
 }
-
+#about{
+  scroll-margin-top: 100px;
+}
 #prizes {
   scroll-margin-top: 100px;
 }

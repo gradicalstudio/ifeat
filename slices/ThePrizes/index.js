@@ -29,7 +29,7 @@ const ThePrizes = ({ slice }) => {
         </div>
         <div>
           {slice.primary.categories.map((item, i) => (
-            <PrizeAccordion key={i} item={item} />
+            <PrizeAccordion key={i} item={item} index={i} />
           ))}
         </div>
       </div>
