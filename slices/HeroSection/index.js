@@ -14,9 +14,9 @@ const HeroSection = ({ slice, context }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" w-full lg:mt-25 mt-20 xl:mt-25 px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
+      className=" w-full lg:mt-25 mt-18 xl:mt-25 px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
     >
-      <div className="relative h-dvh xl:h-full  w-full  ">
+      <div className="relative h-screen xl:h-full  w-full  ">
         <div className="abolute w-full  h-full ">
           <PrismicNextImage
             field={slice.primary.hero_image}
@@ -25,7 +25,7 @@ const HeroSection = ({ slice, context }) => {
         </div>
         <div className="absolute inset-0 rounded-xl bg-linear-to-r from-black/30 via-black/40 to-black/20" />
 
-        <div className="absolute bottom-0 xl:bottom-45 xl:pl-17.5 px-4  md:px-5  lg:w-[70%] ">
+        <div className="absolute bottom-10 xl:bottom-45 xl:pl-17.5 px-4  md:px-5  lg:w-[70%] ">
           {/* Eyebrow Heading */}
           <div className="text-[#A59653] text-xs md:text-sm lg:text-base font-raleway z-10 flex items-center gap-2 xl:gap-3 mb-2.5 ">
             <div>
@@ -43,7 +43,7 @@ const HeroSection = ({ slice, context }) => {
           <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
             <PrismicRichText field={slice.primary.short_description} />
           </div>
-          <div className="mt-10 xl:w-[75%]">
+          <div className="mt-6 xl:w-[75%]">
             <CountdownTimer targetDate={context.eventDate} />
           </div>
           {/* Buttons */}

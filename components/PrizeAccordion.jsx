@@ -20,7 +20,7 @@ export default function PrizeAccordion({ item, index }) {
     <div className="border-b border-[#0E1219]/20">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between pb-3 xl:py-6.25 cursor-pointer"
+        className="w-full flex items-center justify-between  py-3 md:py-4 xl:py-6.25 cursor-pointer"
       >
         <div className="flex items-center gap-3">
           <PrismicNextImage field={item.medal_icon} className="w-5 md:w-6" />
