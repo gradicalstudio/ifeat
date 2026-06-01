@@ -14,9 +14,9 @@ const HeroSection = ({ slice, context }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className=" w-full xl:mt-8 mt-8 lg:mt-8 px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto h-full mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
+      className=" w-full xl:mt-8 mt-8 lg:mt-8 px-4 md:px-5 xl:px-4 xl:max-w-385 xl:mx-auto h-fit mb-15 lg:mb-25 xl:mb-30   rounded-xl  "
     >
-      <div className="relative h-screen xl:h-full  w-full  ">
+      <div className="hidden lg:block relative lg:h-180 h-screen xl:h-full  w-full  ">
         <div className="abolute w-full  h-full ">
           <PrismicNextImage
             field={slice.primary.hero_image}
@@ -47,12 +47,55 @@ const HeroSection = ({ slice, context }) => {
             <CountdownTimer targetDate={context.eventDate} />
           </div>
           {/* Buttons */}
-          <div className="flex flex-col pb-10 justify-center lg:justify-normal  md:flex-row gap-5 mt-10">
+          <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10">
             <div>
               <PrimaryButton field={slice.primary.link} />
             </div>
             <div>
               <SecondaryButton field={slice.primary.button_two} />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Hero */}
+      <div className="w-full lg:hidden relative h-[620px] md:h-[620px]">
+        <div className="w-full h-full  absolute">
+          <PrismicNextImage
+            field={slice.primary.hero_image}
+            className=" object-center object-cover  w-full h-full rounded-xl "
+          />
+
+          <div className="px-4  absolute  top-20">
+            <div>
+              <div className="text-[#A59653] text-xs md:text-sm lg:text-base font-raleway z-10 flex items-center gap-2 xl:gap-3 mb-2.5 ">
+                <div>
+                  <PrismicRichText field={slice.primary.eyebrow_heading} />
+                </div>
+                <span className="rounded-full w-0.75 h-0.75 bg-[#A59653]" />
+                <div>
+                  <PrismicRichText field={slice.primary.eyebrow_heading_two} />
+                </div>
+              </div>
+              {/* Heading */}
+              <div className="font-monsterrat text-4xl md:text-[52px] xl:text-[4.6875rem] text-white leading-[1.15] xl:leading-[1.1] tracking-tight mb-2.5">
+                <PrismicRichText field={slice.primary.main_heading} />
+              </div>
+              <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
+                <PrismicRichText field={slice.primary.short_description} />
+              </div>
+              <div className="mt-6 xl:w-[75%]">
+                <CountdownTimer targetDate={context.eventDate} />
+              </div>
+              {/* Buttons */}
+              <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10">
+                <div>
+                  <PrimaryButton field={slice.primary.link} />
+                </div>
+                <div>
+                  <SecondaryButton field={slice.primary.button_two} />
+                </div>
+              </div>
             </div>
           </div>
         </div>

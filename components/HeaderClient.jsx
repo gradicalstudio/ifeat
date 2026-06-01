@@ -69,9 +69,7 @@ export default function HeaderClient({ data }) {
       </div>
 
       {/* Mobile/Tablet */}
-      <div
-        className={`lg:hidden w-full bg-[#282828] rounded-2xl backdrop-blur-sm transition-colors duration-500 `}
-      >
+      <div className="lg:hidden w-full bg-[#282828] rounded-2xl backdrop-blur-sm transition-colors duration-500 relative">
         <div className="flex items-center justify-between px-4 py-4">
           {/* Hamburger on left */}
 
@@ -117,25 +115,25 @@ export default function HeaderClient({ data }) {
         </div>
 
         {/* Dropdown Menu */}
-        <div
-          className={`overflow-hidden transition-[max-height] duration-500 ease-in-out ${menuOpen ? "max-h-125" : "max-h-0"}`}
-        >
-          <nav className="flex flex-col px-5 pb-6 gap-6 bg-black/80 backdrop-blur-sm">
-            {data.nav_links.map((item, i) => (
-              <PrismicNextLink
-                key={i}
-                field={item}
-                onClick={(e) => {
-                  handleSmoothScroll(e, item?.url);
-                  setMenuOpen(false);
-                }}
-                className="font-raleway text-[13px] font-medium tracking-widest uppercase text-[#A2A2A2] hover:text-white transition-colors duration-200 pt-2 border-t border-white/10"
-              >
-                {item.text}
-              </PrismicNextLink>
-            ))}
-          </nav>
-        </div>
+        {menuOpen && (
+          <div className="absolute top-full left-0 right-0 rounded-2xl overflow-hidden z-50 animate-dropdown">
+            <nav className="flex flex-col px-5 pb-6 bg-[#282828]">
+              {data.nav_links.map((item, i) => (
+                <PrismicNextLink
+                  key={i}
+                  field={item}
+                  onClick={(e) => {
+                    handleSmoothScroll(e, item?.url);
+                    setMenuOpen(false);
+                  }}
+                  className="font-raleway text-[13px] font-medium tracking-widest uppercase text-[#A2A2A2] hover:text-white transition-colors duration-200 py-4 border-t border-white/10"
+                >
+                  {item.text}
+                </PrismicNextLink>
+              ))}
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );

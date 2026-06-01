@@ -4,10 +4,17 @@
   --font-monsterrat: var(--font-monsterrat-sans);
   --font-raleway: var(--font-raleway-sans);
 }
-#about{
+#about {
   scroll-margin-top: 100px;
 }
+#awardcategories {
+  scroll-margin-top: 90px;
+}
 #prizes {
+  scroll-margin-top: 100px;
+}
+
+#evaluation {
   scroll-margin-top: 100px;
 }
 #jury {
@@ -25,8 +32,23 @@
 #faq {
   scroll-margin-top: 105px;
 }
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-html.lenis, html.lenis body {
+.animate-dropdown {
+  animation: dropdown 0.2s ease-out forwards;
+}
+
+html.lenis,
+html.lenis body {
   height: auto;
 }
 
