@@ -69,7 +69,7 @@ const LastYearWinners = ({ slice }) => {
           </div>
           <div
             className="text-[15px] md:text-base lg:text-lg
- font-raleway w-[74%] mt-3.5"
+ font-raleway lg:w-[74%] mt-3.5"
           >
             <PrismicRichText field={slice.primary.short_description} />
           </div>
