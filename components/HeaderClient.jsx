@@ -5,9 +5,13 @@ import { PrismicNextLink } from "@prismicio/next";
 import { PrismicNextImage } from "@prismicio/next";
 
 function handleSmoothScroll(e, url) {
-  if (url?.startsWith("#")) {
+  if (!url) return;
+
+  const hash = url.includes("#") ? "#" + url.split("#")[1] : null;
+
+  if (hash) {
     e.preventDefault();
-    const el = document.querySelector(url);
+    const el = document.querySelector(hash);
     if (el) el.scrollIntoView({ behavior: "smooth" });
   }
 }
