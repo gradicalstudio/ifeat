@@ -30,7 +30,7 @@ const SubmissionSection = ({ slice, context }) => {
                   <div className="text-[#A59653] uppercase text-xs md:text-sm lg:text-base font-raleway">
                     <PrismicRichText field={item.eyebrow_heading} />
                   </div>
-                  <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat leading-tight text-[#FEFFF4] my-3.5">
+                  <div className="text-[22px]  w-[80%] md:w-full md:text-[28px] lg:text-[38px] font-monsterrat leading-tight text-[#FEFFF4] my-3.5">
                     <PrismicRichText field={item.heading} />
                   </div>
                   <div className="text-[15px] md:text-base lg:text-lg font-raleway leading-snug text-[#FEFFF4]">

@@ -32,6 +32,15 @@
 #faq {
   scroll-margin-top: 105px;
 }
+@media (max-width: 768px) {
+  #webinar {
+    scroll-margin-top: 100px;
+  }
+  #applysection {
+    scroll-margin-top: -90px;
+  }
+}
+
 @keyframes dropdown {
   from {
     opacity: 0;
