@@ -14,8 +14,8 @@ const raleway = Raleway({
 });
 
 export const metadata = {
-  title: "ifeat",
-  description: "ifeat",
+  title: "Ifeat",
+  description: "Ifeat",
 };
 
 export default function RootLayout({ children }) {
