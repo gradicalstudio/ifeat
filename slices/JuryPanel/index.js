@@ -14,7 +14,7 @@ const JuryPanel = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="w-full px-3 md:px-5 xl:max-w-385 xl:mx-auto mb-15 lg:mb-25 xl:mb-30 "
     >
-      <div className="xl:px-41 font-medium">
+      <div className="lg:px-20 xl:px-20 font-medium">
         {/* top */}
         <div className="flex flex-col items-center justify-center mb-10 xl:mb-17.5">
           <div
@@ -37,10 +37,10 @@ const JuryPanel = ({ slice }) => {
           </div>
         </div>
         {/* bottom */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-10 xl:gap-4 xl:grid-cols-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-10 xl:gap-4 lg:grid-cols-3 xl:grid-cols-5">
           {slice.primary.jury_cards.map((item, i) => (
             <div key={i} className=" flex flex-col items-center text-center">
-              <div className="mb-2 xl:mb-2.5 w-50">
+              <div className="mb-2 lg:mb-4 xl:mb-4 w-50">
                 <PrismicNextImage field={item.image} className="rounded-full" />
               </div>
               <div
@@ -49,7 +49,7 @@ const JuryPanel = ({ slice }) => {
               >
                 <PrismicRichText field={item.name} />
               </div>
-              <div className="font-bold text-sm md:text-[15px] lg:text-base font-raleway w-[60%] lg:w-fit leading-tight text-balance">
+              <div className="font-bold text-sm md:text-[15px] lg:text-base font-raleway w-[60%] lg:w-fit xl:w-fit leading-tight text-balance">
                 <PrismicRichText field={item.title} />
               </div>
               <div className="font-raleway text-sm md:text-[15px] lg:text-basetext-base">

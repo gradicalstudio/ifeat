@@ -1,3 +1,4 @@
+import ClockV2 from "@/components/ClockV2";
 import CountdownTimer from "@/components/CountDown";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
@@ -20,7 +21,7 @@ const HeroSection = ({ slice, context }) => {
         <div className="abolute w-full  h-full ">
           <PrismicNextImage
             field={slice.primary.hero_image}
-            className=" object-cover w-full h-full rounded-xl "
+            className=" lg:object-bottom-left xl:object-left object-cover w-full h-full rounded-xl "
           />
         </div>
         <div className="absolute inset-0 rounded-xl bg-linear-to-r from-black/30 via-black/40 to-black/20" />
@@ -43,7 +44,8 @@ const HeroSection = ({ slice, context }) => {
           <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
             <PrismicRichText field={slice.primary.short_description} />
           </div>
-          <div className="mt-6 xl:w-[75%]">
+         
+          <div className="mt-6 lg:w-[70%] xl:w-[75%]">
             <CountdownTimer targetDate={context.eventDate} />
           </div>
           {/* Buttons */}
@@ -59,11 +61,11 @@ const HeroSection = ({ slice, context }) => {
       </div>
 
       {/* Mobile Hero */}
-      <div className="w-full lg:hidden relative h-[620px] md:h-[620px]">
+      <div className="w-full lg:hidden relative h-155 md:h-155">
         <div className="w-full h-full  absolute">
           <PrismicNextImage
             field={slice.primary.hero_image}
-            className=" object-center object-cover  w-full h-full rounded-xl "
+            className=" object-center md:object-bottom-left object-cover  w-full h-full rounded-xl "
           />
 
           <div className="px-4  absolute  top-20">
@@ -84,8 +86,8 @@ const HeroSection = ({ slice, context }) => {
               <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
                 <PrismicRichText field={slice.primary.short_description} />
               </div>
-              <div className="mt-6 xl:w-[75%]">
-                <CountdownTimer targetDate={context.eventDate} />
+              <div className="mt-6 md:w-[75%]">
+                <ClockV2 targetDate={context.eventDate} />
               </div>
               {/* Buttons */}
               <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10">

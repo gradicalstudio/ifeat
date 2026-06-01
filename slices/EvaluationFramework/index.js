@@ -53,9 +53,16 @@ const EvaluationFramework = ({ slice }) => {
           </div>
         </div>
         {/* Middle cards */}
-        <div className="grid grid-cols-1  pt-4  lg:pt-17.5 xl:pt-25  md:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div  className="grid grid-cols-1  pt-4  lg:pt-17.5 xl:pt-25  md:grid-cols-2 xl:grid-cols-4 gap-5">
           {slice.primary.cards.map((item, i) => (
             <div
+             style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",
+                    boxShadow:
+                      "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.25), inset 1px 0 0 rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
               key={i}
               className="flex flex-col rounded-3xl px-4 py-5 lg:px-7 lg:py-8 bg-linear-to-t from-transparent to-white/5 border border-white/8"
             >

@@ -27,7 +27,7 @@ export default function HeaderClient({ data }) {
 
   return (
     <header
-      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5 xl:px-4 " : "px-6 md:px-7  lg:px-6 xl:px-7"} transition-all duration-300`}
+      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5 xl:px-4 " : "px-6 md:px-7 lg:px-8 xl:px-7"} transition-all duration-300`}
     >
       {/* Desktop */}
       <div

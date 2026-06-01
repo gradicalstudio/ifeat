@@ -15,7 +15,7 @@ function calculateTimeLeft(targetDate) {
 
 function Segment({ value, label }) {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 py-3 sm:py-4 md:py-5 lg:py-3 xl:py-4 px-2 sm:px-3 md:px-4 xl:px-6">
+    <div className="flex flex-col flex-1 items-center justify-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 py-3 sm:py-4 md:py-5 lg:py-6 xl:py-4 px-2 sm:px-3 md:px-4 xl:px-6">
       <span
         className="tabular-nums text-[28px] md:text-[38px] lg:text-[50px] leading-none text-[#A59653]"
         style={{
@@ -44,7 +44,7 @@ function Segment({ value, label }) {
 function Divider() {
   return (
     <div
-      className="self-stretch  shrink-0"
+      className="self-stretch shrink-0"
       style={{
         width: "1px",
         background: "rgba(165, 150, 83, 0.45)",
@@ -54,34 +54,47 @@ function Divider() {
   );
 }
 
-export default function CountdownTimer({ targetDate }) {
+export default function ClockV2({ targetDate }) {
   const date = targetDate ? new Date(targetDate) : new Date("2026-07-18T20:00:00");
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(date));
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const timer = setInterval(
-      () => setTimeLeft(calculateTimeLeft(date)),
-      1000
-    );
+    const timer = setInterval(() => setTimeLeft(calculateTimeLeft(date)), 1000);
     return () => clearInterval(timer);
-  }, []); 
+  }, []);
 
   if (!mounted) return null;
 
   return (
     <div
-      className="inline-flex w-full items-stretch border-2 border-[#FEFFF41A]/40 overflow-hidden"
+      className="inline-flex w-full items-stretch overflow-hidden"
       style={{
         borderRadius: "clamp(10px, 2vw, 18px)",
-        background: "rgba(255, 255, 255, 0.06)",
-        backdropFilter: "blur(12px)",
-        WebkitBackdropFilter: "blur(12px)",
-       
-        boxShadow: "0 4px 24px rgba(0,0,0,0.3)",
+        background: "linear-gradient(180deg, rgba(254, 255, 244, 0.02) 0%, rgba(254, 255, 244, 0.1) 100%)",
+        border: "2px solid transparent",
+        backgroundClip: "padding-box",
+        backdropFilter: "blur(30px)",
+        WebkitBackdropFilter: "blur(30px)",
+        boxShadow: "4px 4px 18px 0px #00000040",
+        position: "relative",
       }}
     >
+      {/* gradient border overlay */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          borderRadius: "clamp(10px, 2vw, 18px)",
+          padding: "2px",
+          background: "linear-gradient(180deg, rgba(254, 255, 244, 0.1) 0%, rgba(254, 255, 244, 0.02) 100%)",
+          WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          WebkitMaskComposite: "xor",
+          maskComposite: "exclude",
+          pointerEvents: "none",
+        }}
+      />
       <Segment value={timeLeft.days} label="Days" />
       <Divider />
       <Segment value={timeLeft.hours} label="Hours" />

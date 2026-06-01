@@ -101,7 +101,7 @@ const AwardCategories = ({ slice }) => {
         </div>
         {/* Eligibility */}
         <div
-          className="mt-5 w-full rounded-2xl px-3 py-3  xl:px-7.5 xl:py-9"
+          className="mt-6 w-full rounded-2xl px-3 py-3  xl:px-7.5 xl:py-9"
           style={{
             background:
               "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",

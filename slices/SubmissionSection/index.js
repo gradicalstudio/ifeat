@@ -1,3 +1,4 @@
+import ClockTwo from "@/components/ClockTwo";
 import CountdownTimer from "@/components/CountDown";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
@@ -43,7 +44,16 @@ const SubmissionSection = ({ slice, context }) => {
               </div>
               {/* Top Right */}
               <div className=" lg:w-[90%] xl:w-[40%]">
-                <div className="rounded-2xl bg-linear-to-t from-transparent to-white/5 border border-white/10 px-7 py-9 flex flex-col gap-6">
+                <div
+                  style={{
+                    background:
+                      "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",
+                    boxShadow:
+                      "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.25), inset 1px 0 0 rgba(255,255,255,0.1)",
+                    border: "1px solid rgba(255,255,255,0.15)",
+                  }}
+                  className="rounded-2xl bg-linear-to-t from-transparent to-white/5 border border-white/10 px-7 py-9 flex flex-col gap-6"
+                >
                   {slice.primary.top_right_card.map((item, i) => (
                     <div key={i} className="flex flex-col gap-6">
                       <div>
@@ -107,8 +117,9 @@ const SubmissionSection = ({ slice, context }) => {
               >
                 <PrismicRichText field={item.last_date} />
               </div>
-              <div>
-                <CountdownTimer targetDate={context.eventDate} />
+
+              <div className="w-full lg:px-9">
+                <ClockTwo targetDate={context.eventDate} />
               </div>
               {/* Buttons */}
               <div className="flex flex-col lg:flex-row gap-5 mt-10 pb-10 xl:pb-21">
