@@ -225,5 +225,260 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withVideo",
+		"primary": {
+			"top_section": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"eyebrow_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Occaecat ut aute nostrud nisi in aute do elit officia cupidatat irure."
+											}
+										}
+									]
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eiusmod reprehenderit exercitation culpa dolore magna nulla consectetur duis magna labore sunt. Fugiat Lorem Lorem pariatur ipsum laboris commodo eiusmod qui cupidatat aliquip irure dolore et esse voluptate."
+											}
+										}
+									]
+								}
+							],
+							[
+								"short_description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sint magna deserunt non minim nulla fugiat sint eu occaecat pariatur labore cillum. Consectetur ut enim ex cupidatat est est excepteur magna. Nulla consequat nisi reprehenderit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"button",
+								{
+									"key": "e95a4aff-6d6b-4269-bb68-84775027f074",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "fix"
+									}
+								}
+							],
+							[
+								"small_image",
+								{
+									"__TYPE__": "ImageContent",
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+										"width": 4000,
+										"height": 4000
+									},
+									"url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+									"width": 4000,
+									"height": 4000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "mad",
+									"thumbnails": {}
+								}
+							]
+						]
+					}
+				]
+			},
+			"top_right_card": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Est consequat reprehenderit non magna non fugiat sint minim laboris fugiat. Ad aute esse elit nostrud ut ex do ipsum. Voluptate irure laborum velit et cillum adipisicing id ex irure esse."
+											}
+										}
+									]
+								}
+							],
+							[
+								"embed_link",
+								{
+									"key": "20559eab-74bf-4599-8ebe-60a92238ccac",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "explain"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"bottom_section": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"eyebrow_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Deserunt nulla consequat adipisicing elit adipisicing ea excepteur quis mollit."
+											}
+										}
+									]
+								}
+							],
+							[
+								"eyebrow_heading_two",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sunt reprehenderit ipsum aliquip aliquip magna sunt tempor adipisicing fugiat ullamco laboris. Veniam magna aliqua aliquip ullamco dolore aute voluptate occaecat ut in proident sunt culpa."
+											}
+										}
+									]
+								}
+							],
+							[
+								"heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Dolore aliquip tempor commodo reprehenderit consequat eiusmod non laborum eu consequat reprehenderit mollit magna anim aliqua. Nisi laborum veniam ex qui cupidatat id laboris enim nostrud mollit excepteur incididunt dolore exercitation."
+											}
+										}
+									]
+								}
+							],
+							[
+								"sub_heading",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Occaecat commodo Lorem Lorem qui consequat consequat est voluptate aliqua eu consectetur laborum nulla adipisicing ut."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Et incididunt dolor exercitation cillum elit proident occaecat. Veniam fugiat qui aliqua ut consectetur ea. Esse dolor magna laboris aute proident reprehenderit ex minim sit occaecat et culpa veniam veniam excepteur."
+											}
+										}
+									]
+								}
+							],
+							[
+								"last_date",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Eiusmod do sunt incididunt. Laboris eu ut anim incididunt veniam in."
+											}
+										}
+									]
+								}
+							],
+							[
+								"button_one",
+								{
+									"key": "5666ce52-3539-4bef-a0fc-3576e5793092",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "price"
+									}
+								}
+							],
+							[
+								"button_two",
+								{
+									"key": "2be39a97-2703-4e0c-b0ee-69ea7ad6c6ed",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "various"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

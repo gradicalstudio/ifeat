@@ -1870,6 +1870,189 @@ export interface SubmissionSectionSliceDefaultPrimaryBottomSectionItem {
 }
 
 /**
+ * Item in *SubmissionSection → withVideo → Primary → Top Section*
+ */
+export interface SubmissionSectionSliceWithVideoPrimaryTopSectionItem {
+  /**
+   * Eyebrow Heading field in *SubmissionSection → withVideo → Primary → Top Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_section[].eyebrow_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  eyebrow_heading: prismic.RichTextField;
+
+  /**
+   * Heading field in *SubmissionSection → withVideo → Primary → Top Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_section[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Short description field in *SubmissionSection → withVideo → Primary → Top Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_section[].short_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  short_description: prismic.RichTextField;
+
+  /**
+   * Button field in *SubmissionSection → withVideo → Primary → Top Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_section[].button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Small Image field in *SubmissionSection → withVideo → Primary → Top Section*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_section[].small_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  small_image: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *SubmissionSection → withVideo → Primary → Top Right Card*
+ */
+export interface SubmissionSectionSliceWithVideoPrimaryTopRightCardItem {
+  /**
+   * Embed Link field in *SubmissionSection → withVideo → Primary → Top Right Card*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_right_card[].embed_link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  embed_link: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Description field in *SubmissionSection → withVideo → Primary → Top Right Card*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Description under the video
+   * - **API ID Path**: submission_section.withVideo.primary.top_right_card[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * Item in *SubmissionSection → withVideo → Primary → Bottom Section*
+ */
+export interface SubmissionSectionSliceWithVideoPrimaryBottomSectionItem {
+  /**
+   * Eyebrow Heading field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].eyebrow_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  eyebrow_heading: prismic.RichTextField;
+
+  /**
+   * Eyebrow Heading Two field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].eyebrow_heading_two
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  eyebrow_heading_two: prismic.RichTextField;
+
+  /**
+   * Heading field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Sub Heading field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].sub_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  sub_heading: prismic.RichTextField;
+
+  /**
+   * Description field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Last Date field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].last_date
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  last_date: prismic.RichTextField;
+
+  /**
+   * Button One field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Button Text
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].button_one
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_one: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+
+  /**
+   * Button Two field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Button Text
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].button_two
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button_two: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
  * Primary content in *SubmissionSection → Default → Primary*
  */
 export interface SubmissionSectionSliceDefaultPrimary {
@@ -1924,9 +2107,65 @@ export type SubmissionSectionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *SubmissionSection → withVideo → Primary*
+ */
+export interface SubmissionSectionSliceWithVideoPrimary {
+  /**
+   * Top Section field in *SubmissionSection → withVideo → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_section[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  top_section: prismic.GroupField<
+    Simplify<SubmissionSectionSliceWithVideoPrimaryTopSectionItem>
+  >;
+
+  /**
+   * Top Right Card field in *SubmissionSection → withVideo → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.top_right_card[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  top_right_card: prismic.GroupField<
+    Simplify<SubmissionSectionSliceWithVideoPrimaryTopRightCardItem>
+  >;
+
+  /**
+   * Bottom Section field in *SubmissionSection → withVideo → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  bottom_section: prismic.GroupField<
+    Simplify<SubmissionSectionSliceWithVideoPrimaryBottomSectionItem>
+  >;
+}
+
+/**
+ * withVideo variation for SubmissionSection Slice
+ *
+ * - **API ID**: `withVideo`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type SubmissionSectionSliceWithVideo = prismic.SharedSliceVariation<
+  "withVideo",
+  Simplify<SubmissionSectionSliceWithVideoPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *SubmissionSection*
  */
-type SubmissionSectionSliceVariation = SubmissionSectionSliceDefault;
+type SubmissionSectionSliceVariation =
+  | SubmissionSectionSliceDefault
+  | SubmissionSectionSliceWithVideo;
 
 /**
  * SubmissionSection Shared Slice
@@ -2139,8 +2378,13 @@ declare module "@prismicio/client" {
       SubmissionSectionSliceDefaultPrimaryTopRightCardItem,
       SubmissionSectionSliceDefaultPrimaryBottomSectionItem,
       SubmissionSectionSliceDefaultPrimary,
+      SubmissionSectionSliceWithVideoPrimaryTopSectionItem,
+      SubmissionSectionSliceWithVideoPrimaryTopRightCardItem,
+      SubmissionSectionSliceWithVideoPrimaryBottomSectionItem,
+      SubmissionSectionSliceWithVideoPrimary,
       SubmissionSectionSliceVariation,
       SubmissionSectionSliceDefault,
+      SubmissionSectionSliceWithVideo,
       ThePrizesSlice,
       ThePrizesSliceDefaultPrimaryCategoriesItem,
       ThePrizesSliceDefaultPrimary,

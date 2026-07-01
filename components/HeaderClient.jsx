@@ -22,7 +22,7 @@ export default function HeaderClient({ data }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      setAtTop(window.scrollY < 50);
+      setAtTop(window.scrollY < 15);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
