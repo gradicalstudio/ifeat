@@ -17,22 +17,13 @@ const JuryPanel = ({ slice }) => {
       <div className="lg:px-20 xl:px-20 font-medium">
         {/* top */}
         <div className="flex flex-col items-center justify-center mb-10 xl:mb-17.5">
-          <div
-            className="text-[#A59653] text-xs md:text-sm lg:text-base
- uppercase font-raleway"
-          >
+          <div className="text-[#A59653] text-xs md:text-sm lg:text-base uppercase font-raleway">
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
-          <div
-            className="text-[22px] md:text-[28px] lg:text-[38px]
- font-monsterrat my-3 xl:my-3.5"
-          >
+          <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat my-3 xl:my-3.5">
             <PrismicRichText field={slice.primary.main_heading} />
           </div>
-          <div
-            className="text-[15px] md:text-base lg:text-lg
- font-raleway text-center w-[80%]"
-          >
+          <div className="text-[15px] md:text-base lg:text-lg font-raleway text-center w-[80%] md:w-[90%]">
             <PrismicRichText field={slice.primary.short_description} />
           </div>
         </div>
