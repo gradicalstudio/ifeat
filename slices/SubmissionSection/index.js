@@ -255,11 +255,26 @@ const SubmissionSection = ({ slice, context }) => {
                   >
                     <PrismicRichText field={item.description} />
                   </div>
-                  <div
-                    className="text-[#FEFFF4] text-[15px] md:text-base lg:text-lg
- font-raleway mt-7.5 mb-10"
-                  >
-                    <PrismicRichText field={item.last_date} />
+                  <div className="text-[#FEFFF4] text-[15px] md:text-base lg:text-lg font-raleway mt-7.5 mb-10">
+                    <PrismicRichText
+                      field={item.last_date}
+                      components={{
+                        hyperlink: ({ node, children }) => (
+                          <a
+                            href={node.data.url}
+                            target={node.data.target}
+                            rel={
+                              node.data.target === "_blank"
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            className="underline underline-offset-2 sm:no-underline sm:hover:underline"
+                          >
+                            {children}
+                          </a>
+                        ),
+                      }}
+                    />
                   </div>
 
                   <div className="w-full lg:px-9">

@@ -55,7 +55,9 @@ function Divider() {
 }
 
 export default function ClockTwo({ targetDate }) {
-  const date = targetDate ? new Date(targetDate) : new Date("2026-07-18T20:00:00");
+  const date = targetDate
+    ? new Date(targetDate)
+    : new Date("2026-10-19T21:00:00+07:00");
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(date));
   const [mounted, setMounted] = useState(false);
 
@@ -72,7 +74,8 @@ export default function ClockTwo({ targetDate }) {
       className="inline-flex w-full items-stretch overflow-hidden"
       style={{
         borderRadius: "14px",
-        background: "linear-gradient(180deg, rgba(254, 255, 244, 0.02) 0%, rgba(254, 255, 244, 0.1) 100%)",
+        background:
+          "linear-gradient(180deg, rgba(254, 255, 244, 0.02) 0%, rgba(254, 255, 244, 0.1) 100%)",
         border: "2px solid transparent",
         backgroundClip: "padding-box",
         backdropFilter: "blur(30px)",
@@ -88,8 +91,10 @@ export default function ClockTwo({ targetDate }) {
           inset: 0,
           borderRadius: "14px",
           padding: "2px",
-          background: "linear-gradient(180deg, rgba(254, 255, 244, 0.1) 0%, rgba(254, 255, 244, 0.02) 100%)",
-          WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+          background:
+            "linear-gradient(180deg, rgba(254, 255, 244, 0.1) 0%, rgba(254, 255, 244, 0.02) 100%)",
+          WebkitMask:
+            "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
           WebkitMaskComposite: "xor",
           maskComposite: "exclude",
           pointerEvents: "none",
