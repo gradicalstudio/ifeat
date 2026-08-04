@@ -306,7 +306,7 @@ const SubmissionSection = ({ slice, context }) => {
                     />
                   </div>
                   {/* Buttons */}
-                  <div className="flex w-full flex-col md:flex-row gap-5 mt-10 pb-10 xl:pb-21">
+                  <div className="flex w-full flex-col justify-center md:flex-row gap-5 mt-10 pb-10 xl:pb-21">
                     <div>
                       <PrimaryButton field={item.button_one} />
                     </div>
