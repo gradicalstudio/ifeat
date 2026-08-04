@@ -57,7 +57,7 @@ function Divider() {
 export default function ClockTwo({ targetDate }) {
   const date = targetDate
     ? new Date(targetDate)
-    : new Date("2026-10-19T21:00:00+07:00");
+    : new Date("2026-10-23T21:00:00+07:00");
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(date));
   const [mounted, setMounted] = useState(false);
 
