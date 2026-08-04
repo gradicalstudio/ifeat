@@ -255,7 +255,7 @@ const SubmissionSection = ({ slice, context }) => {
                   >
                     <PrismicRichText field={item.description} />
                   </div>
-                  <div className="text-[#FEFFF4] text-[15px] md:text-base lg:text-lg font-raleway mt-7.5 mb-10">
+                  <div className="text-[#FEFFF4] max-w-65 md:max-w-max text-[15px] md:text-base lg:text-lg font-raleway mt-7.5 mb-10">
                     <PrismicRichText
                       field={item.last_date}
                       components={{
@@ -276,12 +276,37 @@ const SubmissionSection = ({ slice, context }) => {
                       }}
                     />
                   </div>
-
-                  <div className="w-full lg:px-9">
+                  {/* Heading and CLock */}
+                  <div className="text-[#A59653] text-xs md:text-sm lg:text-base  font-raleway">
+                    <PrismicRichText field={item.event_heading} />
+                  </div>
+                  <div className="w-full lg:px-9 my-5 lg:my-4">
                     <ClockTwo targetDate={context.eventDate} />
                   </div>
+
+                  <div className="text-[#FEFFF4] text-sm md:text-base font-light lg:text-lg font-raleway">
+                    <PrismicRichText
+                      field={item.event_info}
+                      components={{
+                        hyperlink: ({ node, children }) => (
+                          <a
+                            href={node.data.url}
+                            target={node.data.target}
+                            rel={
+                              node.data.target === "_blank"
+                                ? "noopener noreferrer"
+                                : undefined
+                            }
+                            className="underline underline-offset-2 sm:no-underline sm:hover:underline"
+                          >
+                            {children}
+                          </a>
+                        ),
+                      }}
+                    />
+                  </div>
                   {/* Buttons */}
-                  <div className="flex flex-col lg:flex-row gap-5 mt-10 pb-10 xl:pb-21">
+                  <div className="flex flex-col md:flex-row gap-5 mt-10 pb-10 xl:pb-21">
                     <div>
                       <PrimaryButton field={item.button_one} />
                     </div>

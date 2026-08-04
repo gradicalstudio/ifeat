@@ -1837,6 +1837,26 @@ export interface SubmissionSectionSliceDefaultPrimaryBottomSectionItem {
   last_date: prismic.RichTextField;
 
   /**
+   * Event Heading field in *SubmissionSection → Default → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.default.primary.bottom_section[].event_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  event_heading: prismic.RichTextField;
+
+  /**
+   * Event Info field in *SubmissionSection → Default → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.default.primary.bottom_section[].event_info
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  event_info: prismic.RichTextField;
+
+  /**
    * Button One field in *SubmissionSection → Default → Primary → Bottom Section*
    *
    * - **Field Type**: Link
@@ -2018,6 +2038,26 @@ export interface SubmissionSectionSliceWithVideoPrimaryBottomSectionItem {
    * - **Documentation**: https://prismic.io/docs/fields/rich-text
    */
   last_date: prismic.RichTextField;
+
+  /**
+   * Event Heading field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].event_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  event_heading: prismic.RichTextField;
+
+  /**
+   * Event Info field in *SubmissionSection → withVideo → Primary → Bottom Section*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: submission_section.withVideo.primary.bottom_section[].event_info
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  event_info: prismic.RichTextField;
 
   /**
    * Button One field in *SubmissionSection → withVideo → Primary → Bottom Section*
