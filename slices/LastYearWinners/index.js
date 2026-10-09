@@ -257,7 +257,7 @@ text-[#A59653] "
                   </div>
                 )}
                 {isFilled.richText(slice.primary.short_description) && (
-                  <div className="text-[15px] md:text-base lg:text-lg font-raleway lg:w-[74%] mt-3.5">
+                  <div className="text-[15px] md:text-base lg:text-lg font-raleway w-[99%] md:w-[64%] lg:w-[74%] xl:w-[70%] mt-3.5">
                     <PrismicRichText field={slice.primary.short_description} />
                   </div>
                 )}
