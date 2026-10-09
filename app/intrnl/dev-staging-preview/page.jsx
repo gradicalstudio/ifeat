@@ -19,6 +19,12 @@ export async function generateMetadata() {
   return {
     title: page.data.meta_title,
     description: page.data.meta_description,
+    robots: {
+      index: false,
+      follow: false,
+      nocache: true,
+      googleBot: { index: false, follow: false },
+    },
     openGraph: {
       images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
     },
