@@ -399,5 +399,390 @@
 				"value": []
 			}
 		]
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "withPeopleChoiceAwardWinners",
+		"primary": {
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Culpa duis eiusmod qui quis."
+						}
+					}
+				]
+			},
+			"short_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod culpa amet in sit elit non laboris nulla magna. Ipsum et magna non nisi ullamco in quis excepteur ut nisi sunt commodo id nisi. Occaecat ipsum est Lorem nisi Lorem."
+						}
+					}
+				]
+			},
+			"cateory_one_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Exercitation Lorem ea nostrud voluptate."
+						}
+					}
+				]
+			},
+			"categoryone": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+										"width": 3882,
+										"height": 2584
+									},
+									"url": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+									"width": 3882,
+									"height": 2584,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "heading",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"country",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "needs",
+									"type": "Text"
+								}
+							],
+							[
+								"position",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "radio",
+									"type": "Text"
+								}
+							],
+							[
+								"name",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Enim excepteur enim officia velit et. Sunt adipisicing excepteur dolore cillum. Incididunt cupidatat minim exercitation duis."
+											}
+										}
+									]
+								}
+							],
+							[
+								"project",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Commodo fugiat qui esse dolor ullamco sit sit pariatur culpa mollit consequat. Dolor cillum ex amet culpa magna nulla ut voluptate labore tempor dolore nulla dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Sunt cupidatat commodo do laboris. Exercitation aute nisi veniam consectetur anim elit do nulla ipsum labore ad consequat labore ad."
+											}
+										}
+									]
+								}
+							],
+							[
+								"learn_more",
+								{
+									"key": "197667b9-d08f-41f9-b521-b3eafdcc49b0",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "https://slicemachine.dev",
+										"text": "affect"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"category_two_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Commodo tempor aliqua aute velit adipisicing nulla id consequat veniam. Enim irure ad voluptate aliquip do elit non."
+						}
+					}
+				]
+			},
+			"category_two": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+										"width": 4000,
+										"height": 6000
+									},
+									"url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef",
+									"width": 4000,
+									"height": 6000,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "now",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"country",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "wave",
+									"type": "Text"
+								}
+							],
+							[
+								"position",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "than",
+									"type": "Text"
+								}
+							],
+							[
+								"name",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Do incididunt pariatur pariatur ad esse officia amet officia anim consectetur Lorem ipsum. Et et deserunt aliqua eiusmod. Enim deserunt elit esse exercitation consequat culpa occaecat."
+											}
+										}
+									]
+								}
+							],
+							[
+								"project",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Commodo ut dolore laboris sunt ipsum dolor dolor minim deserunt ipsum laboris. Adipisicing ut excepteur esse est proident sit aute proident sunt labore nostrud deserunt Lorem."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Duis minim non est irure deserunt eu dolore do occaecat culpa ullamco exercitation mollit et aliquip. In occaecat ad in deserunt labore cupidatat in dolore elit officia ut ad ex ex minim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"link",
+								{
+									"key": "17979918-fc71-43fc-ac77-bdf7689c69eb",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "top"
+									}
+								}
+							]
+						]
+					}
+				]
+			},
+			"category_three_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Irure adipisicing id ullamco nisi esse nisi cillum esse aliquip sint ullamco nostrud. Incididunt commodo reprehenderit enim ea id pariatur nostrud sit. Nulla occaecat voluptate est deserunt aute adipisicing proident voluptate nulla pariatur labore cillum sint."
+						}
+					}
+				]
+			},
+			"category_three": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"image",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+										"width": 3500,
+										"height": 2338
+									},
+									"url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea",
+									"width": 3500,
+									"height": 2338,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "post",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"country",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "cream",
+									"type": "Text"
+								}
+							],
+							[
+								"position",
+								{
+									"__TYPE__": "FieldContent",
+									"value": "brought",
+									"type": "Text"
+								}
+							],
+							[
+								"name",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Commodo laboris nulla magna elit minim cillum. Velit eu enim Lorem aute. Veniam adipisicing incididunt aliqua tempor tempor eiusmod esse ipsum ullamco pariatur eu irure est enim minim."
+											}
+										}
+									]
+								}
+							],
+							[
+								"project",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Officia cupidatat in est culpa."
+											}
+										}
+									]
+								}
+							],
+							[
+								"description",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Velit excepteur fugiat consectetur proident mollit dolore ex minim in excepteur cupidatat do irure. Est aliqua aliquip irure qui incididunt sint duis nostrud eu esse mollit ipsum."
+											}
+										}
+									]
+								}
+							],
+							[
+								"link",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "b0c97728-47ed-480d-af5b-7b4528e1fb98",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "baby"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

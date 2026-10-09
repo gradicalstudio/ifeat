@@ -1399,6 +1399,237 @@ export interface LastYearWinnersSlicePeopleChoiceAwardPrimaryCompaniesItem {
 }
 
 /**
+ * Item in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+ */
+export interface LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryoneItem {
+  /**
+   * Image field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Country field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: India, Spain or Netherlands
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].country
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  country: prismic.KeyTextField;
+
+  /**
+   * Position field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].position
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Name field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Project field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].project
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project: prismic.RichTextField;
+
+  /**
+   * Description field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Learn More field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → CategoryOne*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[].learn_more
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  learn_more: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
+ * Item in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+ */
+export interface LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryTwoItem {
+  /**
+   * Image field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Country field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].country
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  country: prismic.KeyTextField;
+
+  /**
+   * Position field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].position
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Name field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Project field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].project
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project: prismic.RichTextField;
+
+  /**
+   * Description field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Link field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Two*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Item in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+ */
+export interface LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryThreeItem {
+  /**
+   * Image field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Country field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].country
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  country: prismic.KeyTextField;
+
+  /**
+   * Position field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].position
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  position: prismic.KeyTextField;
+
+  /**
+   * Name field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  name: prismic.RichTextField;
+
+  /**
+   * Project field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].project
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project: prismic.RichTextField;
+
+  /**
+   * Description field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Link field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary → Category Three*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[].link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
  * Primary content in *LastYearWinners → Default → Primary*
  */
 export interface LastYearWinnersSliceDefaultPrimary {
@@ -1532,11 +1763,117 @@ export type LastYearWinnersSlicePeopleChoiceAward =
   >;
 
 /**
+ * Primary content in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+ */
+export interface LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimary {
+  /**
+   * Main Heading field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.main_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  main_heading: prismic.RichTextField;
+
+  /**
+   * Short description field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.short_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  short_description: prismic.RichTextField;
+
+  /**
+   * Cateory One Title field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.cateory_one_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  cateory_one_title: prismic.RichTextField;
+
+  /**
+   * CategoryOne field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.categoryone[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  categoryone: prismic.GroupField<
+    Simplify<LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryoneItem>
+  >;
+
+  /**
+   * Category Two Title field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  category_two_title: prismic.RichTextField;
+
+  /**
+   * Category Two field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_two[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  category_two: prismic.GroupField<
+    Simplify<LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryTwoItem>
+  >;
+
+  /**
+   * Category Three Title field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  category_three_title: prismic.RichTextField;
+
+  /**
+   * Category Three field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.category_three[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  category_three: prismic.GroupField<
+    Simplify<LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryThreeItem>
+  >;
+}
+
+/**
+ * WithPeopleChoiceAwardWinners variation for LastYearWinners Slice
+ *
+ * - **API ID**: `withPeopleChoiceAwardWinners`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LastYearWinnersSliceWithPeopleChoiceAwardWinners =
+  prismic.SharedSliceVariation<
+    "withPeopleChoiceAwardWinners",
+    Simplify<LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *LastYearWinners*
  */
 type LastYearWinnersSliceVariation =
   | LastYearWinnersSliceDefault
-  | LastYearWinnersSlicePeopleChoiceAward;
+  | LastYearWinnersSlicePeopleChoiceAward
+  | LastYearWinnersSliceWithPeopleChoiceAwardWinners;
 
 /**
  * LastYearWinners Shared Slice
@@ -2600,9 +2937,14 @@ declare module "@prismicio/client" {
       LastYearWinnersSliceDefaultPrimary,
       LastYearWinnersSlicePeopleChoiceAwardPrimaryCompaniesItem,
       LastYearWinnersSlicePeopleChoiceAwardPrimary,
+      LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryoneItem,
+      LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryTwoItem,
+      LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategoryThreeItem,
+      LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimary,
       LastYearWinnersSliceVariation,
       LastYearWinnersSliceDefault,
       LastYearWinnersSlicePeopleChoiceAward,
+      LastYearWinnersSliceWithPeopleChoiceAwardWinners,
       PeopleChoiceAwardSlice,
       PeopleChoiceAwardSliceDefaultPrimary,
       PeopleChoiceAwardSliceVariation,
