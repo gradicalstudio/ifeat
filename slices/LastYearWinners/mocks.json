@@ -235,8 +235,8 @@
 							[
 								"link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "3b1ccc60-d200-4d57-ba21-e1b20498159f",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://twitter.com",
@@ -261,5 +261,143 @@
 			}
 		},
 		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "peopleChoiceAward",
+		"primary": {
+			"main_heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Qui ea aute do pariatur ex."
+						}
+					}
+				]
+			},
+			"short_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Sunt adipisicing velit nisi do adipisicing duis mollit consequat id mollit occaecat laborum incididunt do. Labore ea ea laboris nisi pariatur tempor id laborum mollit nostrud laboris. Ut fugiat occaecat sint deserunt."
+						}
+					}
+				]
+			},
+			"companies": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"company_name",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Ullamco tempor Lorem consequat deserunt id aute."
+											}
+										}
+									]
+								}
+							],
+							[
+								"company_logo",
+								{
+									"origin": {
+										"id": "main",
+										"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+										"width": 2747,
+										"height": 4120
+									},
+									"url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa",
+									"width": 2747,
+									"height": 4120,
+									"edit": {
+										"zoom": 1,
+										"crop": {
+											"x": 0,
+											"y": 0
+										},
+										"background": "transparent"
+									},
+									"alt": "steep",
+									"credits": null,
+									"__TYPE__": "ImageContent",
+									"thumbnails": {}
+								}
+							],
+							[
+								"project_title",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Dolore dolore sint aute ea nostrud pariatur elit ea sunt."
+											}
+										}
+									]
+								}
+							],
+							[
+								"one_line_impact_statement",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Labore do quis tempor occaecat labore Lorem fugiat nulla amet pariatur et. Deserunt voluptate sunt occaecat duis magna culpa."
+											}
+										}
+									]
+								}
+							],
+							[
+								"short_paragraph",
+								{
+									"__TYPE__": "StructuredTextContent",
+									"value": [
+										{
+											"type": "paragraph",
+											"content": {
+												"text": "Labore mollit non sit ut. Ullamco excepteur dolor et aute. Excepteur exercitation elit voluptate incididunt ad velit esse enim quis et aliquip sunt dolore."
+											}
+										}
+									]
+								}
+							],
+							[
+								"learn_more",
+								{
+									"key": "e4c021ca-3e36-48c3-9ab1-b5dfb468d77f",
+									"__TYPE__": "LinkContent",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://google.com",
+										"text": "child"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": [
+			{
+				"__TYPE__": "GroupItemContent",
+				"value": []
+			}
+		]
 	}
 ]

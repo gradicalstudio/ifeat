@@ -1,3 +1,4 @@
+import { isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 
@@ -52,196 +53,255 @@ const LastYearWinners = ({ slice }) => {
     return "bg-gray-300";
   };
   return (
-    <section
-      id="winners-2025"
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
-    >
-      <div className="font font-medium">
-        {/* Top secton */}
-        <div className="mb-10 xl:mb-17.5">
-          <div
-            className="text-[22px] md:text-[28px] lg:text-[38px]
+    <>
+      {slice.variation === "default" && (
+        <section
+          id="winners-2025"
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+          className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
+        >
+          <div className="font font-medium">
+            {/* Top secton */}
+            <div className="mb-10 xl:mb-17.5">
+              <div
+                className="text-[22px] md:text-[28px] lg:text-[38px]
  font-monsterrat "
-          >
-            <PrismicRichText field={slice.primary.main_heading} />
-          </div>
-          <div
-            className="text-[15px] md:text-base lg:text-lg
+              >
+                <PrismicRichText field={slice.primary.main_heading} />
+              </div>
+              <div
+                className="text-[15px] md:text-base lg:text-lg
  font-raleway lg:w-[74%] mt-3.5"
-          >
-            <PrismicRichText field={slice.primary.short_description} />
-          </div>
-        </div>
-        {/* Middle section */}
-        <div>
-          <div
-            className="font-raleway text-lg md:text-xl lg:text-[25px]
+              >
+                <PrismicRichText field={slice.primary.short_description} />
+              </div>
+            </div>
+            {/* Middle section */}
+            <div>
+              <div
+                className="font-raleway text-lg md:text-xl lg:text-[25px]
  uppercase text-[#A59653] mb-5"
-          >
-            <PrismicRichText field={slice.primary.cateory_one_title} />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-            {slice.primary.categoryone.map((item, i) => (
-              <div
-                key={i}
-                className="   flex flex-col"
               >
-                <div>
-                  <div className="relative h-79.25">
-                    <PrismicNextImage
-                      field={item.image}
-                      className="object-cover w-full h-full rounded-xl"
-                    />
-                    <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                      <div>
-                        {getCountryFlag(item.country) && (
-                          <img
-                            src={getCountryFlag(item.country)}
-                            className="w-4 h-2.5 rounded-xs object-fill"
-                            alt={item.country}
-                          />
-                        )}
+                <PrismicRichText field={slice.primary.cateory_one_title} />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
+                {slice.primary.categoryone.map((item, i) => (
+                  <div key={i} className="   flex flex-col">
+                    <div>
+                      <div className="relative h-79.25">
+                        <PrismicNextImage
+                          field={item.image}
+                          className="object-cover w-full h-full rounded-xl"
+                        />
+                        <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
+                          <div>
+                            {getCountryFlag(item.country) && (
+                              <img
+                                src={getCountryFlag(item.country)}
+                                className="w-4 h-2.5 rounded-xs object-fill"
+                                alt={item.country}
+                              />
+                            )}
+                          </div>
+                          <span className="tracking-wider leading-tight">
+                            {item.country}
+                          </span>
+                        </div>
                       </div>
-                      <span className="tracking-wider leading-tight">
-                        {item.country}
-                      </span>
-                    </div>
-                  </div>
 
-                  {/* Gold / Silver / Bronze badge */}
-                  <div className="md:h-40 xl:h-48">
-                    <div
-                      className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                    >
-                      <span
-                        className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                      ></span>
-                      <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                        {item.position}
-                      </span>
-                    </div>
+                      {/* Gold / Silver / Bronze badge */}
+                      <div className="md:h-40 xl:h-48">
+                        <div
+                          className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
+                        >
+                          <span
+                            className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
+                          ></span>
+                          <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
+                            {item.position}
+                          </span>
+                        </div>
 
-                    <div
-                      className="font-raleway text-lg md:text-xl lg:text-[25px]
+                        <div
+                          className="font-raleway text-lg md:text-xl lg:text-[25px]
 "
-                    >
-                      <PrismicRichText field={item.name} />
-                    </div>
-                    <div
-                      className="text-sm md:text-[15px] lg:text-base
+                        >
+                          <PrismicRichText field={item.name} />
+                        </div>
+                        <div
+                          className="text-sm md:text-[15px] lg:text-base
 font-raleway my-3 xl:my-5 "
-                    >
-                      <PrismicRichText field={item.project} />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Line always at the same vertical position across cards */}
-                <div className="border-b border-[#677479]" />
-
-                {/* Description grows to fill remaining space */}
-                <div className="font-raleway text-sm md:text-[15px] lg:text-base mt-7.5 flex-1">
-                  <PrismicRichText field={item.description} />
-                </div>
-
-                {/* Learn more pinned to bottom */}
-                <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
-                  <PrismicNextLink field={item.learn_more} />
-                  <span className="font-bold">→</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Last section */}
-        <div className="mt-10 xl:mt-17.5">
-          <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
-            <PrismicRichText field={slice.primary.category_two_title} />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-            {slice.primary.category_two.map((item, i) => (
-              <div
-                key={i}
-                className="flex flex-col"
-              >
-                <div>
-                  <div className="relative h-79.25">
-                    <PrismicNextImage
-                      field={item.image}
-                      className="object-cover w-full h-full rounded-xl"
-                    />
-                    <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                      <div>
-                        {getCountryFlag(item.country) && (
-                          <img
-                            src={getCountryFlag(item.country)}
-                            className="w-4 h-2.5 rounded-xs object-fill"
-                            alt={item.country}
-                          />
-                        )}
+                        >
+                          <PrismicRichText field={item.project} />
+                        </div>
                       </div>
-                      <span className="tracking-wider leading-tight">
-                        {item.country}
-                      </span>
+                    </div>
+
+                    {/* Line always at the same vertical position across cards */}
+                    <div className="border-b border-[#677479]" />
+
+                    {/* Description grows to fill remaining space */}
+                    <div className="font-raleway text-sm md:text-[15px] lg:text-base mt-7.5 flex-1">
+                      <PrismicRichText field={item.description} />
+                    </div>
+
+                    {/* Learn more pinned to bottom */}
+                    <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
+                      <PrismicNextLink field={item.learn_more} />
+                      <span className="font-bold">→</span>
                     </div>
                   </div>
-
-                  {/* Gold / Silver / Bronze badge */}
-                  <div className="md:h-40 xl:h-48">
-                    <div
-                      className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                    >
-                      <span
-                        className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                      ></span>
-                      <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                        {item.position}
-                      </span>
-                    </div>
-
-                    <div
-                      className="font-raleway text-lg md:text-xl lg:text-[25px]
-"
-                    >
-                      <PrismicRichText field={item.name} />
-                    </div>
-                    <div
-                      className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5 md:h-12 lg:h-14"
-                    >
-                      <PrismicRichText field={item.project} />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Line always at the same vertical position across cards */}
-                <div className="border-b border-[#677479]" />
-
-                {/* Description grows to fill remaining space */}
-                <div
-                  className="font-raleway text-sm md:text-[15px] lg:text-base
- mt-7.5 flex-1"
-                >
-                  <PrismicRichText field={item.description} />
-                </div>
-
-                {/* Learn more pinned to bottom */}
-                <div
-                  className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-text-[#A59653] "
-                >
-                  <PrismicNextLink field={item.link} />
-                  <span className="font-bold">→</span>
-                </div>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Last section */}
+            <div className="mt-10 xl:mt-17.5">
+              <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
+                <PrismicRichText field={slice.primary.category_two_title} />
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                {slice.primary.category_two.map((item, i) => (
+                  <div key={i} className="flex flex-col">
+                    <div>
+                      <div className="relative h-79.25">
+                        <PrismicNextImage
+                          field={item.image}
+                          className="object-cover w-full h-full rounded-xl"
+                        />
+                        <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
+                          <div>
+                            {getCountryFlag(item.country) && (
+                              <img
+                                src={getCountryFlag(item.country)}
+                                className="w-4 h-2.5 rounded-xs object-fill"
+                                alt={item.country}
+                              />
+                            )}
+                          </div>
+                          <span className="tracking-wider leading-tight">
+                            {item.country}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Gold / Silver / Bronze badge */}
+                      <div className="md:h-40 xl:h-48">
+                        <div
+                          className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
+                        >
+                          <span
+                            className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
+                          ></span>
+                          <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
+                            {item.position}
+                          </span>
+                        </div>
+
+                        <div
+                          className="font-raleway text-lg md:text-xl lg:text-[25px]
+"
+                        >
+                          <PrismicRichText field={item.name} />
+                        </div>
+                        <div
+                          className="text-sm md:text-[15px] lg:text-base
+ font-raleway my-3 xl:my-5 md:h-12 lg:h-14"
+                        >
+                          <PrismicRichText field={item.project} />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Line always at the same vertical position across cards */}
+                    <div className="border-b border-[#677479]" />
+
+                    {/* Description grows to fill remaining space */}
+                    <div
+                      className="font-raleway text-sm md:text-[15px] lg:text-base
+ mt-7.5 flex-1"
+                    >
+                      <PrismicRichText field={item.description} />
+                    </div>
+
+                    {/* Learn more pinned to bottom */}
+                    <div
+                      className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
+text-[#A59653] "
+                    >
+                      <PrismicNextLink field={item.link} />
+                      <span className="font-bold">→</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
+      )}
+      {slice.variation === "peopleChoiceAward" && (
+        <section
+          data-slice-type={slice.slice_type}
+          data-slice-variation={slice.variation}
+          className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
+        >
+          <div className="font font-medium">
+            {/* Top section */}
+            {(isFilled.richText(slice.primary.main_heading) ||
+              isFilled.richText(slice.primary.short_description)) && (
+              <div className="mb-10 xl:mb-17.5">
+                {isFilled.richText(slice.primary.main_heading) && (
+                  <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat">
+                    <PrismicRichText field={slice.primary.main_heading} />
+                  </div>
+                )}
+                {isFilled.richText(slice.primary.short_description) && (
+                  <div className="text-[15px] md:text-base lg:text-lg font-raleway lg:w-[74%] mt-3.5">
+                    <PrismicRichText field={slice.primary.short_description} />
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Companies grid: cards use subgrid so each row aligns across cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-4 md:gap-y-0">
+              {slice.primary.companies.map((item, i) => (
+                <div
+                  key={i}
+                  className="grid md:row-span-6 md:grid-rows-subgrid rounded-xl border border-[#677479] p-5 md:mb-4"
+                >
+                  <div className="w-48 h-24 md:w-56 md:h-32">
+                    <PrismicNextImage
+                      field={item.company_logo}
+                      className="w-full h-full object-contain object-left"
+                    />
+                  </div>
+                  <div className="font-raleway text-lg md:text-xl lg:text-[25px] mt-3 xl:mt-5">
+                    <PrismicRichText field={item.company_name} />
+                  </div>
+                  <div className="text-sm md:text-[15px] lg:text-base font-raleway my-3 xl:my-5">
+                    <PrismicRichText field={item.project_title} />
+                  </div>
+                  <div className="text-sm md:text-[15px] lg:text-base font-raleway pb-3 xl:pb-5 text-[#A59653]">
+                    <PrismicRichText field={item.one_line_impact_statement} />
+                  </div>
+                  <div className="border-t border-[#677479] pt-7.5 font-raleway text-sm md:text-[15px] lg:text-base">
+                    <PrismicRichText field={item.short_paragraph} />
+                  </div>
+                  {isFilled.link(item.learn_more) && (
+                    <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653]">
+                      <PrismicNextLink field={item.learn_more} />
+                      <span className="font-bold">→</span>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </>
   );
 };
 

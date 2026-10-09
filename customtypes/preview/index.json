@@ -1,0 +1,82 @@
+{
+  "format": "page",
+  "id": "preview",
+  "label": "Preview",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "last_year_winners": {
+              "type": "SharedSlice"
+            },
+            "hero_section": {
+              "type": "SharedSlice"
+            },
+            "section_three": {
+              "type": "SharedSlice"
+            },
+            "evaluation_framework": {
+              "type": "SharedSlice"
+            },
+            "the_prizes": {
+              "type": "SharedSlice"
+            },
+            "award_categories": {
+              "type": "SharedSlice"
+            },
+            "submission_section": {
+              "type": "SharedSlice"
+            },
+            "reflection": {
+              "type": "SharedSlice"
+            },
+            "fa_q": {
+              "type": "SharedSlice"
+            },
+            "jury_panel": {
+              "type": "SharedSlice"
+            },
+            "people_choice_award": {
+              "type": "SharedSlice"
+            },
+            "second_section": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO & Metadata": {
+      "meta_title": {
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "A title of the page used for social media and search engines"
+        },
+        "type": "Text"
+      },
+      "meta_description": {
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "A brief summary of the page"
+        },
+        "type": "Text"
+      },
+      "meta_image": {
+        "config": {
+          "constraint": {
+            "height": 1260,
+            "width": 2400
+          },
+          "label": "Meta Image",
+          "thumbnails": []
+        },
+        "type": "Image"
+      }
+    }
+  }
+}

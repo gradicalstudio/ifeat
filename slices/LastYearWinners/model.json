@@ -188,6 +188,99 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "peopleChoiceAward",
+      "name": "PeopleChoiceAward",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "main_heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Main Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "short_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Short description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "companies": {
+          "type": "Group",
+          "config": {
+            "label": "Companies",
+            "repeat": true,
+            "fields": {
+              "company_name": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Company Name",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "company_logo": {
+                "type": "Image",
+                "config": {
+                  "label": "Company logo",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              },
+              "project_title": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Project title",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "one_line_impact_statement": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "One line impact statement",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "short_paragraph": {
+                "type": "StructuredText",
+                "config": {
+                  "label": "Short Paragraph",
+                  "placeholder": "",
+                  "allowTargetBlank": true,
+                  "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                }
+              },
+              "learn_more": {
+                "type": "Link",
+                "config": {
+                  "label": "Learn More",
+                  "placeholder": "",
+                  "select": null,
+                  "allowTargetBlank": true,
+                  "allowText": true,
+                  "repeat": false
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

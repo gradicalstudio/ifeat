@@ -447,10 +447,88 @@ export type HomepageDocument<Lang extends string = string> =
     Lang
   >;
 
+type PreviewDocumentDataSlicesSlice =
+  | LastYearWinnersSlice
+  | HeroSectionSlice
+  | SectionThreeSlice
+  | EvaluationFrameworkSlice
+  | ThePrizesSlice
+  | AwardCategoriesSlice
+  | SubmissionSectionSlice
+  | ReflectionSlice
+  | FaQSlice
+  | JuryPanelSlice
+  | PeopleChoiceAwardSlice
+  | SecondSectionSlice;
+
+/**
+ * Content for Preview documents
+ */
+interface PreviewDocumentData {
+  /**
+   * Slice Zone field in *Preview*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: preview.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/slices
+   */
+  slices: prismic.SliceZone<PreviewDocumentDataSlicesSlice>; /**
+   * Meta Title field in *Preview*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: preview.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Preview*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: preview.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Preview*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: preview.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Preview document from Prismic
+ *
+ * - **API ID**: `preview`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/content-modeling
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PreviewDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<PreviewDocumentData>,
+    "preview",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | FooterDocument
   | HeaderDocument
-  | HomepageDocument;
+  | HomepageDocument
+  | PreviewDocument;
 
 /**
  * Item in *AwardCategories → Default → Primary → Cards*
@@ -1250,6 +1328,77 @@ export interface LastYearWinnersSliceDefaultPrimaryCategoryTwoItem {
 }
 
 /**
+ * Item in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+ */
+export interface LastYearWinnersSlicePeopleChoiceAwardPrimaryCompaniesItem {
+  /**
+   * Company Name field in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[].company_name
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  company_name: prismic.RichTextField;
+
+  /**
+   * Company logo field in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[].company_logo
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  company_logo: prismic.ImageField<never>;
+
+  /**
+   * Project title field in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[].project_title
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  project_title: prismic.RichTextField;
+
+  /**
+   * One line impact statement field in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[].one_line_impact_statement
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  one_line_impact_statement: prismic.RichTextField;
+
+  /**
+   * Short Paragraph field in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[].short_paragraph
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  short_paragraph: prismic.RichTextField;
+
+  /**
+   * Learn More field in *LastYearWinners → PeopleChoiceAward → Primary → Companies*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[].learn_more
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  learn_more: prismic.LinkField<
+    string,
+    string,
+    unknown,
+    prismic.FieldState,
+    never
+  >;
+}
+
+/**
  * Primary content in *LastYearWinners → Default → Primary*
  */
 export interface LastYearWinnersSliceDefaultPrimary {
@@ -1332,9 +1481,62 @@ export type LastYearWinnersSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *LastYearWinners → PeopleChoiceAward → Primary*
+ */
+export interface LastYearWinnersSlicePeopleChoiceAwardPrimary {
+  /**
+   * Main Heading field in *LastYearWinners → PeopleChoiceAward → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.main_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  main_heading: prismic.RichTextField;
+
+  /**
+   * Short description field in *LastYearWinners → PeopleChoiceAward → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.short_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  short_description: prismic.RichTextField;
+
+  /**
+   * Companies field in *LastYearWinners → PeopleChoiceAward → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.companies[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  companies: prismic.GroupField<
+    Simplify<LastYearWinnersSlicePeopleChoiceAwardPrimaryCompaniesItem>
+  >;
+}
+
+/**
+ * PeopleChoiceAward variation for LastYearWinners Slice
+ *
+ * - **API ID**: `peopleChoiceAward`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type LastYearWinnersSlicePeopleChoiceAward =
+  prismic.SharedSliceVariation<
+    "peopleChoiceAward",
+    Simplify<LastYearWinnersSlicePeopleChoiceAwardPrimary>,
+    never
+  >;
+
+/**
  * Slice variation for *LastYearWinners*
  */
-type LastYearWinnersSliceVariation = LastYearWinnersSliceDefault;
+type LastYearWinnersSliceVariation =
+  | LastYearWinnersSliceDefault
+  | LastYearWinnersSlicePeopleChoiceAward;
 
 /**
  * LastYearWinners Shared Slice
@@ -2363,6 +2565,9 @@ declare module "@prismicio/client" {
       HomepageDocument,
       HomepageDocumentData,
       HomepageDocumentDataSlicesSlice,
+      PreviewDocument,
+      PreviewDocumentData,
+      PreviewDocumentDataSlicesSlice,
       AllDocumentTypes,
       AwardCategoriesSlice,
       AwardCategoriesSliceDefaultPrimaryCardsItem,
@@ -2393,8 +2598,11 @@ declare module "@prismicio/client" {
       LastYearWinnersSliceDefaultPrimaryCategoryoneItem,
       LastYearWinnersSliceDefaultPrimaryCategoryTwoItem,
       LastYearWinnersSliceDefaultPrimary,
+      LastYearWinnersSlicePeopleChoiceAwardPrimaryCompaniesItem,
+      LastYearWinnersSlicePeopleChoiceAwardPrimary,
       LastYearWinnersSliceVariation,
       LastYearWinnersSliceDefault,
+      LastYearWinnersSlicePeopleChoiceAward,
       PeopleChoiceAwardSlice,
       PeopleChoiceAwardSliceDefaultPrimary,
       PeopleChoiceAwardSliceVariation,
