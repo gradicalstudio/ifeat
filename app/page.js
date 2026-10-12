@@ -4,12 +4,15 @@ import { SliceZone } from "@prismicio/react";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { visibleSlices } from "@/utils/visibleSlices";
+import { groupWinnerTabs } from "@/utils/groupWinnerTabs";
+import WinnerTabs from "@/components/WinnerTabs";
 
 export default async function Page() {
   const client = createClient();
   const page = await client.getSingle("homepage").catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} context={{ eventDate: page.data.event_date }} />;
+  return <SliceZone slices={groupWinnerTabs(visibleSlices(page.data.slices))} components={{ ...components, winner_tabs: WinnerTabs }} context={{ eventDate: page.data.event_date }} />;
 }
 
 export async function generateMetadata() {

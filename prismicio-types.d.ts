@@ -600,6 +600,17 @@ export interface AwardCategoriesSliceDefaultPrimaryCardsItem {
  */
 export interface AwardCategoriesSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *AwardCategories → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: award_categories.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Eyebrow Heading field in *AwardCategories → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -757,6 +768,17 @@ export interface EvaluationFrameworkSliceDefaultPrimaryCardsItem {
  */
 export interface EvaluationFrameworkSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *EvaluationFramework → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: evaluation_framework.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Eyebrow Heading field in *EvaluationFramework → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -881,6 +903,17 @@ export interface FaQSliceDefaultPrimaryFaqsItem {
  */
 export interface FaQSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *FaQ → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: fa_q.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Main Heading field in *FaQ → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -942,6 +975,17 @@ export type FaQSlice = prismic.SharedSlice<"fa_q", FaQSliceVariation>;
  * Primary content in *HeroSection → Default → Primary*
  */
 export interface HeroSectionSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *HeroSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_section.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Eyebrow Heading field in *HeroSection → Default → Primary*
    *
@@ -1098,6 +1142,17 @@ export interface JuryPanelSliceDefaultPrimaryJuryCardsItem {
  * Primary content in *JuryPanel → Default → Primary*
  */
 export interface JuryPanelSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *JuryPanel → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: jury_panel.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Eyebrow Heading field in *JuryPanel → Default → Primary*
    *
@@ -1634,6 +1689,27 @@ export interface LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimaryCategory
  */
 export interface LastYearWinnersSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *LastYearWinners → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: last_year_winners.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
+   * Tab label field in *LastYearWinners → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.default.primary.tab_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tab_label: prismic.KeyTextField;
+
+  /**
    * Main Heading field in *LastYearWinners → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1716,6 +1792,17 @@ export type LastYearWinnersSliceDefault = prismic.SharedSliceVariation<
  */
 export interface LastYearWinnersSlicePeopleChoiceAwardPrimary {
   /**
+   * Hide Toggle field in *LastYearWinners → PeopleChoiceAward → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: last_year_winners.peopleChoiceAward.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Main Heading field in *LastYearWinners → PeopleChoiceAward → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1766,6 +1853,27 @@ export type LastYearWinnersSlicePeopleChoiceAward =
  * Primary content in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
  */
 export interface LastYearWinnersSliceWithPeopleChoiceAwardWinnersPrimary {
+  /**
+   * Hide Toggle field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
+   * Tab Label field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: last_year_winners.withPeopleChoiceAwardWinners.primary.tab_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  tab_label: prismic.KeyTextField;
+
   /**
    * Main Heading field in *LastYearWinners → WithPeopleChoiceAwardWinners → Primary*
    *
@@ -1892,6 +2000,17 @@ export type LastYearWinnersSlice = prismic.SharedSlice<
  */
 export interface PeopleChoiceAwardSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *PeopleChoiceAward → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: people_choice_award.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Eyebrow Heading field in *PeopleChoiceAward → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1992,6 +2111,17 @@ export interface ReflectionSliceDefaultPrimaryCategoriesItem {
  */
 export interface ReflectionSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *Reflection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: reflection.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Eyebrow Heading field in *Reflection → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -2078,6 +2208,17 @@ export type ReflectionSlice = prismic.SharedSlice<
  * Primary content in *SecondSection → Default → Primary*
  */
 export interface SecondSectionSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *SecondSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: second_section.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Eyebrow Heading field in *SecondSection → Default → Primary*
    *
@@ -2188,6 +2329,17 @@ export interface SectionThreeSliceDefaultPrimaryContentColumnsItem {
  * Primary content in *SectionThree → Default → Primary*
  */
 export interface SectionThreeSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *SectionThree → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: section_three.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Main Heading field in *SectionThree → Default → Primary*
    *
@@ -2636,6 +2788,17 @@ export interface SubmissionSectionSliceWithVideoPrimaryBottomSectionItem {
  */
 export interface SubmissionSectionSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *SubmissionSection → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: submission_section.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Top Section field in *SubmissionSection → Default → Primary*
    *
    * - **Field Type**: Group
@@ -2689,6 +2852,17 @@ export type SubmissionSectionSliceDefault = prismic.SharedSliceVariation<
  * Primary content in *SubmissionSection → withVideo → Primary*
  */
 export interface SubmissionSectionSliceWithVideoPrimary {
+  /**
+   * Hide Toggle field in *SubmissionSection → withVideo → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: submission_section.withVideo.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Top Section field in *SubmissionSection → withVideo → Primary*
    *
@@ -2797,6 +2971,17 @@ export interface ThePrizesSliceDefaultPrimaryCategoriesItem {
  * Primary content in *ThePrizes → Default → Primary*
  */
 export interface ThePrizesSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *ThePrizes → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: the_prizes.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Eyebrow Heading field in *ThePrizes → Default → Primary*
    *

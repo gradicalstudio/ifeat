@@ -1,6 +1,7 @@
 import { isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import { getCountryFlag } from "@/utils/countryFlag";
 
 /**
  * @typedef {import("@prismicio/client").Content.LastYearWinnersSlice} LastYearWinnersSlice
@@ -15,14 +16,6 @@ const LastYearWinners = ({ slice }) => {
     india: "🇮🇳",
     netherlands: "🇳🇱",
     spain: "🇪🇸",
-  };
-
-  const getCountryFlag = (country) => {
-    const lower = country?.toLowerCase() || "";
-    if (lower.includes("india")) return "/india-logo.svg";
-    if (lower.includes("netherlands")) return "/netherlands-logo.svg";
-    if (lower.includes("spain")) return "/spainc-logo.svg";
-    return null;
   };
 
   const medalStyles = {
@@ -56,7 +49,6 @@ const LastYearWinners = ({ slice }) => {
     <>
       {slice.variation === "default" && (
         <section
-          id="winners-2025"
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
           className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
@@ -99,12 +91,12 @@ const LastYearWinners = ({ slice }) => {
                             {getCountryFlag(item.country) && (
                               <img
                                 src={getCountryFlag(item.country)}
-                                className="w-4 h-2.5 rounded-xs object-fill"
+                                className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
                                 alt={item.country}
                               />
                             )}
                           </div>
-                          <span className="tracking-wider leading-tight">
+                          <span className="tracking-wider leading-3">
                             {item.country}
                           </span>
                         </div>
@@ -175,12 +167,12 @@ font-raleway my-3 xl:my-5 "
                             {getCountryFlag(item.country) && (
                               <img
                                 src={getCountryFlag(item.country)}
-                                className="w-4 h-2.5 rounded-xs object-fill"
+                                className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
                                 alt={item.country}
                               />
                             )}
                           </div>
-                          <span className="tracking-wider leading-tight">
+                          <span className="tracking-wider leading-3">
                             {item.country}
                           </span>
                         </div>
@@ -250,17 +242,19 @@ text-[#A59653] "
             {/* Top section */}
             {(isFilled.richText(slice.primary.main_heading) ||
               isFilled.richText(slice.primary.short_description)) && (
-              <div className="mb-10 xl:mb-17.5">
-                {isFilled.richText(slice.primary.main_heading) && (
-                  <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat">
-                    <PrismicRichText field={slice.primary.main_heading} />
-                  </div>
-                )}
-                {isFilled.richText(slice.primary.short_description) && (
-                  <div className="text-[15px] md:text-base lg:text-lg font-raleway  md:w-[64%] lg:w-[74%] xl:w-[69%] mt-3.5">
-                    <PrismicRichText field={slice.primary.short_description} />
-                  </div>
-                )}
+              <div className="mb-5 xl:mb-10 w-full bg-[#263B33] rounded-tl-[100px] rounded-br-[100px]">
+                <div className="flex flex-col gap-4 w-full justify-between px-10 py-10 xl:px-16.75 xl:py-16.5">
+                  {isFilled.richText(slice.primary.main_heading) && (
+                    <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat text-[#FEFFF4]">
+                      <PrismicRichText field={slice.primary.main_heading} />
+                    </div>
+                  )}
+                  {isFilled.richText(slice.primary.short_description) && (
+                    <div className="text-[15px] md:text-base lg:text-lg font-raleway text-[#FEFFF4] ">
+                      <PrismicRichText field={slice.primary.short_description} />
+                    </div>
+                  )}
+                </div>
               </div>
             )}
 
@@ -304,7 +298,6 @@ text-[#A59653] "
       {slice.variation === "withPeopleChoiceAwardWinners" && (
         <section>
           <section
-            id="winners-2025"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
             className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
@@ -347,12 +340,12 @@ text-[#A59653] "
                               {getCountryFlag(item.country) && (
                                 <img
                                   src={getCountryFlag(item.country)}
-                                  className="w-4 h-2.5 rounded-xs object-fill"
+                                  className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
                                   alt={item.country}
                                 />
                               )}
                             </div>
-                            <span className="tracking-wider leading-tight">
+                            <span className="tracking-wider leading-3">
                               {item.country}
                             </span>
                           </div>
@@ -423,12 +416,12 @@ font-raleway my-3 xl:my-5 "
                               {getCountryFlag(item.country) && (
                                 <img
                                   src={getCountryFlag(item.country)}
-                                  className="w-4 h-2.5 rounded-xs object-fill"
+                                  className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
                                   alt={item.country}
                                 />
                               )}
                             </div>
-                            <span className="tracking-wider leading-tight">
+                            <span className="tracking-wider leading-3">
                               {item.country}
                             </span>
                           </div>
@@ -504,12 +497,12 @@ text-[#A59653] "
                               {getCountryFlag(item.country) && (
                                 <img
                                   src={getCountryFlag(item.country)}
-                                  className="w-4 h-2.5 rounded-xs object-fill"
+                                  className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
                                   alt={item.country}
                                 />
                               )}
                             </div>
-                            <span className="tracking-wider leading-tight">
+                            <span className="tracking-wider leading-3">
                               {item.country}
                             </span>
                           </div>

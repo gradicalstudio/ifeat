@@ -110,6 +110,10 @@
 						]
 					}
 				]
+			},
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

@@ -12,6 +12,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
         "eyebrow_heading": {
           "type": "StructuredText",
           "config": {

@@ -12,6 +12,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
+        "tab_label": {
+          "type": "Text",
+          "config": {
+            "label": "Tab label",
+            "placeholder": ""
+          }
+        },
         "main_heading": {
           "type": "StructuredText",
           "config": {
@@ -197,6 +213,15 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
         "main_heading": {
           "type": "StructuredText",
           "config": {
@@ -290,6 +315,22 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
+        "tab_label": {
+          "type": "Text",
+          "config": {
+            "label": "Tab Label",
+            "placeholder": ""
+          }
+        },
         "main_heading": {
           "type": "StructuredText",
           "config": {

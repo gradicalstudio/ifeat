@@ -258,6 +258,15 @@
 						}
 					}
 				]
+			},
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"tab_label": {
+				"__TYPE__": "FieldContent",
+				"value": "growth",
+				"type": "Text"
 			}
 		},
 		"items": []
@@ -391,6 +400,10 @@
 						]
 					}
 				]
+			},
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [
@@ -764,8 +777,8 @@
 							[
 								"link",
 								{
-									"__TYPE__": "LinkContent",
 									"key": "b0c97728-47ed-480d-af5b-7b4528e1fb98",
+									"__TYPE__": "LinkContent",
 									"value": {
 										"__TYPE__": "ExternalLink",
 										"url": "http://google.com",
@@ -776,6 +789,15 @@
 						]
 					}
 				]
+			},
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"tab_label": {
+				"__TYPE__": "FieldContent",
+				"value": "milk",
+				"type": "Text"
 			}
 		},
 		"items": [
