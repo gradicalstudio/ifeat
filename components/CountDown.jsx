@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function calculateTimeLeft(targetDate) {
   const difference = targetDate.getTime() - new Date().getTime();
-  if (difference <= 0) return { days: 0, hours: 0, mins: 0, secs: 0 };
+  if (difference <= 0) return null;
   return {
     days: Math.floor(difference / (1000 * 60 * 60 * 24)),
     hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
@@ -55,20 +55,21 @@ function Divider() {
 }
 
 export default function CountdownTimer({ targetDate }) {
-  const date = targetDate ? new Date(targetDate) : new Date("2026-07-18T20:00:00");
+  const date = targetDate ? new Date(targetDate) : new Date("2026-10-23T21:00:00+07:00");
   const [timeLeft, setTimeLeft] = useState(() => calculateTimeLeft(date));
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const timer = setInterval(
-      () => setTimeLeft(calculateTimeLeft(date)),
-      1000
-    );
+    const timer = setInterval(() => {
+      const next = calculateTimeLeft(date);
+      setTimeLeft(next);
+      if (!next) clearInterval(timer);
+    }, 1000);
     return () => clearInterval(timer);
   }, []); 
 
-  if (!mounted) return null;
+  if (!mounted || !timeLeft) return null;
 
   return (
     <div

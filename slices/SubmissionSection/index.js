@@ -1,4 +1,5 @@
 import ClockTwo from "@/components/ClockTwo";
+import HideWhenEnded from "@/components/HideWhenEnded";
 import CountdownTimer from "@/components/CountDown";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
@@ -124,7 +125,7 @@ const SubmissionSection = ({ slice, context }) => {
                     <PrismicRichText field={item.last_date} />
                   </div>
 
-                  <div className="w-full lg:px-9">
+                  <div className="w-full lg:px-9 empty:hidden">
                     <ClockTwo targetDate={context.eventDate} />
                   </div>
                   {/* Buttons */}
@@ -277,12 +278,14 @@ const SubmissionSection = ({ slice, context }) => {
                     />
                   </div>
                   {/* Heading and CLock */}
-                  <div className="text-[#A59653] text-xs md:text-sm lg:text-base  font-raleway">
-                    <PrismicRichText field={item.event_heading} />
-                  </div>
-                  <div className="w-full lg:px-9 my-5 lg:my-4">
-                    <ClockTwo targetDate={context.eventDate} />
-                  </div>
+                  <HideWhenEnded targetDate={context.eventDate}>
+                    <div className="text-[#A59653] text-xs md:text-sm lg:text-base  font-raleway">
+                      <PrismicRichText field={item.event_heading} />
+                    </div>
+                    <div className="w-full lg:px-9 my-5 lg:my-4 empty:hidden">
+                      <ClockTwo targetDate={context.eventDate} />
+                    </div>
+                  </HideWhenEnded>
 
                   <div className="text-[#FEFFF4] text-sm md:text-base font-light lg:text-lg font-raleway">
                     <PrismicRichText

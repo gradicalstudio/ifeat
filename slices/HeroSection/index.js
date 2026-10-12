@@ -45,7 +45,7 @@ const HeroSection = ({ slice, context }) => {
             <PrismicRichText field={slice.primary.short_description} />
           </div>
          
-          <div className="mt-6 lg:w-[70%] xl:w-[75%]">
+          <div className="mt-6 lg:w-[70%] xl:w-[75%] empty:hidden">
             <CountdownTimer targetDate={context.eventDate} />
           </div>
           {/* Buttons */}
@@ -86,7 +86,7 @@ const HeroSection = ({ slice, context }) => {
               <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
                 <PrismicRichText field={slice.primary.short_description} />
               </div>
-              <div className="mt-6 md:w-[75%]">
+              <div className="mt-6 md:w-[75%] empty:hidden">
                 <ClockV2 targetDate={context.eventDate} />
               </div>
               {/* Buttons */}

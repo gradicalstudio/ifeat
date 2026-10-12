@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 function calculateTimeLeft(targetDate) {
   const difference = targetDate.getTime() - new Date().getTime();
-  if (difference <= 0) return { days: 0, hours: 0, mins: 0, secs: 0 };
+  if (difference <= 0) return null;
   return {
     days: Math.floor(difference / (1000 * 60 * 60 * 24)),
     hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
@@ -63,11 +63,15 @@ export default function ClockV2({ targetDate }) {
 
   useEffect(() => {
     setMounted(true);
-    const timer = setInterval(() => setTimeLeft(calculateTimeLeft(date)), 1000);
+    const timer = setInterval(() => {
+      const next = calculateTimeLeft(date);
+      setTimeLeft(next);
+      if (!next) clearInterval(timer);
+    }, 1000);
     return () => clearInterval(timer);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted || !timeLeft) return null;
 
   return (
     <div
