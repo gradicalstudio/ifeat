@@ -35,7 +35,7 @@ export default function HeaderClient({ data }) {
     >
       {/* Desktop */}
       <div
-        className={`hidden lg:flex  xl:mx-auto items-center  rounded-2xl py-5 justify-between px-10 lg:px-5 transition-all duration-300 bg-[#282828] $`}
+        className={`hidden xl:flex  xl:mx-auto items-center  rounded-2xl py-5 justify-between px-10 lg:px-5 transition-all duration-300 bg-[#282828] $`}
       >
         <PrismicNextLink
           href="/"
@@ -73,7 +73,7 @@ export default function HeaderClient({ data }) {
       </div>
 
       {/* Mobile/Tablet */}
-      <div className="lg:hidden w-full bg-[#282828] rounded-2xl backdrop-blur-sm transition-colors duration-500 relative">
+      <div className="xl:hidden w-full bg-[#282828] rounded-2xl backdrop-blur-sm transition-colors duration-500 relative">
         <div className="flex items-center justify-between px-4 py-4">
           {/* Hamburger on left */}
 

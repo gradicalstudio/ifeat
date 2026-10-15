@@ -49,6 +49,7 @@ const LastYearWinners = ({ slice }) => {
     <>
       {slice.variation === "default" && (
         <section
+          id="winners-default"
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
           className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
@@ -234,6 +235,7 @@ text-[#A59653] "
       )}
       {slice.variation === "peopleChoiceAward" && (
         <section
+          id="people-choice-award"
           data-slice-type={slice.slice_type}
           data-slice-variation={slice.variation}
           className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
@@ -251,7 +253,9 @@ text-[#A59653] "
                   )}
                   {isFilled.richText(slice.primary.short_description) && (
                     <div className="text-[15px] md:text-base lg:text-lg font-raleway text-[#FEFFF4] ">
-                      <PrismicRichText field={slice.primary.short_description} />
+                      <PrismicRichText
+                        field={slice.primary.short_description}
+                      />
                     </div>
                   )}
                 </div>
@@ -298,6 +302,7 @@ text-[#A59653] "
       {slice.variation === "withPeopleChoiceAwardWinners" && (
         <section>
           <section
+            id="people-choice-award-winners"
             data-slice-type={slice.slice_type}
             data-slice-variation={slice.variation}
             className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
