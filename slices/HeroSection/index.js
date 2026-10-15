@@ -26,7 +26,7 @@ const HeroSection = ({ slice, context }) => {
         </div>
         <div className="absolute inset-0 rounded-xl bg-linear-to-r from-black/30 via-black/40 to-black/20" />
 
-        <div className="absolute bottom-10 xl:bottom-45 xl:pl-17.5 px-4  md:px-5  lg:w-[70%] ">
+        <div className="absolute bottom-10 2xl:bottom-45 xl:pl-17.5 px-4  md:px-5  lg:w-[70%] ">
           {/* Eyebrow Heading */}
           <div className="text-[#A59653] text-xs md:text-sm lg:text-base font-raleway z-10 flex items-center gap-2 xl:gap-3 mb-2.5 ">
             <div>

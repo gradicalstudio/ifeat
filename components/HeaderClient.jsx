@@ -56,7 +56,7 @@ export default function HeaderClient({ data }) {
               key={i}
               field={item}
               onClick={(e) => handleSmoothScroll(e, item?.url)}
-              className="font-montserrat lg:text-[10px] xl:text-[13px] font-medium tracking-widest font-raleway uppercase text-[#A2A2A2] hover:text-white transition-colors duration-200"
+              className="font-montserrat lg:text-[10px] xl:text-[12px] font-medium tracking-widest font-raleway uppercase text-[#A2A2A2] hover:text-white transition-colors duration-200"
             >
               {item.text}
             </PrismicNextLink>
