@@ -8,6 +8,7 @@ const FLAGS = [
   { match: ["netherlands", "holland"], src: "/netherlands-logo.svg" },
   { match: ["norway"], src: "/norway-logo.svg" },
   { match: ["australia"], src: "/australia-logo.svg" },
+  { match: ["south africa"], src: "/south-africa-logo.svg" },
   {
     match: ["united states", "usa", "u.s.a", "america"],
     src: "/united-states-logo.svg",
