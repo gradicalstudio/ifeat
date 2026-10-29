@@ -1,13 +1,14 @@
 "use client";
 
 import { PrismicNextLink } from "@prismicio/next";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 
 export default function SecondaryButton({ field }) {
   const handleClick = (e) => {
     if (field?.url?.startsWith("#")) {
       e.preventDefault();
       const el = document.querySelector(field.url);
-      if (el) el.scrollIntoView({ behavior: "smooth" });
+      if (el) smoothScrollTo(el);
     }
   };
 

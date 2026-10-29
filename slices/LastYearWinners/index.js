@@ -513,22 +513,24 @@ text-[#A59653] "
                           </div>
                         </div>
 
-                        {/* Gold / Silver / Bronze badge */}
-                        <div className="md:h-40 xl:h-48">
-                          <div
-                            className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                          >
-                            <span
-                              className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                            ></span>
-                            <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                              {item.position}
-                            </span>
-                          </div>
+                        {/* Gold / Silver / Bronze badge, hidden when no position is set.
+                            The fixed height is sized for the badge, so drop it without one. */}
+                        <div className={item.position ? "md:h-40 xl:h-48" : ""}>
+                          {item.position && (
+                            <div
+                              className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
+                            >
+                              <span
+                                className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
+                              ></span>
+                              <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
+                                {item.position}
+                              </span>
+                            </div>
+                          )}
 
                           <div
-                            className="font-raleway text-lg md:text-xl lg:text-[25px]
-"
+                            className={`font-raleway text-lg md:text-xl lg:text-[25px] ${item.position ? "" : "mt-3 xl:mt-5"}`}
                           >
                             <PrismicRichText field={item.name} />
                           </div>

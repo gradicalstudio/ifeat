@@ -1,12 +1,13 @@
 "use client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 
 function handleSmoothScroll(e, url) {
   if (url?.startsWith("#")) {
     e.preventDefault();
     const el = document.querySelector(url);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) smoothScrollTo(el);
   }
 }
 
@@ -21,7 +22,7 @@ export default function FooterClient({ data }) {
                 <PrismicNextImage
                   onClick={(e) => {
     e.preventDefault();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    smoothScrollTo(0);
   }}
                   className="h-21.5 w-auto lg:h-28 xl:h-26"
                   field={data.footer_logo}

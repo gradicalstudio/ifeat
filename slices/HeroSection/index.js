@@ -2,6 +2,7 @@ import ClockV2 from "@/components/ClockV2";
 import CountdownTimer from "@/components/CountDown";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
+import { isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 
@@ -11,6 +12,10 @@ import { PrismicRichText } from "@prismicio/react";
  * @type {import("react").FC<HeroSectionProps>}
  */
 const HeroSection = ({ slice, context }) => {
+  // A CTA only shows when it has a link set in Prismic
+  const hasButtons =
+    isFilled.link(slice.primary.link) || isFilled.link(slice.primary.button_two);
+
   return (
     <section
       data-slice-type={slice.slice_type}
@@ -38,25 +43,31 @@ const HeroSection = ({ slice, context }) => {
             </div>
           </div>
           {/* Heading */}
-          <div className="font-monsterrat text-4xl md:text-[52px] xl:text-[4.6875rem] text-white leading-[1.15] xl:leading-[1.1] tracking-tight mb-2.5">
+          <div className="font-monsterrat text-4xl md:text-[52px] xl:text-[4.6875rem] text-white leading-[1.15] xl:leading-[1.1] tracking-tight mb-3.5">
             <PrismicRichText field={slice.primary.main_heading} />
           </div>
-          <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
+          <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[65%]">
             <PrismicRichText field={slice.primary.short_description} />
           </div>
          
-          <div className="mt-6 lg:w-[70%] xl:w-[75%] empty:hidden">
+          <div className="peer mt-6 lg:w-[70%] xl:w-[75%] empty:hidden">
             <CountdownTimer targetDate={context.eventDate} />
           </div>
-          {/* Buttons */}
-          <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10">
-            <div>
-              <PrimaryButton field={slice.primary.link} />
+          {/* Buttons, with extra top space once the clock is gone */}
+          {hasButtons && (
+            <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10 peer-empty:mt-16">
+              {isFilled.link(slice.primary.link) && (
+                <div>
+                  <PrimaryButton field={slice.primary.link} />
+                </div>
+              )}
+              {isFilled.link(slice.primary.button_two) && (
+                <div>
+                  <SecondaryButton field={slice.primary.button_two} />
+                </div>
+              )}
             </div>
-            <div>
-              <SecondaryButton field={slice.primary.button_two} />
-            </div>
-          </div>
+          )}
         </div>
       </div>
 
@@ -68,7 +79,7 @@ const HeroSection = ({ slice, context }) => {
             className=" object-center md:object-bottom-left object-cover  w-full h-full rounded-xl "
           />
 
-          <div className="px-4  absolute  top-20">
+          <div className="px-4  absolute  top-20 md:top-50">
             <div>
               <div className="text-[#A59653] text-xs md:text-sm lg:text-base font-raleway z-10 flex items-center gap-2 xl:gap-3 mb-2.5 ">
                 <div>
@@ -86,18 +97,24 @@ const HeroSection = ({ slice, context }) => {
               <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
                 <PrismicRichText field={slice.primary.short_description} />
               </div>
-              <div className="mt-6 md:w-[75%] empty:hidden">
+              <div className="peer mt-6 md:w-[75%] empty:hidden">
                 <ClockV2 targetDate={context.eventDate} />
               </div>
-              {/* Buttons */}
-              <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10">
-                <div>
-                  <PrimaryButton field={slice.primary.link} />
+              {/* Buttons, with extra top space once the clock is gone */}
+              {hasButtons && (
+                <div className="flex flex-col pb-10 justify-center md:justify-normal  md:flex-row gap-5 mt-10 md:peer-empty:mt-26 peer-empty:mt-36">
+                  {isFilled.link(slice.primary.link) && (
+                    <div>
+                      <PrimaryButton field={slice.primary.link} />
+                    </div>
+                  )}
+                  {isFilled.link(slice.primary.button_two) && (
+                    <div>
+                      <SecondaryButton field={slice.primary.button_two} />
+                    </div>
+                  )}
                 </div>
-                <div>
-                  <SecondaryButton field={slice.primary.button_two} />
-                </div>
-              </div>
+              )}
             </div>
           </div>
         </div>

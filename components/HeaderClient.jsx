@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { PrismicNextLink } from "@prismicio/next";
+import { smoothScrollTo } from "@/utils/smoothScroll";
 import { PrismicNextImage } from "@prismicio/next";
 
 function handleSmoothScroll(e, url) {
@@ -12,7 +13,7 @@ function handleSmoothScroll(e, url) {
   if (hash) {
     e.preventDefault();
     const el = document.querySelector(hash);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    if (el) smoothScrollTo(el);
   }
 }
 
@@ -41,7 +42,7 @@ export default function HeaderClient({ data }) {
           href="/"
           onClick={(e) => {
             e.preventDefault();
-            window.scrollTo({ top: 0, behavior: "smooth" });
+            smoothScrollTo(0);
           }}
         >
           <PrismicNextImage
@@ -82,7 +83,7 @@ export default function HeaderClient({ data }) {
             href="/"
             onClick={(e) => {
               e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
+              smoothScrollTo(0);
             }}
           >
             <PrismicNextImage
