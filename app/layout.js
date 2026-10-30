@@ -26,10 +26,10 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${monsterrat.variable} ${raleway.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col bg-[#FEFFF4]">
         <SmoothScroll>
           <Header />  
-          <main className="bg-[#FEFFF4]">{children}</main>
+          <main className="">{children}</main>
           <Footer />
         </SmoothScroll>
       </body>
