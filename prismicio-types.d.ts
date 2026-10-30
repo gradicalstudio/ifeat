@@ -360,6 +360,9 @@ export type HeaderDocument<Lang extends string = string> =
   >;
 
 type HomepageDocumentDataSlicesSlice =
+  | FollowThroughSlice
+  | VideoComponentSlice
+  | ImageCarouselSlice
   | SubmissionSectionSlice
   | FaQSlice
   | JuryPanelSlice
@@ -448,6 +451,9 @@ export type HomepageDocument<Lang extends string = string> =
   >;
 
 type PreviewDocumentDataSlicesSlice =
+  | FollowThroughSlice
+  | VideoComponentSlice
+  | ImageCarouselSlice
   | LastYearWinnersSlice
   | HeroSectionSlice
   | SectionThreeSlice
@@ -972,6 +978,71 @@ type FaQSliceVariation = FaQSliceDefault;
 export type FaQSlice = prismic.SharedSlice<"fa_q", FaQSliceVariation>;
 
 /**
+ * Primary content in *FollowThrough → Default → Primary*
+ */
+export interface FollowThroughSliceDefaultPrimary {
+  /**
+   * Heading field in *FollowThrough → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: follow_through.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *FollowThrough → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: follow_through.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * CTA field in *FollowThrough → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: follow_through.default.primary.cta
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  cta: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Default variation for FollowThrough Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FollowThroughSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FollowThroughSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *FollowThrough*
+ */
+type FollowThroughSliceVariation = FollowThroughSliceDefault;
+
+/**
+ * FollowThrough Shared Slice
+ *
+ * - **API ID**: `follow_through`
+ * - **Description**: FollowThrough
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type FollowThroughSlice = prismic.SharedSlice<
+  "follow_through",
+  FollowThroughSliceVariation
+>;
+
+/**
  * Primary content in *HeroSection → Default → Primary*
  */
 export interface HeroSectionSliceDefaultPrimary {
@@ -1091,6 +1162,68 @@ type HeroSectionSliceVariation = HeroSectionSliceDefault;
 export type HeroSectionSlice = prismic.SharedSlice<
   "hero_section",
   HeroSectionSliceVariation
+>;
+
+/**
+ * Item in *ImageCarousel → Default → Primary → Carousel*
+ */
+export interface ImageCarouselSliceDefaultPrimaryCarouselItem {
+  /**
+   * Images field in *ImageCarousel → Default → Primary → Carousel*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_carousel.default.primary.carousel[].images
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  images: prismic.ImageField<never>;
+}
+
+/**
+ * Primary content in *ImageCarousel → Default → Primary*
+ */
+export interface ImageCarouselSliceDefaultPrimary {
+  /**
+   * Carousel field in *ImageCarousel → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: image_carousel.default.primary.carousel[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  carousel: prismic.GroupField<
+    Simplify<ImageCarouselSliceDefaultPrimaryCarouselItem>
+  >;
+}
+
+/**
+ * Default variation for ImageCarousel Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ImageCarouselSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ImageCarouselSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ImageCarousel*
+ */
+type ImageCarouselSliceVariation = ImageCarouselSliceDefault;
+
+/**
+ * ImageCarousel Shared Slice
+ *
+ * - **API ID**: `image_carousel`
+ * - **Description**: ImageCarousel
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type ImageCarouselSlice = prismic.SharedSlice<
+  "image_carousel",
+  ImageCarouselSliceVariation
 >;
 
 /**
@@ -3055,6 +3188,68 @@ export type ThePrizesSlice = prismic.SharedSlice<
   ThePrizesSliceVariation
 >;
 
+/**
+ * Item in *VideoComponent → Default → Primary → Video List*
+ */
+export interface VideoComponentSliceDefaultPrimaryVideoListItem {
+  /**
+   * Video field in *VideoComponent → Default → Primary → Video List*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_component.default.primary.video_list[].video
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  video: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+}
+
+/**
+ * Primary content in *VideoComponent → Default → Primary*
+ */
+export interface VideoComponentSliceDefaultPrimary {
+  /**
+   * Video List field in *VideoComponent → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_component.default.primary.video_list[]
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  video_list: prismic.GroupField<
+    Simplify<VideoComponentSliceDefaultPrimaryVideoListItem>
+  >;
+}
+
+/**
+ * Default variation for VideoComponent Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoComponentSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<VideoComponentSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *VideoComponent*
+ */
+type VideoComponentSliceVariation = VideoComponentSliceDefault;
+
+/**
+ * VideoComponent Shared Slice
+ *
+ * - **API ID**: `video_component`
+ * - **Description**: VideoComponent
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoComponentSlice = prismic.SharedSlice<
+  "video_component",
+  VideoComponentSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -3107,10 +3302,19 @@ declare module "@prismicio/client" {
       FaQSliceDefaultPrimary,
       FaQSliceVariation,
       FaQSliceDefault,
+      FollowThroughSlice,
+      FollowThroughSliceDefaultPrimary,
+      FollowThroughSliceVariation,
+      FollowThroughSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimary,
       HeroSectionSliceVariation,
       HeroSectionSliceDefault,
+      ImageCarouselSlice,
+      ImageCarouselSliceDefaultPrimaryCarouselItem,
+      ImageCarouselSliceDefaultPrimary,
+      ImageCarouselSliceVariation,
+      ImageCarouselSliceDefault,
       JuryPanelSlice,
       JuryPanelSliceDefaultPrimaryJuryCardsItem,
       JuryPanelSliceDefaultPrimary,
@@ -3165,6 +3369,11 @@ declare module "@prismicio/client" {
       ThePrizesSliceDefaultPrimary,
       ThePrizesSliceVariation,
       ThePrizesSliceDefault,
+      VideoComponentSlice,
+      VideoComponentSliceDefaultPrimaryVideoListItem,
+      VideoComponentSliceDefaultPrimary,
+      VideoComponentSliceVariation,
+      VideoComponentSliceDefault,
     };
   }
 }

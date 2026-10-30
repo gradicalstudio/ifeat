@@ -1,0 +1,31 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"video_list": {
+				"__TYPE__": "GroupContentType",
+				"value": [
+					{
+						"__TYPE__": "GroupItemContent",
+						"value": [
+							[
+								"video",
+								{
+									"__TYPE__": "LinkContent",
+									"key": "b4e14bd4-2a04-4770-97b1-2572c2c344d2",
+									"value": {
+										"__TYPE__": "ExternalLink",
+										"url": "http://twitter.com",
+										"text": "potatoes"
+									}
+								}
+							]
+						]
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

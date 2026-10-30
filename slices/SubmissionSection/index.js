@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.SubmissionSectionSlice} SubmissionSectionSlice
@@ -36,7 +37,7 @@ const SubmissionSection = ({ slice, context }) => {
                         <PrismicRichText field={item.eyebrow_heading} />
                       </div>
                       <div className="text-[22px]  w-[80%] md:w-full md:text-[28px] lg:text-[38px] font-monsterrat leading-tight text-[#FEFFF4] my-3.5">
-                        <PrismicRichText field={item.heading} />
+                        <Heading field={item.heading} />
                       </div>
                       <div className="text-[15px] md:text-base lg:text-lg font-raleway leading-snug text-[#FEFFF4]">
                         <PrismicRichText field={item.short_description} />
@@ -104,7 +105,7 @@ const SubmissionSection = ({ slice, context }) => {
                     className="text-[#FEFFF4] text-[22px] md:text-[28px] lg:text-[38px]
  py-2.5 font-monsterrat"
                   >
-                    <PrismicRichText field={item.heading} />
+                    <Heading field={item.heading} />
                   </div>
                   <div
                     className="text-[#FEFFF4] text-[15px] md:text-base lg:text-lg 
@@ -166,7 +167,7 @@ const SubmissionSection = ({ slice, context }) => {
                         <PrismicRichText field={item.eyebrow_heading} />
                       </div>
                       <div className="text-[22px]  w-[80%] md:w-full md:text-[28px] lg:text-[38px] font-monsterrat leading-tight text-[#FEFFF4] my-3.5">
-                        <PrismicRichText field={item.heading} />
+                        <Heading field={item.heading} />
                       </div>
                       <div className="text-[15px] md:text-base lg:text-lg font-raleway leading-snug text-[#FEFFF4]">
                         <PrismicRichText field={item.short_description} />
@@ -242,7 +243,7 @@ const SubmissionSection = ({ slice, context }) => {
                     className="text-[#FEFFF4] text-[22px] md:text-[28px] lg:text-[38px]
  py-2.5 font-monsterrat"
                   >
-                    <PrismicRichText field={item.heading} />
+                    <Heading field={item.heading} />
                   </div>
                   <div
                     className="text-[#FEFFF4] text-[15px] md:text-base lg:text-lg 

@@ -6,7 +6,9 @@ export const components = {
   award_categories: dynamic(() => import("./AwardCategories")),
   evaluation_framework: dynamic(() => import("./EvaluationFramework")),
   fa_q: dynamic(() => import("./FaQ")),
+  follow_through: dynamic(() => import("./FollowThrough")),
   hero_section: dynamic(() => import("./HeroSection")),
+  image_carousel: dynamic(() => import("./ImageCarousel")),
   jury_panel: dynamic(() => import("./JuryPanel")),
   last_year_winners: dynamic(() => import("./LastYearWinners")),
   people_choice_award: dynamic(() => import("./PeopleChoiceAward")),
@@ -15,4 +17,5 @@ export const components = {
   section_three: dynamic(() => import("./SectionThree")),
   submission_section: dynamic(() => import("./SubmissionSection")),
   the_prizes: dynamic(() => import("./ThePrizes")),
+  video_component: dynamic(() => import("./VideoComponent")),
 };

@@ -1,6 +1,7 @@
 import { isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 import { getCountryFlag } from "@/utils/countryFlag";
 
 /**
@@ -61,7 +62,7 @@ const LastYearWinners = ({ slice }) => {
                 className="text-[22px] md:text-[28px] lg:text-[38px]
  font-monsterrat "
               >
-                <PrismicRichText field={slice.primary.main_heading} />
+                <Heading field={slice.primary.main_heading} />
               </div>
               <div
                 className="text-[15px] md:text-base lg:text-lg
@@ -248,7 +249,7 @@ text-[#A59653] "
                 <div className="flex flex-col gap-4 w-full justify-between px-10 py-10 xl:px-16.75 xl:py-16.5">
                   {isFilled.richText(slice.primary.main_heading) && (
                     <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat text-[#FEFFF4]">
-                      <PrismicRichText field={slice.primary.main_heading} />
+                      <Heading field={slice.primary.main_heading} />
                     </div>
                   )}
                   {isFilled.richText(slice.primary.short_description) && (
@@ -314,7 +315,7 @@ text-[#A59653] "
                   className="text-[22px] md:text-[28px] lg:text-[38px]
  font-monsterrat "
                 >
-                  <PrismicRichText field={slice.primary.main_heading} />
+                  <Heading field={slice.primary.main_heading} />
                 </div>
                 <div
                   className="text-[15px] md:text-base lg:text-lg

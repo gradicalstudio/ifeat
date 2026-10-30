@@ -5,6 +5,7 @@ import SecondaryButton from "@/components/SecondaryButton";
 import { isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.HeroSectionSlice} HeroSectionSlice
@@ -44,7 +45,7 @@ const HeroSection = ({ slice, context }) => {
           </div>
           {/* Heading */}
           <div className="font-monsterrat text-4xl md:text-[52px] xl:text-[4.6875rem] text-white leading-[1.15] xl:leading-[1.1] tracking-tight mb-3.5">
-            <PrismicRichText field={slice.primary.main_heading} />
+            <Heading as="h1" field={slice.primary.main_heading} />
           </div>
           <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[65%]">
             <PrismicRichText field={slice.primary.short_description} />
@@ -92,7 +93,7 @@ const HeroSection = ({ slice, context }) => {
               </div>
               {/* Heading */}
               <div className="font-monsterrat text-4xl md:text-[52px] xl:text-[4.6875rem] text-white leading-[1.15] xl:leading-[1.1] tracking-tight mb-2.5">
-                <PrismicRichText field={slice.primary.main_heading} />
+                <Heading as="h1" field={slice.primary.main_heading} />
               </div>
               <div className="font-raleway text-base md:text-xl xl:text-[1.5625rem] text-white w-[80%] xl:w-[60%]">
                 <PrismicRichText field={slice.primary.short_description} />

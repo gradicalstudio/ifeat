@@ -1,4 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.PeopleChoiceAwardSlice} PeopleChoiceAwardSlice
@@ -26,7 +27,7 @@ const PeopleChoiceAward = ({ slice }) => {
               className="text-[22px] md:text-[28px] lg:text-[38px]
  font-monsterrat text-[#FEFFF4]"
             >
-              <PrismicRichText field={slice.primary.main_heading} />
+              <Heading field={slice.primary.main_heading} />
             </div>
           </div>
           {/* right */}

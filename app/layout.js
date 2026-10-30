@@ -3,6 +3,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/LenisScroll";
+import { siteUrl } from "@/utils/siteUrl";
 
 const monsterrat = Montserrat({
   variable: "--font-monsterrat-sans",
@@ -14,6 +15,7 @@ const raleway = Raleway({
 });
 
 export const metadata = {
+  metadataBase: new URL(siteUrl),
   title: "Ifeat",
   description: "Ifeat",
 };

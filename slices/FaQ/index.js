@@ -1,5 +1,6 @@
 import FaqAccordion from "@/components/FaQAccordion";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.FaQSlice} FaQSlice
@@ -21,7 +22,7 @@ const FaQ = ({ slice }) => {
             className="font-monsterrat leading-tight text-[22px] md:text-[28px] lg:text-[38px]
  "
           >
-            <PrismicRichText field={slice.primary.main_heading} />
+            <Heading field={slice.primary.main_heading} />
           </div>
           <div
             className="font-raleway text-[15px] md:text-base lg:text-lg

@@ -1,4 +1,5 @@
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.SecondSectionSlice} SecondSectionSlice
@@ -20,7 +21,7 @@ const SecondSection = ({ slice }) => {
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
           <div className="text-[28px] md:text-[38px]  xl:text-[3.125rem] lg:leading-tight leading-[1.15] font-medium font-raleway ">
-            <PrismicRichText field={slice.primary.main_heading} />
+            <Heading field={slice.primary.main_heading} />
           </div>
         </div>
         {/* Right Side */}

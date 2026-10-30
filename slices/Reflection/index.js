@@ -1,5 +1,6 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.ReflectionSlice} ReflectionSlice
@@ -24,7 +25,7 @@ const Reflection = ({ slice }) => {
           <div
             className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat my-3.5 xl:my-3.5"
           >
-            <PrismicRichText field={slice.primary.main_heading} />
+            <Heading field={slice.primary.main_heading} />
           </div>
           <div className="text-[15px] md:text-base lg:text-lg font-raleway tracking-tight">
             <PrismicRichText field={slice.primary.description} />

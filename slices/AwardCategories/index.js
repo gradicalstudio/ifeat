@@ -1,5 +1,6 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.AwardCategoriesSlice} AwardCategoriesSlice
@@ -22,7 +23,7 @@ const AwardCategories = ({ slice }) => {
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
           <div className="text-[28px] md:text-[38px] lg:text-[50px] font-monsterrat  my-4 lg:my-3.5 text-[#FEFFF4]">
-            <PrismicRichText field={slice.primary.main_heading} />
+            <Heading field={slice.primary.main_heading} />
           </div>
           <div className="text-[15px] md:text-base lg:text-lg text-[#FEFFF4] font-raleway">
             <PrismicRichText field={slice.primary.short_description} />
@@ -59,7 +60,7 @@ const AwardCategories = ({ slice }) => {
                     <PrismicNextImage field={item.icon} />
                   </div>
                   <div className="text-lg md:text-xl lg:text-[25px]  font-monsterrat">
-                    <PrismicRichText field={item.card_heading} />
+                    <Heading as="h3" field={item.card_heading} />
                   </div>
                 </div>
                 <div className="text-[#FEFFF4] text-sm md:text-[15px] lg:text-base mb-4 xl:mb-7.5 font-raleway">
@@ -111,7 +112,7 @@ const AwardCategories = ({ slice }) => {
           }}
         >
           <div className="text-lg md:text-xl lg:text-[25px] font-monsterrat text-[#FEFFF4] mb-5">
-            <PrismicRichText field={slice.primary.second_heading} />
+            <Heading as="h3" field={slice.primary.second_heading} />
           </div>
           <div className="border border-[#677479] mb-7.5 " />
           <PrismicRichText

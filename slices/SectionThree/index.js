@@ -1,5 +1,6 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.SectionThreeSlice} SectionThreeSlice
@@ -15,7 +16,7 @@ const SectionThree = ({ slice }) => {
     >
       <div>
         <div className="font-monsterrat text-[28px] md:text-[38px] leading-[1.15] lg:leading-tight 2xl:text-[50px] mb-10 lg:mb-18.25">
-          <PrismicRichText field={slice.primary.main_heading} />
+          <Heading field={slice.primary.main_heading} />
         </div>
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-10 lg:gap-10 font-raleway">
           {slice.primary.content_columns.map((item, i) => (
@@ -31,7 +32,7 @@ const SectionThree = ({ slice }) => {
                   />
                 </div>
                 <div className="text-base font-semibold md:text-[17px] lg:text-[22px]">
-                  <PrismicRichText field={item.heading} />
+                  <Heading as="h3" field={item.heading} />
                 </div>
                 <div className="text-sm md:text-[15px] lg:text-base">
                   <PrismicRichText field={item.description} />

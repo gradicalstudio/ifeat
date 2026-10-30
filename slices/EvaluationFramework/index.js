@@ -1,5 +1,6 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
+import Heading from "@/components/Heading";
 
 /**
  * @typedef {import("@prismicio/client").Content.EvaluationFrameworkSlice} EvaluationFrameworkSlice
@@ -29,7 +30,7 @@ const EvaluationFramework = ({ slice }) => {
               className="text-[28px] md:text-[38px] lg:text-[50px]
  xl:w-[72%] leading-tight font-monsterrat my-3.5 text-[#FEFFF4]"
             >
-              <PrismicRichText field={slice.primary.main_heading} />
+              <Heading field={slice.primary.main_heading} />
             </div>
             <div
               className=" font-raleway text-[15px] md:text-base lg:text-lg
@@ -81,7 +82,7 @@ const EvaluationFramework = ({ slice }) => {
                 className="font-monsterrat text-lg md:text-xl lg:text-[25px]
  font-medium text-[#FEFFF4] mb-5 leading-snug lg:h-19"
               >
-                <PrismicRichText field={item.card_heading} />
+                <Heading as="h3" field={item.card_heading} />
               </div>
 
               {/* Divider */}

@@ -11,6 +11,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "follow_through": {
+              "type": "SharedSlice"
+            },
+            "video_component": {
+              "type": "SharedSlice"
+            },
+            "image_carousel": {
+              "type": "SharedSlice"
+            },
             "last_year_winners": {
               "type": "SharedSlice"
             },
