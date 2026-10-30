@@ -93,7 +93,7 @@ const LastYearWinners = ({ slice }) => {
                             {getCountryFlag(item.country) && (
                               <img
                                 src={getCountryFlag(item.country)}
-                                className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
+                                className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
                                 alt={item.country}
                               />
                             )}
@@ -169,7 +169,7 @@ font-raleway my-3 xl:my-5 "
                             {getCountryFlag(item.country) && (
                               <img
                                 src={getCountryFlag(item.country)}
-                                className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
+                                className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
                                 alt={item.country}
                               />
                             )}
@@ -346,7 +346,7 @@ text-[#A59653] "
                               {getCountryFlag(item.country) && (
                                 <img
                                   src={getCountryFlag(item.country)}
-                                  className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
+                                  className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
                                   alt={item.country}
                                 />
                               )}
@@ -422,7 +422,7 @@ font-raleway my-3 xl:my-5 "
                               {getCountryFlag(item.country) && (
                                 <img
                                   src={getCountryFlag(item.country)}
-                                  className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
+                                  className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
                                   alt={item.country}
                                 />
                               )}
@@ -503,7 +503,7 @@ text-[#A59653] "
                               {getCountryFlag(item.country) && (
                                 <img
                                   src={getCountryFlag(item.country)}
-                                  className="w-4 h-2.5 rounded-xs object-fill ring-1 ring-black/15"
+                                  className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
                                   alt={item.country}
                                 />
                               )}
