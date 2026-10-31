@@ -3,6 +3,7 @@ import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
 import { getCountryFlag } from "@/utils/countryFlag";
+import WinnerDescription from "@/components/WinnerDescription";
 
 /**
  * @typedef {import("@prismicio/client").Content.LastYearWinnersSlice} LastYearWinnersSlice
@@ -141,10 +142,12 @@ font-raleway my-3 xl:my-5 "
                     </div>
 
                     {/* Learn more pinned to bottom */}
-                    <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
-                      <PrismicNextLink field={item.learn_more} />
-                      <span className="font-bold">→</span>
-                    </div>
+                    {isFilled.link(item.learn_more) && (
+                      <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
+                        <PrismicNextLink field={item.learn_more} />
+                        <span className="font-bold">→</span>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -155,7 +158,7 @@ font-raleway my-3 xl:my-5 "
               <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
                 <PrismicRichText field={slice.primary.category_two_title} />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                 {slice.primary.category_two.map((item, i) => (
                   <div key={i} className="flex flex-col">
                     <div>
@@ -220,13 +223,15 @@ font-raleway my-3 xl:my-5 "
                     </div>
 
                     {/* Learn more pinned to bottom */}
-                    <div
-                      className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-text-[#A59653] "
-                    >
-                      <PrismicNextLink field={item.link} />
-                      <span className="font-bold">→</span>
-                    </div>
+                    {isFilled.link(item.link) && (
+                      <div
+                        className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
+  text-[#A59653] "
+                      >
+                        <PrismicNextLink field={item.link} />
+                        <span className="font-bold">→</span>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -334,7 +339,7 @@ text-[#A59653] "
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                   {slice.primary.categoryone.map((item, i) => (
-                    <div key={i} className="   flex flex-col">
+                    <div key={i} className="group flex flex-col">
                       <div>
                         <div className="relative h-79.25">
                           <PrismicNextImage
@@ -371,8 +376,7 @@ text-[#A59653] "
                           </div>
 
                           <div
-                            className="font-raleway text-lg md:text-xl lg:text-[25px]
-"
+                            className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
                           >
                             <PrismicRichText field={item.name} />
                           </div>
@@ -388,16 +392,21 @@ font-raleway my-3 xl:my-5 "
                       {/* Line always at the same vertical position across cards */}
                       <div className="border-b border-[#677479]" />
 
-                      {/* Description grows to fill remaining space */}
-                      <div className="font-raleway text-sm md:text-[15px] lg:text-base mt-7.5 flex-1">
-                        <PrismicRichText field={item.description} />
-                      </div>
+                      {/* Description clamped, "Read more" opens the full card */}
+                      <WinnerDescription
+                        item={item}
+                        link={item.learn_more}
+                        medalStyle={getMedalStyle(item.position)}
+                        medalDotStyle={getMedalDotStyle(item.position)}
+                      />
 
                       {/* Learn more pinned to bottom */}
-                      <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
-                        <PrismicNextLink field={item.learn_more} />
-                        <span className="font-bold">→</span>
-                      </div>
+                      {isFilled.link(item.learn_more) && (
+                        <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
+                          <PrismicNextLink field={item.learn_more} />
+                          <span className="font-bold">→</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -408,9 +417,9 @@ font-raleway my-3 xl:my-5 "
                 <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
                   <PrismicRichText field={slice.primary.category_two_title} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                   {slice.primary.category_two.map((item, i) => (
-                    <div key={i} className="flex flex-col">
+                    <div key={i} className="group flex flex-col">
                       <div>
                         <div className="relative h-79.25">
                           <PrismicNextImage
@@ -447,8 +456,7 @@ font-raleway my-3 xl:my-5 "
                           </div>
 
                           <div
-                            className="font-raleway text-lg md:text-xl lg:text-[25px]
-"
+                            className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
                           >
                             <PrismicRichText field={item.name} />
                           </div>
@@ -464,22 +472,24 @@ font-raleway my-3 xl:my-5 "
                       {/* Line always at the same vertical position across cards */}
                       <div className="border-b border-[#677479]" />
 
-                      {/* Description grows to fill remaining space */}
-                      <div
-                        className="font-raleway text-sm md:text-[15px] lg:text-base
- mt-7.5 flex-1"
-                      >
-                        <PrismicRichText field={item.description} />
-                      </div>
+                      {/* Description clamped, "Read more" opens the full card */}
+                      <WinnerDescription
+                        item={item}
+                        link={item.link}
+                        medalStyle={getMedalStyle(item.position)}
+                        medalDotStyle={getMedalDotStyle(item.position)}
+                      />
 
                       {/* Learn more pinned to bottom */}
-                      <div
-                        className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-text-[#A59653] "
-                      >
-                        <PrismicNextLink field={item.link} />
-                        <span className="font-bold">→</span>
-                      </div>
+                      {isFilled.link(item.link) && (
+                        <div
+                          className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
+  text-[#A59653] "
+                        >
+                          <PrismicNextLink field={item.link} />
+                          <span className="font-bold">→</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -489,9 +499,9 @@ text-[#A59653] "
                 <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
                   <PrismicRichText field={slice.primary.category_three_title} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                   {slice.primary.category_three.map((item, i) => (
-                    <div key={i} className="flex flex-col">
+                    <div key={i} className="group flex flex-col">
                       <div>
                         <div className="relative h-79.25">
                           <PrismicNextImage
@@ -531,7 +541,7 @@ text-[#A59653] "
                           )}
 
                           <div
-                            className={`font-raleway text-lg md:text-xl lg:text-[25px] ${item.position ? "" : "mt-3 xl:mt-5"}`}
+                            className={`font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653] ${item.position ? "" : "mt-3 xl:mt-5"}`}
                           >
                             <PrismicRichText field={item.name} />
                           </div>
@@ -547,22 +557,24 @@ text-[#A59653] "
                       {/* Line always at the same vertical position across cards */}
                       <div className="border-b border-[#677479]" />
 
-                      {/* Description grows to fill remaining space */}
-                      <div
-                        className="font-raleway text-sm md:text-[15px] lg:text-base
- mt-7.5 flex-1"
-                      >
-                        <PrismicRichText field={item.description} />
-                      </div>
+                      {/* Description clamped, "Read more" opens the full card */}
+                      <WinnerDescription
+                        item={item}
+                        link={item.link}
+                        medalStyle={getMedalStyle(item.position)}
+                        medalDotStyle={getMedalDotStyle(item.position)}
+                      />
 
                       {/* Learn more pinned to bottom */}
-                      <div
-                        className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-text-[#A59653] "
-                      >
-                        <PrismicNextLink field={item.link} />
-                        <span className="font-bold">→</span>
-                      </div>
+                      {isFilled.link(item.link) && (
+                        <div
+                          className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
+  text-[#A59653] "
+                        >
+                          <PrismicNextLink field={item.link} />
+                          <span className="font-bold">→</span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

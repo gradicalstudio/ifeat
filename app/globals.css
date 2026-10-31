@@ -85,3 +85,61 @@ html.lenis body {
 .lenis.lenis-smooth iframe {
   pointer-events: none;
 }
+
+/* Thin gold scrollbar for the winner modal */
+.modal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+  margin-block: 12px;
+}
+.modal-scroll::-webkit-scrollbar-thumb {
+  background: #a59653;
+  border-radius: 9999px;
+}
+.modal-scroll::-webkit-scrollbar-thumb:hover {
+  background: #263b33;
+}
+@supports not selector(::-webkit-scrollbar) {
+  .modal-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #a59653 transparent;
+  }
+}
+
+/* Small arrow after a winner's name link, shown when its card (or the link) is hovered.
+   Drawn with a mask so it takes the link's current colour */
+.winner-name a::after {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.45em;
+  margin-left: 0.3em;
+  vertical-align: 0.1em;
+  background-color: currentColor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpath d='M1 6h14M10 1l5 5-5 5' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  opacity: 0;
+  transform: translateX(-6px);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+.group:hover .winner-name a::after,
+.winner-name a:focus-visible::after {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* Nudge it further right once the name itself is hovered */
+.group:hover .winner-name a:hover::after,
+.winner-name a:hover::after {
+  opacity: 1;
+  transform: translateX(5px);
+}
+/* Touch screens and mobile widths have no reliable hover, so keep the arrow visible */
+@media (hover: none), (max-width: 767px) {
+  .winner-name a::after {
+    opacity: 1;
+    transform: none;
+  }
+}
