@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { PrismicNextImage } from "@prismicio/next";
 
 // Drift speed in px per second
-const SPEED = 60;
+const SPEED = 120;
 
 // Fisher-Yates shuffle, returns a new array
 const shuffle = (list) => {
