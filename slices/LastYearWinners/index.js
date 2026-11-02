@@ -4,6 +4,8 @@ import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
 import { getCountryFlag } from "@/utils/countryFlag";
 import WinnerDescription from "@/components/WinnerDescription";
+// When rendered inside WinnerTabs, these place the year toggle; otherwise they're no-ops
+import { HeadingWithTabBar, TabBarRow } from "@/components/TabSwitcher";
 
 /**
  * @typedef {import("@prismicio/client").Content.LastYearWinnersSlice} LastYearWinnersSlice
@@ -59,12 +61,14 @@ const LastYearWinners = ({ slice }) => {
           <div className="font font-medium">
             {/* Top secton */}
             <div className="mb-10 xl:mb-17.5">
-              <div
-                className="text-[22px] md:text-[28px] lg:text-[38px]
+              <HeadingWithTabBar>
+                <div
+                  className="text-[22px] md:text-[28px] lg:text-[38px]
  font-monsterrat "
-              >
-                <Heading field={slice.primary.main_heading} />
-              </div>
+                >
+                  <Heading field={slice.primary.main_heading} />
+                </div>
+              </HeadingWithTabBar>
               <div
                 className="text-[15px] md:text-base lg:text-lg
  font-raleway lg:w-[74%] mt-3.5"
@@ -247,6 +251,8 @@ font-raleway my-3 xl:my-5 "
           className=" xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
         >
           <div className="font font-medium">
+            {/* This variation's heading sits in a dark banner, so the toggle gets its own row */}
+            <TabBarRow className="mb-5 xl:mb-8" />
             {/* Top section */}
             {(isFilled.richText(slice.primary.main_heading) ||
               isFilled.richText(slice.primary.short_description)) && (
@@ -316,12 +322,14 @@ font-raleway my-3 xl:my-5 "
             <div className="font font-medium">
               {/* Top secton */}
               <div className="mb-10 xl:mb-17.5">
-                <div
-                  className="text-[22px] md:text-[28px] lg:text-[38px]
+                <HeadingWithTabBar>
+                  <div
+                    className="text-[22px] md:text-[28px] lg:text-[38px]
  font-monsterrat "
-                >
-                  <Heading field={slice.primary.main_heading} />
-                </div>
+                  >
+                    <Heading field={slice.primary.main_heading} />
+                  </div>
+                </HeadingWithTabBar>
                 <div
                   className="text-[15px] md:text-base lg:text-lg
  font-raleway lg:w-[74%] mt-3.5"
@@ -363,7 +371,7 @@ font-raleway my-3 xl:my-5 "
                         </div>
 
                         {/* Gold / Silver / Bronze badge */}
-                        <div className="md:h-40 xl:h-48">
+                        <div>
                           <div
                             className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
                           >
@@ -389,10 +397,7 @@ font-raleway my-3 xl:my-5 "
                         </div>
                       </div>
 
-                      {/* Line always at the same vertical position across cards */}
-                      <div className="border-b border-[#677479]" />
-
-                      {/* Description clamped, "Read more" opens the full card */}
+                      {/* "+ Know more" opens the full description in a modal */}
                       <WinnerDescription
                         item={item}
                         link={item.learn_more}
@@ -443,7 +448,7 @@ font-raleway my-3 xl:my-5 "
                         </div>
 
                         {/* Gold / Silver / Bronze badge */}
-                        <div className="md:h-40 xl:h-48">
+                        <div>
                           <div
                             className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
                           >
@@ -462,17 +467,14 @@ font-raleway my-3 xl:my-5 "
                           </div>
                           <div
                             className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5 md:h-12 lg:h-14"
+ font-raleway my-3 xl:my-5"
                           >
                             <PrismicRichText field={item.project} />
                           </div>
                         </div>
                       </div>
 
-                      {/* Line always at the same vertical position across cards */}
-                      <div className="border-b border-[#677479]" />
-
-                      {/* Description clamped, "Read more" opens the full card */}
+                      {/* "+ Know more" opens the full description in a modal */}
                       <WinnerDescription
                         item={item}
                         link={item.link}
@@ -526,7 +528,7 @@ font-raleway my-3 xl:my-5 "
 
                         {/* Gold / Silver / Bronze badge, hidden when no position is set.
                             The fixed height is sized for the badge, so drop it without one. */}
-                        <div className={item.position ? "md:h-40 xl:h-48" : ""}>
+                        <div>
                           {item.position && (
                             <div
                               className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
@@ -547,17 +549,14 @@ font-raleway my-3 xl:my-5 "
                           </div>
                           <div
                             className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5 md:h-12 lg:h-14"
+ font-raleway my-3 xl:my-5"
                           >
                             <PrismicRichText field={item.project} />
                           </div>
                         </div>
                       </div>
 
-                      {/* Line always at the same vertical position across cards */}
-                      <div className="border-b border-[#677479]" />
-
-                      {/* Description clamped, "Read more" opens the full card */}
+                      {/* "+ Know more" opens the full description in a modal */}
                       <WinnerDescription
                         item={item}
                         link={item.link}

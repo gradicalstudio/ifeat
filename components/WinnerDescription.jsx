@@ -1,5 +1,5 @@
 "use client";
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
@@ -10,27 +10,14 @@ import { getCountryFlag } from "@/utils/countryFlag";
 const nameLinkHover =
   "[&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]";
 
-// Clamped winner description with a "Read more" button that opens the full card in a modal
+// "+ Know more" button on the card that opens the full winner description in a modal
 export default function WinnerDescription({
   item,
   link,
   medalStyle,
   medalDotStyle,
 }) {
-  const textRef = useRef(null);
-  const [isTruncated, setIsTruncated] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-
-  // Only show "Read more" when the clamp actually hides text
-  useLayoutEffect(() => {
-    const el = textRef.current;
-    if (!el) return;
-    const check = () => setIsTruncated(el.scrollHeight > el.clientHeight + 1);
-    check();
-    const observer = new ResizeObserver(check);
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   // Pause Lenis and listen for Escape while the modal is open
   useEffect(() => {
@@ -49,18 +36,15 @@ export default function WinnerDescription({
   return (
     // Without a learn-more row below, keep the same breathing room before the next card
     <div
-      className={`font-raleway text-sm md:text-[15px] lg:text-base mt-7.5 flex-1 ${isFilled.link(link) ? "" : "pb-5"}`}
+      className={`font-raleway text-sm md:text-[15px] lg:text-base flex-1 flex flex-col justify-end items-start ${isFilled.link(link) ? "" : "pb-5"}`}
     >
-      <div ref={textRef} className="line-clamp-4">
-        <PrismicRichText field={item.description} />
-      </div>
-      {isTruncated && (
+      {isFilled.richText(item.description) && (
         <button
           type="button"
           onClick={() => setIsOpen(true)}
-          className="mt-2 cursor-pointer underline underline-offset-4 text-[#A59653] hover:text-[#263B33] transition-colors duration-300"
+          className="cursor-pointer underline underline-offset-4 text-black hover:text-[#A59653] transition-colors duration-300"
         >
-          Read more
+          + Know more
         </button>
       )}
 
@@ -138,7 +122,7 @@ export default function WinnerDescription({
                 )}
 
                 <div
-                  className={`winner-name text-lg md:text-xl lg:text-[25px] mt-3 xl:mt-5 ${nameLinkHover}`}
+                  className={`winner-name winner-name-static text-lg md:text-xl lg:text-[25px] mt-3 xl:mt-5 ${nameLinkHover}`}
                 >
                   <PrismicRichText field={item.name} />
                 </div>
