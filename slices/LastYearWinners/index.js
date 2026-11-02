@@ -86,7 +86,7 @@ const LastYearWinners = ({ slice }) => {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                 {slice.primary.categoryone.map((item, i) => (
-                  <div key={i} className="   flex flex-col">
+                  <div key={i} className="group flex flex-col">
                     <div>
                       <div className="relative h-79.25">
                         <PrismicNextImage
@@ -110,7 +110,7 @@ const LastYearWinners = ({ slice }) => {
                       </div>
 
                       {/* Gold / Silver / Bronze badge */}
-                      <div className="md:h-40 xl:h-48">
+                      <div>
                         <div
                           className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
                         >
@@ -123,8 +123,7 @@ const LastYearWinners = ({ slice }) => {
                         </div>
 
                         <div
-                          className="font-raleway text-lg md:text-xl lg:text-[25px]
-"
+                          className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
                         >
                           <PrismicRichText field={item.name} />
                         </div>
@@ -137,13 +136,13 @@ font-raleway my-3 xl:my-5 "
                       </div>
                     </div>
 
-                    {/* Line always at the same vertical position across cards */}
-                    <div className="border-b border-[#677479]" />
-
-                    {/* Description grows to fill remaining space */}
-                    <div className="font-raleway text-sm md:text-[15px] lg:text-base mt-7.5 flex-1">
-                      <PrismicRichText field={item.description} />
-                    </div>
+                    {/* "+ Know more" opens the full description in a modal */}
+                    <WinnerDescription
+                      item={item}
+                      link={item.learn_more}
+                      medalStyle={getMedalStyle(item.position)}
+                      medalDotStyle={getMedalDotStyle(item.position)}
+                    />
 
                     {/* Learn more pinned to bottom */}
                     {isFilled.link(item.learn_more) && (
@@ -164,7 +163,7 @@ font-raleway my-3 xl:my-5 "
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
                 {slice.primary.category_two.map((item, i) => (
-                  <div key={i} className="flex flex-col">
+                  <div key={i} className="group flex flex-col">
                     <div>
                       <div className="relative h-79.25">
                         <PrismicNextImage
@@ -188,7 +187,7 @@ font-raleway my-3 xl:my-5 "
                       </div>
 
                       {/* Gold / Silver / Bronze badge */}
-                      <div className="md:h-40 xl:h-48">
+                      <div>
                         <div
                           className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
                         >
@@ -201,30 +200,26 @@ font-raleway my-3 xl:my-5 "
                         </div>
 
                         <div
-                          className="font-raleway text-lg md:text-xl lg:text-[25px]
-"
+                          className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
                         >
                           <PrismicRichText field={item.name} />
                         </div>
                         <div
                           className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5 md:h-12 lg:h-14"
+ font-raleway my-3 xl:my-5"
                         >
                           <PrismicRichText field={item.project} />
                         </div>
                       </div>
                     </div>
 
-                    {/* Line always at the same vertical position across cards */}
-                    <div className="border-b border-[#677479]" />
-
-                    {/* Description grows to fill remaining space */}
-                    <div
-                      className="font-raleway text-sm md:text-[15px] lg:text-base
- mt-7.5 flex-1"
-                    >
-                      <PrismicRichText field={item.description} />
-                    </div>
+                    {/* "+ Know more" opens the full description in a modal */}
+                    <WinnerDescription
+                      item={item}
+                      link={item.link}
+                      medalStyle={getMedalStyle(item.position)}
+                      medalDotStyle={getMedalDotStyle(item.position)}
+                    />
 
                     {/* Learn more pinned to bottom */}
                     {isFilled.link(item.link) && (
