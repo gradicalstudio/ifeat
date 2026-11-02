@@ -1184,6 +1184,16 @@ export interface ImageCarouselSliceDefaultPrimaryCarouselItem {
  */
 export interface ImageCarouselSliceDefaultPrimary {
   /**
+   * Speed field in *ImageCarousel → Default → Primary*
+   *
+   * - **Field Type**: Number
+   * - **Placeholder**: Pixels per second. Leave empty for 120. Higher = faster, 0 = stopped
+   * - **API ID Path**: image_carousel.default.primary.speed
+   * - **Documentation**: https://prismic.io/docs/fields/number
+   */
+  speed: prismic.NumberField;
+
+  /**
    * Carousel field in *ImageCarousel → Default → Primary*
    *
    * - **Field Type**: Group

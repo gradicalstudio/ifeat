@@ -12,6 +12,13 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "speed": {
+          "type": "Number",
+          "config": {
+            "label": "Speed",
+            "placeholder": "Pixels per second. Leave empty for 120. Higher = faster, 0 = stopped"
+          }
+        },
         "carousel": {
           "type": "Group",
           "config": {

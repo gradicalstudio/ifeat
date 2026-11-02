@@ -2,8 +2,15 @@
 import { useEffect, useRef, useState } from "react";
 import { PrismicNextImage } from "@prismicio/next";
 
-// Drift speed in px per second
-const SPEED = 120;
+// Drift speed in px per second, used when the Prismic "Speed" field is empty
+const DEFAULT_SPEED = 120;
+// Cap so a typo in Prismic (e.g. 12000) can't turn the reel into a blur
+const MAX_SPEED = 1000;
+
+const resolveSpeed = (value) =>
+  typeof value === "number" && Number.isFinite(value)
+    ? Math.min(Math.max(value, 0), MAX_SPEED)
+    : DEFAULT_SPEED;
 
 // Fisher-Yates shuffle, returns a new array
 const shuffle = (list) => {
@@ -15,7 +22,12 @@ const shuffle = (list) => {
   return result;
 };
 
-export default function ImageReel({ images: sourceImages }) {
+export default function ImageReel({ images: sourceImages, speed }) {
+  // Kept in a ref so the drift loop always reads the latest value without restarting
+  const speedRef = useRef(resolveSpeed(speed));
+  useEffect(() => {
+    speedRef.current = resolveSpeed(speed);
+  }, [speed]);
   const viewportRef = useRef(null);
   const trackRef = useRef(null);
   const offset = useRef(0);
@@ -63,7 +75,7 @@ export default function ImageReel({ images: sourceImages }) {
     const tick = (now) => {
       const dt = (now - last) / 1000;
       last = now;
-      if (!drag.current && !reduceMotion) offset.current -= SPEED * dt;
+      if (!drag.current && !reduceMotion) offset.current -= speedRef.current * dt;
 
       // Wrap the offset into one set's width so the loop is seamless
       const width = setWidth.current;
