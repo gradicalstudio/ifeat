@@ -2,34 +2,154 @@
   "id": "video_component",
   "type": "SharedSlice",
   "name": "VideoComponent",
-  "description": "VideoComponent",
+  "description": "Ceremony video with heading, description and button",
   "variations": [
     {
       "id": "default",
-      "name": "Default",
+      "name": "Split",
       "docURL": "...",
       "version": "initial",
-      "description": "Default",
+      "description": "Green panel: text and button on the left, video in a glass card on the right",
       "imageUrl": "",
       "primary": {
-        "video_list": {
-          "type": "Group",
+        "hide_toggle": {
+          "type": "Boolean",
           "config": {
-            "label": "Video List",
-            "repeat": true,
-            "fields": {
-              "video": {
-                "type": "Link",
-                "config": {
-                  "label": "Video",
-                  "placeholder": "",
-                  "select": null,
-                  "allowTargetBlank": true,
-                  "allowText": true,
-                  "repeat": false
-                }
-              }
-            }
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "A night celebrating sustainability, live from Bangkok",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Relive the moments the 2026 winners were announced...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "Meet the winners (e.g. #winners-2025)",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "Vimeo Video",
+            "placeholder": "Paste the Vimeo link, e.g. https://vimeo.com/1248276061"
+          }
+        },
+        "poster": {
+          "type": "Image",
+          "config": {
+            "label": "Poster Image (optional, Vimeo thumbnail used if empty)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "play_label": {
+          "type": "Text",
+          "config": {
+            "label": "Play Button Label",
+            "placeholder": "Watch the ceremony"
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "cinematic",
+      "name": "Cinematic",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Centred heading, description and button above a large video",
+      "imageUrl": "",
+      "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
+        "eyebrow": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Eyebrow",
+            "placeholder": "The 2026 Ceremony",
+            "allowTargetBlank": true,
+            "multi": "paragraph"
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "A night celebrating sustainability, live from Bangkok",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Relive the moments the 2026 winners were announced...",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "button": {
+          "type": "Link",
+          "config": {
+            "label": "Button",
+            "placeholder": "Meet the winners (e.g. #winners-2025)",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        },
+        "video": {
+          "type": "Embed",
+          "config": {
+            "label": "Vimeo Video",
+            "placeholder": "Paste the Vimeo link, e.g. https://vimeo.com/1248276061"
+          }
+        },
+        "poster": {
+          "type": "Image",
+          "config": {
+            "label": "Poster Image (optional, Vimeo thumbnail used if empty)",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "play_label": {
+          "type": "Text",
+          "config": {
+            "label": "Play Button Label",
+            "placeholder": "Watch the ceremony"
           }
         }
       },

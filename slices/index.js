@@ -11,6 +11,7 @@ export const components = {
   image_carousel: dynamic(() => import("./ImageCarousel")),
   jury_panel: dynamic(() => import("./JuryPanel")),
   last_year_winners: dynamic(() => import("./LastYearWinners")),
+  notify_form: dynamic(() => import("./NotifyForm")),
   people_choice_award: dynamic(() => import("./PeopleChoiceAward")),
   reflection: dynamic(() => import("./Reflection")),
   second_section: dynamic(() => import("./SecondSection")),

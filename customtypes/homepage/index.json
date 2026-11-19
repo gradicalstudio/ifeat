@@ -62,6 +62,9 @@
             },
             "second_section": {
               "type": "SharedSlice"
+            },
+            "notify_form": {
+              "type": "SharedSlice"
             }
           }
         }

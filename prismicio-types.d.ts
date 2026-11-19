@@ -374,7 +374,8 @@ type HomepageDocumentDataSlicesSlice =
   | ThePrizesSlice
   | PeopleChoiceAwardSlice
   | SectionThreeSlice
-  | SecondSectionSlice;
+  | SecondSectionSlice
+  | NotifyFormSlice;
 
 /**
  * Content for Homepage documents
@@ -465,7 +466,8 @@ type PreviewDocumentDataSlicesSlice =
   | FaQSlice
   | JuryPanelSlice
   | PeopleChoiceAwardSlice
-  | SecondSectionSlice;
+  | SecondSectionSlice
+  | NotifyFormSlice;
 
 /**
  * Content for Preview documents
@@ -982,6 +984,17 @@ export type FaQSlice = prismic.SharedSlice<"fa_q", FaQSliceVariation>;
  */
 export interface FollowThroughSliceDefaultPrimary {
   /**
+   * Hide Toggle field in *FollowThrough → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: follow_through.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
    * Heading field in *FollowThrough → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -1183,6 +1196,17 @@ export interface ImageCarouselSliceDefaultPrimaryCarouselItem {
  * Primary content in *ImageCarousel → Default → Primary*
  */
 export interface ImageCarouselSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *ImageCarousel → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: image_carousel.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
   /**
    * Speed field in *ImageCarousel → Default → Primary*
    *
@@ -2136,6 +2160,132 @@ type LastYearWinnersSliceVariation =
 export type LastYearWinnersSlice = prismic.SharedSlice<
   "last_year_winners",
   LastYearWinnersSliceVariation
+>;
+
+/**
+ * Primary content in *NotifyForm → Default → Primary*
+ */
+export interface NotifyFormSliceDefaultPrimary {
+  /**
+   * Hide Toggle field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: notify_form.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
+   * Heading field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Be first to hear when 2027/2028 applications open
+   * - **API ID Path**: notify_form.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Has your company run a sustainability project worth celebrating?
+   * - **API ID Path**: notify_form.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Name Label field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Full name
+   * - **API ID Path**: notify_form.default.primary.name_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  name_label: prismic.KeyTextField;
+
+  /**
+   * Company Label field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Company
+   * - **API ID Path**: notify_form.default.primary.company_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  company_label: prismic.KeyTextField;
+
+  /**
+   * Email Label field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Work Email
+   * - **API ID Path**: notify_form.default.primary.email_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  email_label: prismic.KeyTextField;
+
+  /**
+   * Consent Text field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: We'll only contact you about the IFEAT Sustainability Awards... (link the Privacy Policy here)
+   * - **API ID Path**: notify_form.default.primary.consent_text
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  consent_text: prismic.RichTextField;
+
+  /**
+   * Button Label field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Notify me
+   * - **API ID Path**: notify_form.default.primary.button_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  button_label: prismic.KeyTextField;
+
+  /**
+   * Success Message field in *NotifyForm → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Thanks! We'll email you the day applications open.
+   * - **API ID Path**: notify_form.default.primary.success_message
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  success_message: prismic.RichTextField;
+}
+
+/**
+ * Default variation for NotifyForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type NotifyFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<NotifyFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *NotifyForm*
+ */
+type NotifyFormSliceVariation = NotifyFormSliceDefault;
+
+/**
+ * NotifyForm Shared Slice
+ *
+ * - **API ID**: `notify_form`
+ * - **Description**: Sign-up form that saves name, company and email to a Google Sheet
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type NotifyFormSlice = prismic.SharedSlice<
+  "notify_form",
+  NotifyFormSliceVariation
 >;
 
 /**
@@ -3199,42 +3349,86 @@ export type ThePrizesSlice = prismic.SharedSlice<
 >;
 
 /**
- * Item in *VideoComponent → Default → Primary → Video List*
- */
-export interface VideoComponentSliceDefaultPrimaryVideoListItem {
-  /**
-   * Video field in *VideoComponent → Default → Primary → Video List*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: video_component.default.primary.video_list[].video
-   * - **Documentation**: https://prismic.io/docs/fields/link
-   */
-  video: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
-}
-
-/**
- * Primary content in *VideoComponent → Default → Primary*
+ * Primary content in *VideoComponent → Split → Primary*
  */
 export interface VideoComponentSliceDefaultPrimary {
   /**
-   * Video List field in *VideoComponent → Default → Primary*
+   * Hide Toggle field in *VideoComponent → Split → Primary*
    *
-   * - **Field Type**: Group
+   * - **Field Type**: Boolean
    * - **Placeholder**: *None*
-   * - **API ID Path**: video_component.default.primary.video_list[]
-   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   * - **Default Value**: false
+   * - **API ID Path**: video_component.default.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
    */
-  video_list: prismic.GroupField<
-    Simplify<VideoComponentSliceDefaultPrimaryVideoListItem>
-  >;
+  hide_toggle: prismic.BooleanField;
+
+  /**
+   * Heading field in *VideoComponent → Split → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: A night celebrating sustainability, live from Bangkok
+   * - **API ID Path**: video_component.default.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *VideoComponent → Split → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Relive the moments the 2026 winners were announced...
+   * - **API ID Path**: video_component.default.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *VideoComponent → Split → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Meet the winners (e.g. #winners-2025)
+   * - **API ID Path**: video_component.default.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Vimeo Video field in *VideoComponent → Split → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: Paste the Vimeo link, e.g. https://vimeo.com/1248276061
+   * - **API ID Path**: video_component.default.primary.video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video: prismic.EmbedField;
+
+  /**
+   * Poster Image (optional, Vimeo thumbnail used if empty) field in *VideoComponent → Split → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_component.default.primary.poster
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  poster: prismic.ImageField<never>;
+
+  /**
+   * Play Button Label field in *VideoComponent → Split → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Watch the ceremony
+   * - **API ID Path**: video_component.default.primary.play_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  play_label: prismic.KeyTextField;
 }
 
 /**
- * Default variation for VideoComponent Slice
+ * Split variation for VideoComponent Slice
  *
  * - **API ID**: `default`
- * - **Description**: Default
+ * - **Description**: Green panel: text and button on the left, video in a glass card on the right
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type VideoComponentSliceDefault = prismic.SharedSliceVariation<
@@ -3244,15 +3438,116 @@ export type VideoComponentSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *VideoComponent → Cinematic → Primary*
+ */
+export interface VideoComponentSliceCinematicPrimary {
+  /**
+   * Hide Toggle field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: video_component.cinematic.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
+   * Eyebrow field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: The 2026 Ceremony
+   * - **API ID Path**: video_component.cinematic.primary.eyebrow
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  eyebrow: prismic.RichTextField;
+
+  /**
+   * Heading field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: A night celebrating sustainability, live from Bangkok
+   * - **API ID Path**: video_component.cinematic.primary.heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  heading: prismic.RichTextField;
+
+  /**
+   * Description field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: Relive the moments the 2026 winners were announced...
+   * - **API ID Path**: video_component.cinematic.primary.description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * Button field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Meet the winners (e.g. #winners-2025)
+   * - **API ID Path**: video_component.cinematic.primary.button
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  button: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Vimeo Video field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Embed
+   * - **Placeholder**: Paste the Vimeo link, e.g. https://vimeo.com/1248276061
+   * - **API ID Path**: video_component.cinematic.primary.video
+   * - **Documentation**: https://prismic.io/docs/fields/embed
+   */
+  video: prismic.EmbedField;
+
+  /**
+   * Poster Image (optional, Vimeo thumbnail used if empty) field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: video_component.cinematic.primary.poster
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  poster: prismic.ImageField<never>;
+
+  /**
+   * Play Button Label field in *VideoComponent → Cinematic → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Watch the ceremony
+   * - **API ID Path**: video_component.cinematic.primary.play_label
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  play_label: prismic.KeyTextField;
+}
+
+/**
+ * Cinematic variation for VideoComponent Slice
+ *
+ * - **API ID**: `cinematic`
+ * - **Description**: Centred heading, description and button above a large video
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type VideoComponentSliceCinematic = prismic.SharedSliceVariation<
+  "cinematic",
+  Simplify<VideoComponentSliceCinematicPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *VideoComponent*
  */
-type VideoComponentSliceVariation = VideoComponentSliceDefault;
+type VideoComponentSliceVariation =
+  | VideoComponentSliceDefault
+  | VideoComponentSliceCinematic;
 
 /**
  * VideoComponent Shared Slice
  *
  * - **API ID**: `video_component`
- * - **Description**: VideoComponent
+ * - **Description**: Ceremony video with heading, description and button
  * - **Documentation**: https://prismic.io/docs/slices
  */
 export type VideoComponentSlice = prismic.SharedSlice<
@@ -3344,6 +3639,10 @@ declare module "@prismicio/client" {
       LastYearWinnersSliceDefault,
       LastYearWinnersSlicePeopleChoiceAward,
       LastYearWinnersSliceWithPeopleChoiceAwardWinners,
+      NotifyFormSlice,
+      NotifyFormSliceDefaultPrimary,
+      NotifyFormSliceVariation,
+      NotifyFormSliceDefault,
       PeopleChoiceAwardSlice,
       PeopleChoiceAwardSliceDefaultPrimary,
       PeopleChoiceAwardSliceVariation,
@@ -3380,10 +3679,11 @@ declare module "@prismicio/client" {
       ThePrizesSliceVariation,
       ThePrizesSliceDefault,
       VideoComponentSlice,
-      VideoComponentSliceDefaultPrimaryVideoListItem,
       VideoComponentSliceDefaultPrimary,
+      VideoComponentSliceCinematicPrimary,
       VideoComponentSliceVariation,
       VideoComponentSliceDefault,
+      VideoComponentSliceCinematic,
     };
   }
 }

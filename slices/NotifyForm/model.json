@@ -1,0 +1,92 @@
+{
+  "id": "notify_form",
+  "type": "SharedSlice",
+  "name": "NotifyForm",
+  "description": "Sign-up form that saves name, company and email to a Google Sheet",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "Be first to hear when 2027/2028 applications open",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading2,heading3,strong,em"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "Has your company run a sustainability project worth celebrating?",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "name_label": {
+          "type": "Text",
+          "config": {
+            "label": "Name Label",
+            "placeholder": "Full name"
+          }
+        },
+        "company_label": {
+          "type": "Text",
+          "config": {
+            "label": "Company Label",
+            "placeholder": "Company"
+          }
+        },
+        "email_label": {
+          "type": "Text",
+          "config": {
+            "label": "Email Label",
+            "placeholder": "Work Email"
+          }
+        },
+        "consent_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Consent Text",
+            "placeholder": "We'll only contact you about the IFEAT Sustainability Awards... (link the Privacy Policy here)",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "button_label": {
+          "type": "Text",
+          "config": {
+            "label": "Button Label",
+            "placeholder": "Notify me"
+          }
+        },
+        "success_message": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Success Message",
+            "placeholder": "Thanks! We'll email you the day applications open.",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

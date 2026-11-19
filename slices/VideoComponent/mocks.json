@@ -3,27 +3,127 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"video_list": {
-				"__TYPE__": "GroupContentType",
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
 				"value": [
 					{
-						"__TYPE__": "GroupItemContent",
-						"value": [
-							[
-								"video",
-								{
-									"__TYPE__": "LinkContent",
-									"key": "b4e14bd4-2a04-4770-97b1-2572c2c344d2",
-									"value": {
-										"__TYPE__": "ExternalLink",
-										"url": "http://twitter.com",
-										"text": "potatoes"
-									}
-								}
-							]
-						]
+						"type": "heading2",
+						"content": {
+							"text": "A night celebrating sustainability, live from Bangkok"
+						}
 					}
 				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Relive the moments the 2026 winners were announced, and hear from the companies behind this year’s most impactful projects."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "#winners-2025",
+					"text": "Meet the winners"
+				}
+			},
+			"video": {
+				"__TYPE__": "EmbedContent",
+				"all": {
+					"embed_url": "https://vimeo.com/1248276061",
+					"type": "video",
+					"provider_name": "Vimeo",
+					"title": "IFEAT 2026 Sustainability Awards Ceremony",
+					"width": 1280,
+					"height": 720,
+					"thumbnail_url": "https://i.vimeocdn.com/video/2228321105-5c336a6b6be8c682ee77713b6c0c81e24822582c579c29e6985eee9994e4d521-d_1280",
+					"html": "<iframe src=\"https://player.vimeo.com/video/1248276061\" width=\"1280\" height=\"720\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\"></iframe>"
+				}
+			},
+			"play_label": {
+				"__TYPE__": "FieldContent",
+				"value": "Watch the ceremony",
+				"type": "Text"
+			}
+		},
+		"items": []
+	},
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "cinematic",
+		"primary": {
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"eyebrow": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "The 2026 Ceremony"
+						}
+					}
+				]
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "A night celebrating sustainability, live from Bangkok"
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Relive the moments the 2026 winners were announced, and hear from the companies behind this year’s most impactful projects."
+						}
+					}
+				]
+			},
+			"button": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "#winners-2025",
+					"text": "Meet the winners"
+				}
+			},
+			"video": {
+				"__TYPE__": "EmbedContent",
+				"all": {
+					"embed_url": "https://vimeo.com/1248276061",
+					"type": "video",
+					"provider_name": "Vimeo",
+					"title": "IFEAT 2026 Sustainability Awards Ceremony",
+					"width": 1280,
+					"height": 720,
+					"thumbnail_url": "https://i.vimeocdn.com/video/2228321105-5c336a6b6be8c682ee77713b6c0c81e24822582c579c29e6985eee9994e4d521-d_1280",
+					"html": "<iframe src=\"https://player.vimeo.com/video/1248276061\" width=\"1280\" height=\"720\" frameborder=\"0\" allow=\"autoplay; fullscreen; picture-in-picture\"></iframe>"
+				}
+			},
+			"play_label": {
+				"__TYPE__": "FieldContent",
+				"value": "Watch the ceremony",
+				"type": "Text"
 			}
 		},
 		"items": []

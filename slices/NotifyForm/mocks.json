@@ -1,0 +1,99 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"hide_toggle": {
+				"__TYPE__": "BooleanContent",
+				"value": false
+			},
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading2",
+						"content": {
+							"text": "Be first to hear when 2027/2028 applications open",
+							"spans": []
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Has your company run a sustainability project worth celebrating?"
+						}
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Leave your details and we'll email you the day applications open."
+						}
+					}
+				]
+			},
+			"name_label": {
+				"__TYPE__": "FieldContent",
+				"value": "Full name",
+				"type": "Text"
+			},
+			"company_label": {
+				"__TYPE__": "FieldContent",
+				"value": "Company",
+				"type": "Text"
+			},
+			"email_label": {
+				"__TYPE__": "FieldContent",
+				"value": "Work Email",
+				"type": "Text"
+			},
+			"consent_text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "We'll only contact you about the IFEAT Sustainability Awards. You can unsubscribe at any time.  Privacy Policy",
+							"spans": [
+								{
+									"type": "hyperlink",
+									"start": 96,
+									"end": 110,
+									"data": {
+										"__TYPE__": "LinkContent",
+										"value": {
+											"__TYPE__": "ExternalLink",
+											"url": "https://example.com/privacy-policy"
+										}
+									}
+								}
+							]
+						}
+					}
+				]
+			},
+			"button_label": {
+				"__TYPE__": "FieldContent",
+				"value": "Notify me",
+				"type": "Text"
+			},
+			"success_message": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Thanks! We'll email you the day applications open.",
+							"spans": []
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
