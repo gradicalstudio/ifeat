@@ -2,6 +2,7 @@ import { isFilled } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
 import PrimaryButton from "@/components/PrimaryButton";
+import SecondaryButton from "@/components/SecondaryButton";
 import VimeoPlayer from "@/components/VimeoPlayer";
 
 const glassCard = {
@@ -55,23 +56,19 @@ const VideoComponent = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="w-full xl:max-w-385 xl:mx-auto md:px-4 lg:px-5 xl:px-4 px-3 mb-15 lg:mb-25 xl:mb-30"
+      className="xl:px-21 px-4 md:px-5 mb-15 lg:mb-25 xl:mb-30 xl:max-w-385 xl:mx-auto font-medium"
     >
-      <div className="bg-[#263B33] rounded-tl-[48px] rounded-br-[48px] md:rounded-tl-[80px] md:rounded-br-[80px] xl:rounded-tl-[120px] xl:rounded-br-[120px] px-5 py-10 md:px-10 md:py-12 xl:px-16 xl:py-18 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14">
+      <div className="bg-[#263B33] rounded-tl-[100px] rounded-br-[100px] px-10 pt-14 pb-18 md:pb-14 xl:px-16.75 xl:py-16.5 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14">
         <div className="lg:flex-1 min-w-0 flex flex-col gap-4 lg:gap-5 text-[#FEFFF4]">
           <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat font-medium leading-tight">
             <Heading field={primary.heading} />
           </div>
-          <div className="text-[15px] md:text-base lg:text-lg font-raleway leading-snug text-[#E4E6DA] empty:hidden">
+          <div className="text-[15px] md:text-base lg:text-lg font-raleway text-[#E4E6DA] empty:hidden">
             <PrismicRichText field={primary.description} />
           </div>
           {isFilled.link(primary.button) && (
             <div className="pt-2 lg:pt-4">
-              {/* Cream fill on the green panel; the ! overrides PrimaryButton's gold fill */}
-              <PrimaryButton
-                field={primary.button}
-                className="bg-[#FEFFF4]! hover:bg-[#A59653]! hover:border-[#A59653]!"
-              />
+              <SecondaryButton field={primary.button} />
             </div>
           )}
         </div>

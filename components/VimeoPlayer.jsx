@@ -61,10 +61,10 @@ export default function VimeoPlayer({ video, poster, label, className = "" }) {
             type="button"
             onClick={() => setPlaying(true)}
             aria-label={`${label}: play ${title}`}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-3 md:gap-3.5 rounded-full border border-white/45 bg-white/15 backdrop-blur-md backdrop-saturate-150 py-1.5 pl-1.5 pr-5 md:py-2 md:pl-2 md:pr-7 font-monsterrat font-bold uppercase whitespace-nowrap text-xs md:text-[15px] text-[#FEFFF4] [text-shadow:0_1px_2px_rgba(0,0,0,0.35)] shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.4)] cursor-pointer transition-colors duration-300 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FEFFF4]"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2.5 md:gap-3.5 lg:gap-3 xl:gap-3.5 rounded-full border border-white/45 bg-white/15 backdrop-blur-md backdrop-saturate-150 py-1.5 pl-1.5 pr-4 md:py-2 md:pl-2 md:pr-7 lg:pr-5 xl:pr-7 font-monsterrat font-bold uppercase whitespace-nowrap text-[11px] md:text-[15px] lg:text-[13px] xl:text-[15px] text-[#FEFFF4] [text-shadow:0_1px_2px_rgba(0,0,0,0.35)] shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.4)] cursor-pointer transition-colors duration-300 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FEFFF4]"
           >
-            <span aria-hidden="true" className="flex size-10 md:size-14 items-center justify-center rounded-full bg-[#D2C383]">
-              <svg viewBox="0 0 24 24" fill="#263B33" className="size-4 md:size-5.5">
+            <span aria-hidden="true" className="flex size-8 md:size-14 lg:size-11 xl:size-14 items-center justify-center rounded-full bg-[#A59653]">
+              <svg viewBox="0 0 24 24" fill="#263B33" className="size-3.5 md:size-5.5 lg:size-4.5 xl:size-5.5">
                 <path d="M8 5.5v13l11-6.5z" />
               </svg>
             </span>
