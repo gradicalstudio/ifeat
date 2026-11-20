@@ -75,7 +75,7 @@ export default function DescriptionModal({ enabled, link, children }) {
 
               <div
                 data-lenis-prevent
-                className="modal-scroll w-full overflow-y-auto p-5 pt-14 md:p-8 md:pr-6"
+                className="modal-scroll w-full overflow-y-auto p-5 md:p-8 md:pr-6"
               >
                 {children}
 
