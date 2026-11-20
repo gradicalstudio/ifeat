@@ -58,7 +58,7 @@ const VideoComponent = ({ slice }) => {
       data-slice-variation={slice.variation}
       className="xl:px-21 px-4 md:px-5 mb-15 lg:mb-25 xl:mb-30 xl:max-w-385 xl:mx-auto font-medium"
     >
-      <div className="bg-[#263B33] rounded-tl-[100px] rounded-br-[100px] px-10 pt-14 pb-18 md:pb-14 xl:px-16.75 xl:py-16.5 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14">
+      <div className="bg-[#263B33] rounded-tl-[100px] rounded-br-[100px] px-10 pt-20 md:pt-14 pb-18 md:pb-14 xl:px-16.75 xl:py-16.5 flex flex-col lg:flex-row lg:items-center gap-8 lg:gap-14">
         <div className="lg:flex-1 min-w-0 flex flex-col gap-4 lg:gap-5 text-[#FEFFF4]">
           <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat font-medium leading-tight">
             <Heading field={primary.heading} />
@@ -72,7 +72,8 @@ const VideoComponent = ({ slice }) => {
             </div>
           )}
         </div>
-        <div style={glassCard} className="lg:flex-[1.35] min-w-0 rounded-[22px] p-1.5">
+        {/* Mobile: video first, and wider than the text (pulled out into the side padding) */}
+        <div style={glassCard} className="order-first -mx-5 md:mx-0 lg:order-none lg:flex-[1.35] min-w-0 rounded-[22px] p-1.5">
           <VimeoPlayer video={primary.video} poster={primary.poster} label={label} className="rounded-2xl" />
         </div>
       </div>
