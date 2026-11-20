@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import Image from "next/image";
 import { isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
+import Modal from "@/components/Modal";
 
 // Builds the Vimeo player URL from a Prismic Embed field. Prefers the iframe src
 // Prismic stored (it keeps the private-link hash), falling back to the pasted URL.
@@ -32,6 +33,8 @@ const largeThumbnail = (src) => src?.replace(/-d_\d+(x\d+)?/, "-d_1280");
  */
 export default function VimeoPlayer({ video, poster, label, className = "" }) {
   const [playing, setPlaying] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
+  const closeModal = useCallback(() => setModalOpen(false), []);
   const src = isFilled.embed(video) ? playerSrc(video) : null;
   if (!src) return null;
 
@@ -59,7 +62,12 @@ export default function VimeoPlayer({ video, poster, label, className = "" }) {
           <div aria-hidden="true" className="absolute inset-0 bg-black/40" />
           <button
             type="button"
-            onClick={() => setPlaying(true)}
+            // Phones: the inline frame is too small and hides Vimeo's controls, so play in a modal
+            onClick={() =>
+              window.matchMedia("(max-width: 767px)").matches
+                ? setModalOpen(true)
+                : setPlaying(true)
+            }
             aria-label={`${label}: play ${title}`}
             className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2.5 md:gap-3.5 lg:gap-3 xl:gap-3.5 rounded-full border border-white/45 bg-white/15 backdrop-blur-md backdrop-saturate-150 py-1.5 pl-1.5 pr-4 md:py-2 md:pl-2 md:pr-7 lg:pr-5 xl:pr-7 font-monsterrat font-bold uppercase whitespace-nowrap text-[11px] md:text-[15px] lg:text-[13px] xl:text-[15px] text-[#FEFFF4] [text-shadow:0_1px_2px_rgba(0,0,0,0.35)] shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.4)] cursor-pointer transition-colors duration-300 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FEFFF4]"
           >
@@ -71,6 +79,29 @@ export default function VimeoPlayer({ video, poster, label, className = "" }) {
             {label}
           </button>
         </>
+      )}
+
+      {modalOpen && (
+        <Modal
+          onClose={closeModal}
+          overlayClassName="p-2 bg-black/80"
+          className="w-full"
+          closeClassName="-top-12 right-0"
+        >
+          {/* 16:9, as wide as the screen allows but never taller than 80% of its height */}
+          <div
+            className="mx-auto aspect-video overflow-hidden rounded-lg bg-black"
+            style={{ width: "min(100%, calc(80dvh * 16 / 9))" }}
+          >
+            <iframe
+              src={src}
+              title={title}
+              className="h-full w-full border-0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+              allowFullScreen
+            />
+          </div>
+        </Modal>
       )}
     </div>
   );

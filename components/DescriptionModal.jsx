@@ -1,27 +1,14 @@
 "use client";
-import { useState, useEffect } from "react";
-import { createPortal } from "react-dom";
+import { useState, useCallback } from "react";
 import { isFilled } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
+import Modal from "@/components/Modal";
 
 // "+ Know more" button that opens its children in a modal.
 // Renders nothing clickable unless `enabled`, but keeps the row's spacing.
 export default function DescriptionModal({ enabled, link, children }) {
   const [isOpen, setIsOpen] = useState(false);
-
-  // Pause Lenis and listen for Escape while the modal is open
-  useEffect(() => {
-    if (!isOpen) return;
-    window.lenis?.stop();
-    document.body.style.overflow = "hidden";
-    const onKey = (e) => e.key === "Escape" && setIsOpen(false);
-    window.addEventListener("keydown", onKey);
-    return () => {
-      window.lenis?.start();
-      document.body.style.overflow = "";
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [isOpen]);
+  const close = useCallback(() => setIsOpen(false), []);
 
   return (
     // Without a learn-more row below, keep the same breathing room before the next card
@@ -38,58 +25,28 @@ export default function DescriptionModal({ enabled, link, children }) {
         </button>
       )}
 
-      {isOpen &&
-        createPortal(
+      {isOpen && (
+        // The panel clips to the rounded corners and holds the close button,
+        // so the button stays put while the inner content scrolls
+        <Modal
+          onClose={close}
+          className="flex w-full max-w-2xl max-h-[85dvh] md:max-h-[90dvh] overflow-hidden rounded-xl bg-[#FEFFF4] font-raleway font-medium"
+        >
           <div
-            className="fixed inset-0 z-100 flex items-center justify-center bg-black/60 p-4 animate-dropdown"
-            onClick={() => setIsOpen(false)}
+            data-lenis-prevent
+            className="modal-scroll w-full overflow-y-auto p-5 md:p-8 md:pr-6"
           >
-            {/* Outer frame clips to the rounded corners and holds the close button,
-                so the button stays put while the inner content scrolls */}
-            <div
-              role="dialog"
-              aria-modal="true"
-              onClick={(e) => e.stopPropagation()}
-              className="relative flex w-full max-w-2xl max-h-[85dvh] md:max-h-[90dvh] overflow-hidden rounded-xl bg-[#FEFFF4] font-raleway font-medium"
-            >
-              <button
-                type="button"
-                onClick={() => setIsOpen(false)}
-                aria-label="Close"
-                className="absolute top-2 right-2 md:top-3 md:right-3 z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-[#0E1219] shadow-md transition-colors duration-300 hover:bg-[#A59653] hover:text-white"
-              >
-                <svg
-                  viewBox="0 0 14 14"
-                  className="h-3.5 w-3.5"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M1 1l12 12M13 1L1 13"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
+            {children}
 
-              <div
-                data-lenis-prevent
-                className="modal-scroll w-full overflow-y-auto p-5 md:p-8 md:pr-6"
-              >
-                {children}
-
-                {isFilled.link(link) && (
-                  <div className="pt-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653]">
-                    <PrismicNextLink field={link} />
-                    <span className="font-bold">→</span>
-                  </div>
-                )}
+            {isFilled.link(link) && (
+              <div className="pt-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653]">
+                <PrismicNextLink field={link} />
+                <span className="font-bold">→</span>
               </div>
-            </div>
-          </div>,
-          document.body,
-        )}
+            )}
+          </div>
+        </Modal>
+      )}
     </div>
   );
 }

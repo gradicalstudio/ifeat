@@ -73,7 +73,7 @@ const VideoComponent = ({ slice }) => {
           )}
         </div>
         {/* Mobile: video first, and wider than the text (pulled out into the side padding) */}
-        <div style={glassCard} className="order-first -mx-5 md:mx-0 lg:order-none lg:flex-[1.35] min-w-0 rounded-[22px] p-1.5">
+        <div style={glassCard} className="order-first  md:mx-0 lg:order-none lg:flex-[1.35] min-w-0 rounded-[22px] p-1.5">
           <VimeoPlayer video={primary.video} poster={primary.poster} label={label} className="rounded-2xl" />
         </div>
       </div>
