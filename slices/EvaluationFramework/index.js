@@ -1,6 +1,7 @@
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
+import StackedCards from "@/components/StackedCards";
 
 /**
  * @typedef {import("@prismicio/client").Content.EvaluationFrameworkSlice} EvaluationFrameworkSlice
@@ -54,18 +55,25 @@ const EvaluationFramework = ({ slice }) => {
           </div>
         </div>
         {/* Middle cards */}
-        <div  className="grid grid-cols-1  pt-4  lg:pt-17.5 xl:pt-25  md:grid-cols-2 xl:grid-cols-4 gap-5">
+        {/* Mobile: a flex column so each sticky card can stack over the one before it
+            (sticky can't leave its grid row). From md up it's the usual grid. */}
+        <StackedCards className="flex flex-col pt-4 lg:pt-17.5 xl:pt-25 md:grid md:grid-cols-2 xl:grid-cols-4 md:gap-5">
           {slice.primary.cards.map((item, i) => (
             <div
              style={{
+                    // each card parks a little lower than the one before, so the stack stays visible
+                    "--stack-top": `${96 + i * 16}px`,
+                    // bottom margin staggers where each card comes to rest when the stack scrolls out
+                    "--stack-mb": `${(slice.primary.cards.length - 1 - i) * 16}px`,
+                    // solid base colour (the section's own) so a stacked card hides the one beneath
                     background:
-                      "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%)",
+                      "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.04) 60%), #0E1219",
                     boxShadow:
                       "0 8px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.25), inset 1px 0 0 rgba(255,255,255,0.1)",
                     border: "1px solid rgba(255,255,255,0.15)",
                   }}
               key={i}
-              className="flex flex-col rounded-3xl px-4 py-5 lg:px-7 lg:py-8 bg-linear-to-t from-transparent to-white/5 border border-white/8"
+              className="sticky top-(--stack-top) mb-(--stack-mb) min-h-(--stack-h) md:static md:mb-0 md:min-h-0 flex flex-col rounded-3xl px-4 py-5 lg:px-7 lg:py-8 bg-linear-to-t from-transparent to-white/5 border border-white/8"
             >
               {/* Percentage */}
               <div className="flex items-start mb-4">
@@ -94,7 +102,7 @@ const EvaluationFramework = ({ slice }) => {
               </div>
             </div>
           ))}
-        </div>
+        </StackedCards>
         {/* Bottom Text */}
         <div
           className="mt-10 xl:mt-17.5  text-[#FEFFF4] text-[15px] md:text-base lg:text-lg

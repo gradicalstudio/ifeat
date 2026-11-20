@@ -2,8 +2,9 @@ import { isFilled } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
-import { getCountryFlag } from "@/utils/countryFlag";
-import WinnerDescription from "@/components/WinnerDescription";
+import WinnerCategory from "@/components/WinnerCategory";
+import CompanyCard from "@/components/CompanyCard";
+import MobileSlider from "@/components/MobileSlider";
 // When rendered inside WinnerTabs, these place the year toggle; otherwise they're no-ops
 import { HeadingWithTabBar, TabBarRow } from "@/components/TabSwitcher";
 
@@ -13,42 +14,6 @@ import { HeadingWithTabBar, TabBarRow } from "@/components/TabSwitcher";
  * @type {import("react").FC<LastYearWinnersProps>}
  */
 const LastYearWinners = ({ slice }) => {
-  {
-    /* Country flags map */
-  }
-  const countryFlags = {
-    india: "🇮🇳",
-    netherlands: "🇳🇱",
-    spain: "🇪🇸",
-  };
-
-  const medalStyles = {
-    gold: "border-[#A59653] text-[#A59653]",
-    silver: "border-[#A2A2A2] text-[#A2A2A2]",
-    bronze: "border-[#A57953] text-[#A57953]",
-  };
-
-  const medalDotStyles = {
-    gold: "bg-[#A59653]",
-    silver: "bg-[#A2A2A2]",
-    bronze: "bg-[#A57953]",
-  };
-
-  const getMedalStyle = (position) => {
-    const lower = position?.toLowerCase() || "";
-    if (lower.includes("gold")) return medalStyles.gold;
-    if (lower.includes("silver")) return medalStyles.silver;
-    if (lower.includes("bronze")) return medalStyles.bronze;
-    return "border-gray-300 text-gray-400";
-  };
-
-  const getMedalDotStyle = (position) => {
-    const lower = position?.toLowerCase() || "";
-    if (lower.includes("gold")) return medalDotStyles.gold;
-    if (lower.includes("silver")) return medalDotStyles.silver;
-    if (lower.includes("bronze")) return medalDotStyles.bronze;
-    return "bg-gray-300";
-  };
   return (
     <>
       {slice.variation === "default" && (
@@ -84,76 +49,7 @@ const LastYearWinners = ({ slice }) => {
               >
                 <PrismicRichText field={slice.primary.cateory_one_title} />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-                {slice.primary.categoryone.map((item, i) => (
-                  <div key={i} className="group flex flex-col">
-                    <div>
-                      <div className="relative h-79.25">
-                        <PrismicNextImage
-                          field={item.image}
-                          className="object-cover w-full h-full rounded-xl"
-                        />
-                        <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                          <div>
-                            {getCountryFlag(item.country) && (
-                              <img
-                                src={getCountryFlag(item.country)}
-                                className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
-                                alt={item.country}
-                              />
-                            )}
-                          </div>
-                          <span className="tracking-wider leading-3">
-                            {item.country}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Gold / Silver / Bronze badge */}
-                      <div>
-                        <div
-                          className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                        >
-                          <span
-                            className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                          ></span>
-                          <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                            {item.position}
-                          </span>
-                        </div>
-
-                        <div
-                          className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
-                        >
-                          <PrismicRichText field={item.name} />
-                        </div>
-                        <div
-                          className="text-sm md:text-[15px] lg:text-base
-font-raleway my-3 xl:my-5 "
-                        >
-                          <PrismicRichText field={item.project} />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* "+ Know more" opens the full description in a modal */}
-                    <WinnerDescription
-                      item={item}
-                      link={item.learn_more}
-                      medalStyle={getMedalStyle(item.position)}
-                      medalDotStyle={getMedalDotStyle(item.position)}
-                    />
-
-                    {/* Learn more pinned to bottom */}
-                    {isFilled.link(item.learn_more) && (
-                      <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
-                        <PrismicNextLink field={item.learn_more} />
-                        <span className="font-bold">→</span>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+              <WinnerCategory items={slice.primary.categoryone} linkKey="learn_more" />
             </div>
 
             {/* Last section */}
@@ -161,79 +57,7 @@ font-raleway my-3 xl:my-5 "
               <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
                 <PrismicRichText field={slice.primary.category_two_title} />
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-                {slice.primary.category_two.map((item, i) => (
-                  <div key={i} className="group flex flex-col">
-                    <div>
-                      <div className="relative h-79.25">
-                        <PrismicNextImage
-                          field={item.image}
-                          className="object-cover w-full h-full rounded-xl"
-                        />
-                        <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                          <div>
-                            {getCountryFlag(item.country) && (
-                              <img
-                                src={getCountryFlag(item.country)}
-                                className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
-                                alt={item.country}
-                              />
-                            )}
-                          </div>
-                          <span className="tracking-wider leading-3">
-                            {item.country}
-                          </span>
-                        </div>
-                      </div>
-
-                      {/* Gold / Silver / Bronze badge */}
-                      <div>
-                        <div
-                          className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                        >
-                          <span
-                            className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                          ></span>
-                          <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                            {item.position}
-                          </span>
-                        </div>
-
-                        <div
-                          className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
-                        >
-                          <PrismicRichText field={item.name} />
-                        </div>
-                        <div
-                          className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5"
-                        >
-                          <PrismicRichText field={item.project} />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* "+ Know more" opens the full description in a modal */}
-                    <WinnerDescription
-                      item={item}
-                      link={item.link}
-                      medalStyle={getMedalStyle(item.position)}
-                      medalDotStyle={getMedalDotStyle(item.position)}
-                    />
-
-                    {/* Learn more pinned to bottom */}
-                    {isFilled.link(item.link) && (
-                      <div
-                        className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-  text-[#A59653] "
-                      >
-                        <PrismicNextLink field={item.link} />
-                        <span className="font-bold">→</span>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
+              <WinnerCategory items={slice.primary.category_two} linkKey="link" />
             </div>
           </div>
         </section>
@@ -269,40 +93,12 @@ font-raleway my-3 xl:my-5 "
               </div>
             )}
 
-            {/* Companies grid: cards use subgrid so each row aligns across cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-x-4 md:gap-y-0">
+            {/* Companies: horizontal swipe slider on mobile, three-column grid from md up */}
+            <MobileSlider gridClassName="md:grid md:auto-rows-fr md:grid-cols-2 lg:grid-cols-3 md:gap-4">
               {slice.primary.companies.map((item, i) => (
-                <div
-                  key={i}
-                  className="grid md:row-span-6 md:grid-rows-subgrid rounded-xl border border-[#677479] p-5 md:mb-4"
-                >
-                  <div className="w-48 h-24 md:w-56 md:h-32">
-                    <PrismicNextImage
-                      field={item.company_logo}
-                      className="w-full h-full object-contain object-left"
-                    />
-                  </div>
-                  <div className="font-raleway text-lg md:text-xl lg:text-[25px] mt-3 xl:mt-5">
-                    <PrismicRichText field={item.company_name} />
-                  </div>
-                  <div className="text-sm md:text-[15px] lg:text-base font-raleway my-3 xl:my-5">
-                    <PrismicRichText field={item.project_title} />
-                  </div>
-                  <div className="text-sm md:text-[15px] lg:text-base font-raleway pb-3 xl:pb-5 text-[#A59653]">
-                    <PrismicRichText field={item.one_line_impact_statement} />
-                  </div>
-                  <div className="border-t border-[#677479] pt-7.5 font-raleway text-sm md:text-[15px] lg:text-base">
-                    <PrismicRichText field={item.short_paragraph} />
-                  </div>
-                  {isFilled.link(item.learn_more) && (
-                    <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653]">
-                      <PrismicNextLink field={item.learn_more} />
-                      <span className="font-bold">→</span>
-                    </div>
-                  )}
-                </div>
+                <CompanyCard key={i} item={item} />
               ))}
-            </div>
+            </MobileSlider>
           </div>
         </section>
       )}
@@ -340,76 +136,7 @@ font-raleway my-3 xl:my-5 "
                 >
                   <PrismicRichText field={slice.primary.cateory_one_title} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-                  {slice.primary.categoryone.map((item, i) => (
-                    <div key={i} className="group flex flex-col">
-                      <div>
-                        <div className="relative h-79.25">
-                          <PrismicNextImage
-                            field={item.image}
-                            className="object-cover w-full h-full rounded-xl"
-                          />
-                          <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                            <div>
-                              {getCountryFlag(item.country) && (
-                                <img
-                                  src={getCountryFlag(item.country)}
-                                  className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
-                                  alt={item.country}
-                                />
-                              )}
-                            </div>
-                            <span className="tracking-wider leading-3">
-                              {item.country}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Gold / Silver / Bronze badge */}
-                        <div>
-                          <div
-                            className={` my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                          >
-                            <span
-                              className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                            ></span>
-                            <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                              {item.position}
-                            </span>
-                          </div>
-
-                          <div
-                            className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
-                          >
-                            <PrismicRichText field={item.name} />
-                          </div>
-                          <div
-                            className="text-sm md:text-[15px] lg:text-base
-font-raleway my-3 xl:my-5 "
-                          >
-                            <PrismicRichText field={item.project} />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* "+ Know more" opens the full description in a modal */}
-                      <WinnerDescription
-                        item={item}
-                        link={item.learn_more}
-                        medalStyle={getMedalStyle(item.position)}
-                        medalDotStyle={getMedalDotStyle(item.position)}
-                      />
-
-                      {/* Learn more pinned to bottom */}
-                      {isFilled.link(item.learn_more) && (
-                        <div className="py-5 flex text-sm md:text-[15px] lg:text-base gap-2 text-[#A59653] ">
-                          <PrismicNextLink field={item.learn_more} />
-                          <span className="font-bold">→</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                <WinnerCategory items={slice.primary.categoryone} linkKey="learn_more" />
               </div>
 
               {/* Second last section */}
@@ -417,161 +144,14 @@ font-raleway my-3 xl:my-5 "
                 <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
                   <PrismicRichText field={slice.primary.category_two_title} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-                  {slice.primary.category_two.map((item, i) => (
-                    <div key={i} className="group flex flex-col">
-                      <div>
-                        <div className="relative h-79.25">
-                          <PrismicNextImage
-                            field={item.image}
-                            className="object-cover w-full h-full rounded-xl"
-                          />
-                          <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                            <div>
-                              {getCountryFlag(item.country) && (
-                                <img
-                                  src={getCountryFlag(item.country)}
-                                  className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
-                                  alt={item.country}
-                                />
-                              )}
-                            </div>
-                            <span className="tracking-wider leading-3">
-                              {item.country}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Gold / Silver / Bronze badge */}
-                        <div>
-                          <div
-                            className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                          >
-                            <span
-                              className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                            ></span>
-                            <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                              {item.position}
-                            </span>
-                          </div>
-
-                          <div
-                            className="font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653]"
-                          >
-                            <PrismicRichText field={item.name} />
-                          </div>
-                          <div
-                            className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5"
-                          >
-                            <PrismicRichText field={item.project} />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* "+ Know more" opens the full description in a modal */}
-                      <WinnerDescription
-                        item={item}
-                        link={item.link}
-                        medalStyle={getMedalStyle(item.position)}
-                        medalDotStyle={getMedalDotStyle(item.position)}
-                      />
-
-                      {/* Learn more pinned to bottom */}
-                      {isFilled.link(item.link) && (
-                        <div
-                          className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-  text-[#A59653] "
-                        >
-                          <PrismicNextLink field={item.link} />
-                          <span className="font-bold">→</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                <WinnerCategory items={slice.primary.category_two} linkKey="link" />
               </div>
               {/* People's choice award section */}
               <div className="mt-10 xl:mt-17.5">
                 <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
                   <PrismicRichText field={slice.primary.category_three_title} />
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4">
-                  {slice.primary.category_three.map((item, i) => (
-                    <div key={i} className="group flex flex-col">
-                      <div>
-                        <div className="relative h-79.25">
-                          <PrismicNextImage
-                            field={item.image}
-                            className="object-cover w-full h-full rounded-xl"
-                          />
-                          <div className="absolute bottom-4.25 items-center justify-center font-medium font-raleway text-[10px] left-4 bg-white rounded-full px-2 py-1 flex gap-1">
-                            <div>
-                              {getCountryFlag(item.country) && (
-                                <img
-                                  src={getCountryFlag(item.country)}
-                                  className="w-4.5 h-3 rounded-[2px] object-cover ring-1 ring-black/10"
-                                  alt={item.country}
-                                />
-                              )}
-                            </div>
-                            <span className="tracking-wider leading-3">
-                              {item.country}
-                            </span>
-                          </div>
-                        </div>
-
-                        {/* Gold / Silver / Bronze badge, hidden when no position is set.
-                            The fixed height is sized for the badge, so drop it without one. */}
-                        <div>
-                          {item.position && (
-                            <div
-                              className={`my-3 xl:my-5 inline-flex items-center gap-2 rounded-full border px-2 py-0.5 ${getMedalStyle(item.position)}`}
-                            >
-                              <span
-                                className={`w-2 h-2 rounded-full ${getMedalDotStyle(item.position)}`}
-                              ></span>
-                              <span className="font-raleway text-xs md:text-[13px] lg:text-sm font-medium tracking-wider uppercase">
-                                {item.position}
-                              </span>
-                            </div>
-                          )}
-
-                          <div
-                            className={`font-raleway text-lg md:text-xl lg:text-[25px] winner-name [&_a]:transition-colors [&_a]:duration-300 [&_a:hover]:text-[#A59653] ${item.position ? "" : "mt-3 xl:mt-5"}`}
-                          >
-                            <PrismicRichText field={item.name} />
-                          </div>
-                          <div
-                            className="text-sm md:text-[15px] lg:text-base
- font-raleway my-3 xl:my-5"
-                          >
-                            <PrismicRichText field={item.project} />
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* "+ Know more" opens the full description in a modal */}
-                      <WinnerDescription
-                        item={item}
-                        link={item.link}
-                        medalStyle={getMedalStyle(item.position)}
-                        medalDotStyle={getMedalDotStyle(item.position)}
-                      />
-
-                      {/* Learn more pinned to bottom */}
-                      {isFilled.link(item.link) && (
-                        <div
-                          className="py-5 flex gap-2  text-sm md:text-[15px] lg:text-base
-  text-[#A59653] "
-                        >
-                          <PrismicNextLink field={item.link} />
-                          <span className="font-bold">→</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
+                <WinnerCategory items={slice.primary.category_three} linkKey="link" />
               </div>
             </div>
           </section>

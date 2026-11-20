@@ -1,6 +1,7 @@
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
+import MobileSlider from "@/components/MobileSlider";
 
 /**
  * @typedef {import("@prismicio/client").Content.JuryPanelSlice} JuryPanelSlice
@@ -29,9 +30,13 @@ const JuryPanel = ({ slice }) => {
           </div>
         </div>
         {/* bottom */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-10 xl:gap-4 lg:grid-cols-3 xl:grid-cols-5">
+        {/* Swipe slider on mobile, grid from md up */}
+        <MobileSlider gridClassName="md:grid md:grid-cols-2 md:gap-10 lg:gap-10 xl:gap-4 lg:grid-cols-3 xl:grid-cols-5">
           {slice.primary.jury_cards.map((item, i) => (
-            <div key={i} className=" flex flex-col items-center text-center">
+            <div
+              key={i}
+              className="min-w-0 shrink-0 basis-[70%] md:basis-auto flex flex-col items-center text-center"
+            >
               <div className="mb-2 lg:mb-4 xl:mb-4 w-50">
                 <PrismicNextImage field={item.image} className="rounded-full" />
               </div>
@@ -49,8 +54,7 @@ const JuryPanel = ({ slice }) => {
               </div>
             </div>
           ))}
-        </div>
-        <div></div>
+        </MobileSlider>
       </div>
     </section>
   );
