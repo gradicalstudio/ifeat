@@ -27,14 +27,16 @@ export default function DescriptionModal({ enabled, link, children }) {
 
       {isOpen && (
         // The panel clips to the rounded corners and holds the close button,
-        // so the button stays put while the inner content scrolls
+        // so the button stays put while the inner content scrolls.
+        // The gutter reserves the 6px scrollbar space on both sides, so md:px-[18px]
+        // + 6px gives the same 24px as the top and bottom.
         <Modal
           onClose={close}
           className="flex w-full max-w-2xl max-h-[85dvh] md:max-h-[90dvh] overflow-hidden rounded-xl bg-[#FEFFF4] font-raleway font-medium"
         >
           <div
             data-lenis-prevent
-            className="modal-scroll w-full overflow-y-auto p-5 md:p-8 md:pr-6"
+            className="modal-scroll w-full overflow-y-auto p-5 md:py-6 md:px-[18px] [scrollbar-gutter:stable_both-edges]"
           >
             {children}
 
