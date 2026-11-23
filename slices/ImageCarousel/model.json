@@ -47,6 +47,79 @@
         }
       },
       "items": {}
+    },
+    {
+      "id": "withCta",
+      "name": "With CTA Box",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Carousel with a heading, text and button box underneath",
+      "imageUrl": "",
+      "primary": {
+        "hide_toggle": {
+          "type": "Boolean",
+          "config": {
+            "label": "Hide Toggle",
+            "placeholder_false": "Show",
+            "placeholder_true": "Hide",
+            "default_value": false
+          }
+        },
+        "speed": {
+          "type": "Number",
+          "config": {
+            "label": "Speed",
+            "placeholder": "Pixels per second. Leave empty for 120. Higher = faster, 0 = stopped"
+          }
+        },
+        "carousel": {
+          "type": "Group",
+          "config": {
+            "label": "Carousel",
+            "repeat": true,
+            "fields": {
+              "images": {
+                "type": "Image",
+                "config": {
+                  "label": "Images",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "heading": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Heading",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "CTA",
+            "placeholder": "",
+            "select": null,
+            "allowTargetBlank": true,
+            "allowText": true,
+            "repeat": false
+          }
+        }
+      },
+      "items": {}
     }
   ]
 }

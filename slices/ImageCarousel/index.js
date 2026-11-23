@@ -1,4 +1,5 @@
 import { isFilled } from "@prismicio/client";
+import CtaBox from "@/components/CtaBox";
 import ImageReel from "@/components/ImageReel";
 
 /**
@@ -20,6 +21,15 @@ const ImageCarousel = ({ slice }) => {
       className="xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
     >
       <ImageReel images={images} speed={slice.primary.speed} />
+      {slice.variation === "withCta" && (
+        <div className="mt-8 lg:mt-12 font-medium">
+          <CtaBox
+            heading={slice.primary.heading}
+            description={slice.primary.description}
+            cta={slice.primary.cta}
+          />
+        </div>
+      )}
     </section>
   );
 };
