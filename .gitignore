@@ -42,3 +42,6 @@ next-env.d.ts
 
 # internal setup notes (not for the public repo)
 /docs/
+
+# personal working notes
+/NOTES.md

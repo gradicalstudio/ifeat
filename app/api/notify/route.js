@@ -2,6 +2,14 @@
 // via a Google Apps Script web app (URL and secret come from env vars).
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+// Personal inbox providers: only work/company emails are accepted.
+const FREE_EMAIL_DOMAINS = new Set([
+  "gmail.com", "googlemail.com", "yahoo.com", "yahoo.co.uk", "yahoo.co.in", "yahoo.fr",
+  "ymail.com", "rocketmail.com", "hotmail.com", "hotmail.co.uk", "outlook.com", "live.com",
+  "msn.com", "icloud.com", "me.com", "mac.com", "aol.com", "proton.me", "protonmail.com",
+  "gmx.com", "gmx.net", "mail.com", "zoho.com", "yandex.com", "yandex.ru", "mail.ru",
+  "inbox.com", "fastmail.com", "hey.com", "tutanota.com", "qq.com", "163.com", "126.com",
+]);
 const MIN_FILL_MS = 2000; // anything faster is almost certainly a bot
 
 const clean = (value, max) =>
@@ -43,6 +51,13 @@ export async function POST(request) {
   }
   if (!EMAIL_RE.test(email)) {
     return Response.json({ error: "Please enter a valid email address." }, { status: 400 });
+  }
+
+  if (FREE_EMAIL_DOMAINS.has(email.split("@").pop())) {
+    return Response.json(
+      { error: "Please use your work email address, not a personal one (e.g. Gmail or Yahoo)." },
+      { status: 400 },
+    );
   }
 
   try {
