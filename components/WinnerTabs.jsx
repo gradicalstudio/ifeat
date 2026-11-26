@@ -8,8 +8,12 @@ export default function WinnerTabs({ slice, context }) {
     content: <LastYearWinners slice={tab} context={context} />,
   }));
 
+  // Existing links point at #winners-2025, so keep that id on the wrapper
+  // unless one of the tabs is itself labelled 2025 (ids must be unique)
+  const hasYearTab = panels.some((panel) => panel.label === "2025");
+
   return (
-    <div>
+    <div id={hasYearTab ? undefined : "winners-2025"}>
       {/* One scroll target per tab (#winners-2026, #winners-2025, ...); TabSwitcher
           opens the matching tab when a link to one of them is clicked */}
       {panels.map((panel) => (
