@@ -27,11 +27,40 @@ function playerSrc(video) {
 // Vimeo's oEmbed thumbnail is small; ask its CDN for a 1280px version instead.
 const largeThumbnail = (src) => src?.replace(/-d_\d+(x\d+)?/, "-d_1280");
 
+const PlayIcon = ({ className }) => (
+  <span
+    aria-hidden="true"
+    // will-change keeps the circle on its own layer, so on screens with fractional
+    // display scaling (125%, 150%) it isn't re-snapped to a different pixel when the hover ends
+    className={`flex shrink-0 items-center justify-center rounded-full bg-[#A59653] transition-transform duration-300 will-change-transform group-hover:scale-110 ${className}`}
+  >
+    {/* Triangle drawn so its optical centre is the middle of the 24x24 box, no margin hacks */}
+    <svg viewBox="0 0 24 24" fill="#263B33" className="size-[46%]">
+      <path d="M7.5 5v14L18.5 12z" />
+    </svg>
+  </span>
+);
+
+const labelClass =
+  "font-monsterrat font-bold uppercase whitespace-nowrap tracking-wider";
+const focusClass =
+  "focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FEFFF4]";
+
 /**
- * Click-to-play Vimeo video: shows a poster and a frosted play button, and only
+ * Click-to-play Vimeo video: shows a poster and a gold play button, and only
  * loads the Vimeo player (and its scripts and cookies) once someone presses play.
+ *
+ * The button sits in a bar along the bottom of the video from md up. On phones it
+ * moves below the video, left-aligned, so nothing covers the poster (`belowClassName`
+ * sets its text colour for the section it is placed in).
  */
-export default function VimeoPlayer({ video, poster, label, className = "" }) {
+export default function VimeoPlayer({
+  video,
+  poster,
+  label,
+  className = "",
+  belowClassName = "text-[#FEFFF4]",
+}) {
   const [playing, setPlaying] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const closeModal = useCallback(() => setModalOpen(false), []);
@@ -41,50 +70,60 @@ export default function VimeoPlayer({ video, poster, label, className = "" }) {
   const title = video.title || label;
   const thumbnail = largeThumbnail(video.thumbnail_url);
   const sizes = "(min-width: 1280px) 1088px, 100vw";
+  const ariaLabel = `${label}: play ${title}`;
+
+  // Phones: the inline frame is too small and hides Vimeo's controls, so play in a modal
+  const play = () =>
+    window.matchMedia("(max-width: 767px)").matches
+      ? setModalOpen(true)
+      : setPlaying(true);
 
   return (
-    <div className={`relative aspect-video overflow-hidden bg-[#0E1219] ${className}`}>
-      {playing ? (
-        <iframe
-          src={src}
-          title={title}
-          className="absolute inset-0 h-full w-full border-0"
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-          allowFullScreen
-        />
-      ) : (
-        <>
-          {isFilled.image(poster) ? (
-            <PrismicNextImage field={poster} fill sizes={sizes} className="object-cover" alt="" />
-          ) : (
-            thumbnail && <Image src={thumbnail} alt="" fill sizes={sizes} className="object-cover" />
-          )}
-          <div aria-hidden="true" className="absolute inset-0 bg-black/40" />
-          <button
-            type="button"
-            // Phones: the inline frame is too small and hides Vimeo's controls, so play in a modal
-            onClick={() =>
-              window.matchMedia("(max-width: 767px)").matches
-                ? setModalOpen(true)
-                : setPlaying(true)
-            }
-            aria-label={`${label}: play ${title}`}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center gap-2.5 md:gap-3.5 lg:gap-3 xl:gap-3.5 rounded-full border border-white/45 bg-white/15 backdrop-blur-md backdrop-saturate-150 py-1.5 pl-1.5 pr-4 md:py-2 md:pl-2 md:pr-7 lg:pr-5 xl:pr-7 font-monsterrat font-bold uppercase whitespace-nowrap text-[11px] md:text-[15px] lg:text-[13px] xl:text-[15px] text-[#FEFFF4] [text-shadow:0_1px_2px_rgba(0,0,0,0.35)] shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.4)] cursor-pointer transition-colors duration-300 hover:bg-white/25 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#FEFFF4]"
-          >
-            <span aria-hidden="true" className="flex size-8 md:size-14 lg:size-11 xl:size-14 items-center justify-center rounded-full bg-[#A59653]">
-              <svg viewBox="0 0 24 24" fill="#263B33" className="size-3.5 md:size-5.5 lg:size-4.5 xl:size-5.5">
-                <path d="M8 5.5v13l11-6.5z" />
-              </svg>
-            </span>
-            {label}
-          </button>
-        </>
-      )}
+    <div>
+      {/* The whole picture is the click target; hovering it scales the play circle.
+          The bar's button stays for keyboard and screen-reader users (its click bubbles up here). */}
+      <div
+        onClick={playing ? undefined : play}
+        className={`group relative aspect-video overflow-hidden bg-[#0E1219] ${playing ? "" : "cursor-pointer"} ${className}`}
+      >
+        {playing ? (
+          <iframe
+            src={src}
+            title={title}
+            className="absolute inset-0 h-full w-full border-0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+            allowFullScreen
+          />
+        ) : (
+          <>
+            {isFilled.image(poster) ? (
+              <PrismicNextImage field={poster} fill sizes={sizes} className="object-cover" alt="" />
+            ) : (
+              thumbnail && <Image src={thumbnail} alt="" fill sizes={sizes} className="object-cover" />
+            )}
+            {/* Bottom bar (md and up): a soft shade keeps the label readable, the picture stays bright */}
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-black/80 to-transparent max-md:hidden"
+            />
+            <button
+              type="button"
+              aria-label={ariaLabel}
+              className={`absolute inset-x-0 bottom-0 flex cursor-pointer items-center gap-3 px-4 py-3 xl:gap-4 xl:px-8 xl:py-5 max-md:hidden text-[#FEFFF4] text-xs lg:text-[13px] xl:text-sm ${labelClass} ${focusClass}`}
+            >
+              <PlayIcon className="size-11 lg:size-12 xl:size-14" />
+              {label}
+            </button>
+          </>
+        )}
 
+      </div>
+
+      {/* Outside the clickable picture, so clicks in the pop-up can't start it again */}
       {modalOpen && (
         <Modal
           onClose={closeModal}
-          overlayClassName="p-2 bg-black/80"
+          overlayClassName="p-2 bg-black/80 backdrop-blur-sm"
           className="w-full"
           closeClassName="-top-12 right-0"
         >
@@ -102,6 +141,21 @@ export default function VimeoPlayer({ video, poster, label, className = "" }) {
             />
           </div>
         </Modal>
+      )}
+
+      {/* Phones: the button sits below the video, left-aligned, outside the picture */}
+      {!playing && (
+        <div className={`flex justify-start px-1.5 pt-3 pb-1 md:hidden ${belowClassName}`}>
+          <button
+            type="button"
+            onClick={play}
+            aria-label={ariaLabel}
+            className={`group inline-flex cursor-pointer items-center gap-2.5 py-0.5 text-[13px] ${labelClass} ${focusClass}`}
+          >
+            <PlayIcon className="size-10" />
+            {label}
+          </button>
+        </div>
       )}
     </div>
   );

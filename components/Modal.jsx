@@ -9,7 +9,7 @@ import { createPortal } from "react-dom";
 export default function Modal({
   onClose,
   className = "",
-  overlayClassName = "p-4 bg-black/60",
+  overlayClassName = "p-4 bg-black/60 backdrop-blur-sm",
   closeClassName = "top-2 right-2 md:top-3 md:right-3",
   children,
 }) {

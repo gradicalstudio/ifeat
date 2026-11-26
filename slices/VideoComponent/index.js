@@ -46,6 +46,7 @@ const VideoComponent = ({ slice }) => {
             video={primary.video}
             poster={primary.poster}
             label={label}
+            belowClassName="text-[#263B33]"
             className="w-full rounded-2xl lg:rounded-[28px] shadow-[0_24px_60px_rgba(14,18,25,0.25)]"
           />
         </div>

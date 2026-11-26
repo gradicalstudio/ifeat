@@ -20,10 +20,28 @@ function handleSmoothScroll(e, url) {
 export default function HeaderClient({ data }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [atTop, setAtTop] = useState(true);
+  // On phones (below md) the header covers section headings, so it slides away while
+  // scrolling down and returns on scroll up (or while the menu is open).
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
+    // Smooth scrolling fires many tiny scroll events, so add up the distance
+    // travelled in the current direction instead of judging each event alone.
+    let lastY = window.scrollY;
+    let dir = 0;
+    let anchorY = lastY;
     const handleScroll = () => {
-      setAtTop(window.scrollY < 15);
+      const y = window.scrollY;
+      setAtTop(y < 15);
+      const newDir = Math.sign(y - lastY);
+      if (newDir !== 0 && newDir !== dir) {
+        dir = newDir;
+        anchorY = lastY;
+      }
+      lastY = y;
+      if (y < 80) setHidden(false);
+      else if (dir > 0 && y - anchorY > 12) setHidden(true);
+      else if (dir < 0 && anchorY - y > 8) setHidden(false);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -32,7 +50,7 @@ export default function HeaderClient({ data }) {
 
   return (
     <header
-      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5 xl:px-4 " : "px-6 md:px-7 lg:px-8 xl:px-7"} transition-all duration-300`}
+      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5 xl:px-4 " : "px-6 md:px-7 lg:px-8 xl:px-7"} transition-all duration-300 ${hidden && !menuOpen ? "max-md:-translate-y-[150%]" : ""}`}
     >
       {/* Desktop */}
       <div

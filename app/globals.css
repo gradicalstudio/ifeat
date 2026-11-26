@@ -4,7 +4,27 @@
   --font-monsterrat: var(--font-monsterrat-sans);
   --font-raleway: var(--font-raleway-sans);
 }
+/* Raleway draws curly quotes thin and nearly straight. Borrow a serif's
+   “ ” glyphs for the quote box only (falls back to Raleway if none is installed). */
+@font-face {
+  font-family: "Quote Marks";
+  font-style: normal;
+  src: local("Georgia"), local("Times New Roman"), local("Noto Serif");
+  unicode-range: U+201C-201D;
+}
+@font-face {
+  font-family: "Quote Marks";
+  font-style: italic;
+  src: local("Georgia Italic"), local("Times New Roman Italic"), local("Noto Serif Italic");
+  unicode-range: U+201C-201D;
+}
+.quote-marks {
+  font-family: "Quote Marks", var(--font-raleway-sans), sans-serif;
+}
 #about {
+  scroll-margin-top: 100px;
+}
+#notify {
   scroll-margin-top: 100px;
 }
 #awardcategories {

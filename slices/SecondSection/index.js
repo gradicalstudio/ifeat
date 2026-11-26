@@ -32,7 +32,7 @@ const SecondSection = ({ slice }) => {
           {/* quotes */}
           <div>
             <div
-              className="ml-1 mt-6 2xl:mt-13.25 rounded-xl p-5 tracking-tight bg-[#F2F3E9] md:text-lg lg:text-xl "
+              className="quote-marks ml-1 mt-6 2xl:mt-13.25 rounded-xl p-5 tracking-tight bg-[#F2F3E9] md:text-lg lg:text-xl "
               style={{ boxShadow: "-4px 0 0 0 #A59653" }}
             >
               <PrismicRichText field={slice.primary.quote_field} />

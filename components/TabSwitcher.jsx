@@ -48,6 +48,24 @@ export default function TabSwitcher({ panels }) {
     tabRefs.current[active]?.focus();
   }, [active]);
 
+  // Links like #winners-2025 open the tab whose label is that year, on click
+  // and when the page loads with the hash. (The links' own handlers do the scrolling.)
+  useEffect(() => {
+    const open = (rawHash) => {
+      const hash = decodeURIComponent(rawHash).trim(); // Prismic urls can carry a trailing space
+      const label = hash.startsWith("#winners-") ? hash.slice(9) : null;
+      const index = panels.findIndex((p) => p.label === label);
+      if (index >= 0) setActive(index);
+    };
+    const onClick = (e) => {
+      const href = e.target.closest?.("a[href^='#winners-']")?.getAttribute("href");
+      if (href) open(href);
+    };
+    open(window.location.hash);
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, [panels.map((p) => p.label).join("|")]);
+
   // A single year needs no tab bar.
   if (panels.length === 1) return panels[0].content;
 

@@ -8,7 +8,7 @@ import CompanyDescription from "@/components/CompanyDescription";
 // slide width); from md up it fills its grid cell.
 export default function CompanyCard({ item }) {
   return (
-    <div className="flex min-w-0 shrink-0 basis-[88%] flex-col rounded-xl border border-[#677479]/50 p-4 md:basis-auto md:flex-row md:gap-4">
+    <div className="group flex min-w-0 shrink-0 basis-[88%] flex-col rounded-xl border border-[#677479]/50 p-4 md:basis-auto md:flex-row md:gap-4">
       <div className="h-14 w-full md:flex md:h-24 md:w-24 md:shrink-0 md:items-center md:justify-center">
         <PrismicNextImage
           field={item.company_logo}

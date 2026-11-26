@@ -26,7 +26,14 @@ export async function generateMetadata() {
     openGraph: {
       type: "website",
       url: "/",
-      images: [{ url: asImageSrc(page.data.meta_image) ?? "" }],
+      // Small JPEG: WhatsApp skips share images over ~300 KB and LinkedIn is happiest with JPEG/PNG
+      images: [
+        {
+          url: asImageSrc(page.data.meta_image, { auto: "compress", fm: "jpg", w: 1200, h: 630, q: 80 }) ?? "",
+          width: 1200,
+          height: 630,
+        },
+      ],
     },
   };
 }
