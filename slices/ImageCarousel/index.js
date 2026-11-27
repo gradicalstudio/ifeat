@@ -16,6 +16,7 @@ const ImageCarousel = ({ slice }) => {
 
   return (
     <section
+      id="moments"
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
       className="xl:max-w-385 px-4 md:px-5 xl:mx-auto xl:px-21 mb-15 lg:mb-25 xl:mb-30"
