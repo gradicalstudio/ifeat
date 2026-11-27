@@ -18,7 +18,7 @@ const Reflection = ({ slice }) => {
         {/* Left */}
         <div>
           <div
-            className="text-[#A59653] font-raleway text-xs md:text-sm lg:text-base uppercase "
+            className="text-gold-ink font-raleway text-xs md:text-sm lg:text-base uppercase"
           >
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>

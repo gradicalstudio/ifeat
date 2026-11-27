@@ -19,7 +19,7 @@ const AwardCategories = ({ slice }) => {
       <div className="bg-[#263B33] font-medium rounded-2xl px-4 xl:px-17.5 py-10 xl:py-25">
         {/* Top section */}
         <div className="2xl:w-[35%]">
-          <div className="text-xs md:text-sm lg:text-base font-raleway text-[#A59653] uppercase">
+          <div className="text-xs md:text-sm lg:text-base font-raleway text-gold-on-dark uppercase">
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
           <div className="text-[28px] md:text-[38px] lg:text-[50px] font-monsterrat  my-4 lg:my-3.5 text-[#FEFFF4]">

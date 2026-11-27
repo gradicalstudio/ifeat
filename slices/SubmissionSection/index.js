@@ -201,6 +201,7 @@ const SubmissionSection = ({ slice, context }) => {
                               <iframe
                                 loading="lazy"
                                 src={item.embed_link.url}
+                                title="Submission guide video"
                                 className="absolute top-0 left-0 h-full w-full border-none rounded-lg"
                                 referrerPolicy="origin"
                                 allow="accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen; clipboard-write;"

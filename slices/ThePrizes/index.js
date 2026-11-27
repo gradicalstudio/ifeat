@@ -18,7 +18,7 @@ const ThePrizes = ({ slice }) => {
     >
       <div className="font-medium xl:px-48.25">
         <div className="mb-10 xl:mb-12.5">
-          <div className="font-raleway text-xs md:text-sm lg:text-base uppercase text-[#A59653]">
+          <div className="font-raleway text-xs md:text-sm lg:text-base uppercase text-gold-ink">
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
           <div className="text-[22px] md:text-[28px] lg:text-[38px] font-monsterrat my-3 xl:my-3.5">

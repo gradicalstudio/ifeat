@@ -45,7 +45,7 @@ const LastYearWinners = ({ slice }) => {
             <div>
               <div
                 className="font-raleway text-lg md:text-xl lg:text-[25px]
- uppercase text-[#A59653] mb-5"
+ uppercase text-gold-ink mb-5"
               >
                 <PrismicRichText field={slice.primary.cateory_one_title} />
               </div>
@@ -54,7 +54,7 @@ const LastYearWinners = ({ slice }) => {
 
             {/* Last section */}
             <div className="mt-10 xl:mt-17.5">
-              <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
+              <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
                 <PrismicRichText field={slice.primary.category_two_title} />
               </div>
               <WinnerCategory items={slice.primary.category_two} linkKey="link" />
@@ -132,7 +132,7 @@ const LastYearWinners = ({ slice }) => {
               <div>
                 <div
                   className="font-raleway text-lg md:text-xl lg:text-[25px]
- uppercase text-[#A59653] mb-5"
+ uppercase text-gold-ink mb-5"
                 >
                   <PrismicRichText field={slice.primary.cateory_one_title} />
                 </div>
@@ -141,14 +141,14 @@ const LastYearWinners = ({ slice }) => {
 
               {/* Second last section */}
               <div className="mt-10 xl:mt-17.5">
-                <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
+                <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
                   <PrismicRichText field={slice.primary.category_two_title} />
                 </div>
                 <WinnerCategory items={slice.primary.category_two} linkKey="link" />
               </div>
               {/* People's choice award section */}
               <div className="mt-10 xl:mt-17.5">
-                <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-[#A59653] mb-5">
+                <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
                   <PrismicRichText field={slice.primary.category_three_title} />
                 </div>
                 <WinnerCategory items={slice.primary.category_three} linkKey="link" />

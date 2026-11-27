@@ -3,6 +3,9 @@
 @theme inline {
   --font-monsterrat: var(--font-monsterrat-sans);
   --font-raleway: var(--font-raleway-sans);
+  /* Gold text that passes WCAG contrast: darker on the cream page, lighter on dark green. */
+  --color-gold-ink: #807235;
+  --color-gold-on-dark: #b5a663;
 }
 /* Raleway draws curly quotes thin and nearly straight. Borrow a serif's
    “ ” glyphs for the quote box only (falls back to Raleway if none is installed). */
@@ -17,6 +20,11 @@
   font-style: italic;
   src: local("Georgia Italic"), local("Times New Roman Italic"), local("Noto Serif Italic");
   unicode-range: U+201C-201D;
+}
+/* Selected text uses the brand gold, with dark text so it stays readable on cream and dark sections. */
+::selection {
+  background: #a59653;
+  color: #0e1219;
 }
 .quote-marks {
   font-family: "Quote Marks", var(--font-raleway-sans), sans-serif;
@@ -112,7 +120,6 @@ html.lenis body {
 }
 .modal-scroll::-webkit-scrollbar-track {
   background: transparent;
-  margin-block: 12px;
 }
 .modal-scroll::-webkit-scrollbar-thumb {
   background: #a59653;

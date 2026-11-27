@@ -1161,9 +1161,100 @@ export type HeroSectionSliceDefault = prismic.SharedSliceVariation<
 >;
 
 /**
+ * Primary content in *HeroSection → Single Button → Primary*
+ */
+export interface HeroSectionSliceSingleButtonPrimary {
+  /**
+   * Hide Toggle field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hero_section.singleButton.primary.hide_toggle
+   * - **Documentation**: https://prismic.io/docs/fields/boolean
+   */
+  hide_toggle: prismic.BooleanField;
+
+  /**
+   * Eyebrow Heading field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.singleButton.primary.eyebrow_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  eyebrow_heading: prismic.RichTextField;
+
+  /**
+   * Eyebrow Heading Two field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.singleButton.primary.eyebrow_heading_two
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  eyebrow_heading_two: prismic.RichTextField;
+
+  /**
+   * Main Heading field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.singleButton.primary.main_heading
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  main_heading: prismic.RichTextField;
+
+  /**
+   * Short description field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.singleButton.primary.short_description
+   * - **Documentation**: https://prismic.io/docs/fields/rich-text
+   */
+  short_description: prismic.RichTextField;
+
+  /**
+   * Button One field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Enter button text on "Display Text"
+   * - **API ID Path**: hero_section.singleButton.primary.link
+   * - **Documentation**: https://prismic.io/docs/fields/link
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Hero Image field in *HeroSection → Single Button → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero_section.singleButton.primary.hero_image
+   * - **Documentation**: https://prismic.io/docs/fields/image
+   */
+  hero_image: prismic.ImageField<never>;
+}
+
+/**
+ * Single Button variation for HeroSection Slice
+ *
+ * - **API ID**: `singleButton`
+ * - **Description**: Single Button
+ * - **Documentation**: https://prismic.io/docs/slices
+ */
+export type HeroSectionSliceSingleButton = prismic.SharedSliceVariation<
+  "singleButton",
+  Simplify<HeroSectionSliceSingleButtonPrimary>,
+  never
+>;
+
+/**
  * Slice variation for *HeroSection*
  */
-type HeroSectionSliceVariation = HeroSectionSliceDefault;
+type HeroSectionSliceVariation =
+  | HeroSectionSliceDefault
+  | HeroSectionSliceSingleButton;
 
 /**
  * HeroSection Shared Slice
@@ -3613,8 +3704,10 @@ declare module "@prismicio/client" {
       FollowThroughSliceDefault,
       HeroSectionSlice,
       HeroSectionSliceDefaultPrimary,
+      HeroSectionSliceSingleButtonPrimary,
       HeroSectionSliceVariation,
       HeroSectionSliceDefault,
+      HeroSectionSliceSingleButton,
       ImageCarouselSlice,
       ImageCarouselSliceDefaultPrimaryCarouselItem,
       ImageCarouselSliceDefaultPrimary,

@@ -17,7 +17,7 @@ const SecondSection = ({ slice }) => {
       <div className="flex flex-col lg:flex-row justify-between w-full">
         {/* Left Side */}
         <div className="lg:w-[40%] xl:w-[40%]">
-          <div className="text-[#A59653] text-xs md:text-sm lg:text-base font-medium font-monsterrat mb-3.5">
+          <div className="text-gold-ink text-xs md:text-sm lg:text-base font-medium font-monsterrat mb-3.5">
             <PrismicRichText field={slice.primary.eyebrow_heading} />
           </div>
           <div className="text-[28px] md:text-[38px]  xl:text-[3.125rem] lg:leading-tight leading-[1.15] font-medium font-raleway ">

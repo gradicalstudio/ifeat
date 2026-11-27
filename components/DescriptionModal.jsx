@@ -65,7 +65,7 @@ export default function DescriptionModal({ enabled, link, children }) {
           {/* Scroll cue: fades the cut-off text and points down while more is below */}
           <div
             aria-hidden="true"
-            className={`pointer-events-none absolute inset-x-0 bottom-0 flex h-28 items-end justify-center bg-gradient-to-t from-[#FEFFF4] via-[#FEFFF4]/85 to-transparent pb-1.5 transition-opacity duration-300 ${moreBelow ? "opacity-100" : "opacity-0"}`}
+            className={`pointer-events-none absolute left-0 right-3 bottom-0 flex h-28 items-end justify-center bg-gradient-to-t from-[#FEFFF4] via-[#FEFFF4]/85 to-transparent pb-1.5 transition-opacity duration-300 ${moreBelow ? "opacity-100" : "opacity-0"}`}
           >
             <svg viewBox="0 0 14 8" className="h-2 w-3.5 text-[#A59653]">
               <path
