@@ -40,7 +40,7 @@ export default function Modal({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className={`absolute z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-[#0E1219] shadow-md transition-colors duration-300 hover:bg-[#A59653] hover:text-white ${closeClassName}`}
+          className={`absolute z-10 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full bg-white text-[#0E1219] shadow-md transition-[color,background-color,scale] duration-200 active:scale-95 hover:bg-[#A59653] hover:text-white ${closeClassName}`}
         >
           <svg viewBox="0 0 14 14" className="h-3.5 w-3.5" aria-hidden="true">
             <path

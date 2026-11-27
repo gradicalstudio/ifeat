@@ -15,6 +15,9 @@ const raleway = Raleway({
   subsets: ["latin"],
 });
 
+// Browser bar on phones matches the page background
+export const viewport = { themeColor: "#FEFFF4" };
+
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Ifeat",

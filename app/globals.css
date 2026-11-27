@@ -95,8 +95,55 @@
   }
 }
 
+/* Strong ease-out: starts fast so the menu / modal feels instant, then settles */
 .animate-dropdown {
-  animation: dropdown 0.2s ease-out forwards;
+  animation: dropdown 0.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Reduced motion: keep the fades (they help people follow what changed), drop the movement */
+@media (prefers-reduced-motion: reduce) {
+  @keyframes dropdown {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .winner-name a::after {
+    transform: none;
+  }
+  .group:hover .winner-name a:hover::after,
+  .winner-name a:hover::after {
+    transform: none;
+  }
+  /* Tailwind v4 presses with the `scale` property */
+  .active\:scale-95:active,
+  .active\:scale-\[0\.97\]:active {
+    scale: none;
+  }
+}
+
+/* Phones: controls give their own press feedback (no grey tap flash), respond to a tap at once
+   (no double-tap-zoom wait), and don't select their label on long-press. Links keep the default. */
+button,
+[role="button"],
+[role="tab"] {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+}
+a {
+  touch-action: manipulation;
+}
+/* iOS zooms the page when an input under 16px gets focus, and does not zoom back out */
+@media (pointer: coarse) {
+  input,
+  textarea,
+  select {
+    font-size: 16px;
+  }
 }
 
 html.lenis,
@@ -158,8 +205,8 @@ html.lenis body {
   opacity: 0;
   transform: translateX(-6px);
   transition:
-    opacity 0.3s ease,
-    transform 0.3s ease;
+    opacity 0.2s ease,
+    transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 .group:hover .winner-name a::after,
 .winner-name a:focus-visible::after,

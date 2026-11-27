@@ -44,7 +44,7 @@ export default function MobileSlider({ children, gridClassName, activeColors }) 
   }, [embla, sync]);
 
   const arrow =
-    "flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#677479]/80 transition-colors duration-300 hover:border-[#A59653] disabled:opacity-30 disabled:pointer-events-none cursor-pointer";
+    "flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#677479]/80 transition-[color,border-color,scale] duration-200 active:scale-95 hover:border-[#A59653] disabled:opacity-30 disabled:pointer-events-none cursor-pointer";
 
   return (
     <div>
@@ -82,7 +82,7 @@ export default function MobileSlider({ children, gridClassName, activeColors }) 
                 aria-label={`Go to slide ${i + 1}`}
                 onClick={() => embla?.scrollTo(i)}
                 style={i === selected && activeColors?.[i] ? { background: activeColors[i] } : undefined}
-                className={`h-2 shrink-0 rounded-full transition-all duration-300 cursor-pointer ${i === selected ? "w-6 bg-[#A59653]" : "w-2 bg-[#677479]/40"}`}
+                className={`h-2 shrink-0 rounded-full transition-[width,background-color] duration-300 cursor-pointer ${i === selected ? "w-6 bg-[#A59653]" : "w-2 bg-[#677479]/40"}`}
               />
             ))}
           </div>

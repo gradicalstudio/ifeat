@@ -98,6 +98,7 @@ export default function NotifyFormClient({ labels, consent, success }) {
             name="email"
             type="email"
             autoComplete="email"
+            enterKeyHint="send"
             required
             maxLength={200}
             className={inputClass}
@@ -118,7 +119,7 @@ export default function NotifyFormClient({ labels, consent, success }) {
         <button
           type="submit"
           disabled={status === "sending"}
-          className="flex items-center justify-center w-full md:w-fit shrink-0 px-9 py-3 lg:py-4 rounded-xl leading-tight font-monsterrat font-bold text-sm xl:text-base uppercase text-black cursor-pointer transition-all duration-300 bg-[#A59653] hover:bg-white border border-[#A59653] hover:border-white disabled:opacity-60 disabled:cursor-wait"
+          className="flex items-center justify-center w-full md:w-fit shrink-0 px-9 py-3 lg:py-4 rounded-xl leading-tight font-monsterrat font-bold text-sm xl:text-base uppercase text-black cursor-pointer transition-[color,background-color,border-color,scale] duration-200 active:scale-[0.97] disabled:active:scale-100 bg-[#A59653] hover:bg-white border border-[#A59653] hover:border-white disabled:opacity-60 disabled:cursor-wait"
         >
           {status === "sending" ? "Sending…" : labels.button}
         </button>

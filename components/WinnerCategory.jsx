@@ -22,7 +22,7 @@ export default function WinnerCategory({ items, linkKey }) {
           return (
             <div key={i} className="group flex flex-col">
               <div>
-                <div className="relative h-79.25">
+                <div className="relative h-79.25 rounded-xl bg-[#263B33]">
                   <PrismicNextImage
                     field={item.image}
                     className="object-cover w-full h-full rounded-xl"

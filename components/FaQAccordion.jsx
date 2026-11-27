@@ -33,7 +33,7 @@ function FaqItem({ item, isOpen, onToggle, isFirst }) {
         <img
           src="/Chevron-dimgold.svg"
           alt=""
-          className={`shrink-0 transition-transform w-3 h-3 xl:w-5 xl:h-5 duration-500 ease-in-out ${
+          className={`shrink-0 transition-transform w-3 h-3 xl:w-5 xl:h-5 duration-300 ease-in-out ${
             isOpen ? "rotate-0" : "rotate-180"
           }`}
         />

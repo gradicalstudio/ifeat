@@ -5,6 +5,9 @@ import { useEffect } from 'react'
 
 export default function SmoothScroll({ children }) {
   useEffect(() => {
+    // People who ask for reduced motion keep the browser's normal scrolling
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
     let lenis
     let cancelled = false
 

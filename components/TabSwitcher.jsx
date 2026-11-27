@@ -101,7 +101,7 @@ export default function TabSwitcher({ panels }) {
           aria-controls={`${uid}-panel-${i}`}
           tabIndex={i === active ? 0 : -1}
           onClick={() => select(i)}
-          className={`cursor-pointer rounded-full px-5 py-2 font-raleway text-sm md:text-base font-medium transition-colors ${
+          className={`cursor-pointer rounded-full px-5 py-2 font-raleway text-sm md:text-base font-medium transition-[color,background-color,scale] active:scale-[0.97] ${
             i === active
               ? "bg-[#A59653] text-black"
               : "text-[#263B33] hover:bg-[#A59653]/15"

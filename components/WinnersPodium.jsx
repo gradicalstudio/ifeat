@@ -1,3 +1,4 @@
+import { isFilled } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText } from "@prismicio/react";
 import CountryChip from "@/components/CountryChip";
@@ -30,7 +31,7 @@ function Hero({ item: hero, linkKey }) {
   const accent = hero.position ? heroMedal.color : "#A59653";
   return (
     <div
-      className="relative h-110 overflow-hidden rounded-xl"
+      className="relative h-110 overflow-hidden rounded-xl bg-[#263B33]"
       style={{ boxShadow: `0 0 0 1px ${accent}` }}
     >
       <PrismicNextImage
@@ -43,7 +44,7 @@ function Hero({ item: hero, linkKey }) {
       <div className="absolute left-4 top-4 flex items-center gap-2">
         {hero.position && (
           <div
-            className="inline-flex items-center gap-2 rounded-full border bg-black/45 px-2.5 pt-[4.5px] pb-[3.5px] text-xs font-medium font-raleway uppercase tracking-wider backdrop-blur-sm"
+            className="inline-flex items-center gap-2 rounded-full border bg-black/70 px-2.5 pt-[4.5px] pb-[3.5px] text-xs font-medium font-raleway uppercase tracking-wider"
             style={{ borderColor: heroMedal.color, color: heroMedal.color }}
           >
             <span className={`h-2 w-2 rounded-full ${heroMedal.dot}`} />
@@ -78,14 +79,16 @@ function Row({ item, linkKey }) {
       className="flex gap-3 rounded-xl border p-2"
       style={{ borderColor: `${medal.color}99` }}
     >
-      <div className="relative min-h-28 w-30 shrink-0 overflow-hidden rounded-lg">
-        <PrismicNextImage
-          field={item.image}
-          fill
-          sizes="120px"
-          className="object-cover"
-        />
-      </div>
+      {isFilled.image(item.image) && (
+        <div className="relative min-h-28 w-30 shrink-0 overflow-hidden rounded-lg">
+          <PrismicNextImage
+            field={item.image}
+            fill
+            sizes="120px"
+            className="object-cover"
+          />
+        </div>
+      )}
       <div className="flex min-w-0 flex-1 flex-col gap-1">
         {(item.position || item.country) && (
           <div className="flex items-center gap-2">

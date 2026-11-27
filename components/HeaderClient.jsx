@@ -50,7 +50,7 @@ export default function HeaderClient({ data }) {
 
   return (
     <header
-      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5 xl:px-4 " : "px-6 md:px-7 lg:px-8 xl:px-7"} transition-all duration-300 ${hidden && !menuOpen ? "max-md:-translate-y-[150%]" : ""}`}
+      className={`sticky top-4 lg:top-4 xl:top-4 z-50 w-full xl:max-w-385  mx-auto rounded-2xl  ${atTop ? "px-4 md:px-5 lg:px-5 xl:px-4 " : "px-6 md:px-7 lg:px-8 xl:px-7"} transition-[padding,transform,translate] duration-300 ${hidden && !menuOpen ? "max-md:-translate-y-[150%]" : ""}`}
     >
       {/* Desktop */}
       <div
@@ -85,14 +85,14 @@ export default function HeaderClient({ data }) {
         <PrismicNextLink
           field={data.cta_link}
           onClick={(e) => handleSmoothScroll(e, data.cta_link?.url)}
-          className="px-6 py-3 rounded-lg font-monsterrat font-bold text-[13px] tracking-widest uppercase  text-black transition-all duration-300 bg-[#A59653] hover:bg-white border border-[#A59653] hover:border-white"
+          className="px-6 py-3 rounded-lg font-monsterrat font-bold text-[13px] tracking-widest uppercase  text-black transition-[color,background-color,border-color,scale] duration-200 active:scale-[0.97] disabled:active:scale-100 bg-[#A59653] hover:bg-white border border-[#A59653] hover:border-white"
         >
           {data.cta_link?.text}
         </PrismicNextLink>
       </div>
 
       {/* Mobile/Tablet */}
-      <div className="xl:hidden w-full bg-[#282828] rounded-2xl backdrop-blur-sm transition-colors duration-500 relative">
+      <div className="xl:hidden w-full bg-[#282828] rounded-2xl transition-colors duration-500 relative">
         <div className="flex items-center justify-between px-4 py-4">
           {/* Hamburger on left */}
 
@@ -125,13 +125,13 @@ export default function HeaderClient({ data }) {
               aria-label="Toggle menu"
             >
               <span
-                className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
+                className={`block h-0.5 w-6 bg-white transition-[transform,translate,rotate,opacity] duration-300 ${menuOpen ? "rotate-45 translate-y-2" : ""}`}
               />
               <span
-                className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "opacity-0" : ""}`}
+                className={`block h-0.5 w-6 bg-white transition-[transform,translate,rotate,opacity] duration-300 ${menuOpen ? "opacity-0" : ""}`}
               />
               <span
-                className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+                className={`block h-0.5 w-6 bg-white transition-[transform,translate,rotate,opacity] duration-300 ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`}
               />
             </button>
           </div>

@@ -64,13 +64,13 @@ export default function ImageReel({ images: sourceImages, speed }) {
     return () => observer.disconnect();
   }, [copies]);
 
-  // Drift loop, pauses while the reel is held
+  // Drift loop, pauses while the reel is held and stops while it is off screen
   useEffect(() => {
     const reduceMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches;
-    let frame;
-    let last = performance.now();
+    let frame = 0;
+    let last = 0;
 
     const tick = (now) => {
       const dt = (now - last) / 1000;
@@ -88,8 +88,17 @@ export default function ImageReel({ images: sourceImages, speed }) {
       frame = requestAnimationFrame(tick);
     };
 
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
+    const observer = new IntersectionObserver(([entry]) => {
+      cancelAnimationFrame(frame);
+      if (!entry.isIntersecting) return;
+      last = performance.now(); // no jump after being off screen
+      frame = requestAnimationFrame(tick);
+    });
+    observer.observe(viewportRef.current);
+    return () => {
+      observer.disconnect();
+      cancelAnimationFrame(frame);
+    };
   }, []);
 
   const onPointerDown = (e) => {

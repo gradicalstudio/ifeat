@@ -8,6 +8,17 @@ import MobileSlider from "@/components/MobileSlider";
 // When rendered inside WinnerTabs, these place the year toggle; otherwise they're no-ops
 import { HeadingWithTabBar, TabBarRow } from "@/components/TabSwitcher";
 
+// A winners category with its heading; renders nothing when it has no winners, so no orphan heading
+const Category = ({ title, items, linkKey, className }) =>
+  items?.length ? (
+    <div className={className}>
+      <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
+        <PrismicRichText field={title} />
+      </div>
+      <WinnerCategory items={items} linkKey={linkKey} />
+    </div>
+  ) : null;
+
 /**
  * @typedef {import("@prismicio/client").Content.LastYearWinnersSlice} LastYearWinnersSlice
  * @typedef {import("@prismicio/react").SliceComponentProps<LastYearWinnersSlice>} LastYearWinnersProps
@@ -42,23 +53,10 @@ const LastYearWinners = ({ slice }) => {
               </div>
             </div>
             {/* Middle section */}
-            <div>
-              <div
-                className="font-raleway text-lg md:text-xl lg:text-[25px]
- uppercase text-gold-ink mb-5"
-              >
-                <PrismicRichText field={slice.primary.cateory_one_title} />
-              </div>
-              <WinnerCategory items={slice.primary.categoryone} linkKey="learn_more" />
-            </div>
+            <Category title={slice.primary.cateory_one_title} items={slice.primary.categoryone} linkKey="learn_more" />
 
             {/* Last section */}
-            <div className="mt-10 xl:mt-17.5">
-              <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
-                <PrismicRichText field={slice.primary.category_two_title} />
-              </div>
-              <WinnerCategory items={slice.primary.category_two} linkKey="link" />
-            </div>
+            <Category className="mt-10 xl:mt-17.5" title={slice.primary.category_two_title} items={slice.primary.category_two} linkKey="link" />
           </div>
         </section>
       )}
@@ -129,30 +127,12 @@ const LastYearWinners = ({ slice }) => {
                 </div>
               </div>
               {/* Middle section */}
-              <div>
-                <div
-                  className="font-raleway text-lg md:text-xl lg:text-[25px]
- uppercase text-gold-ink mb-5"
-                >
-                  <PrismicRichText field={slice.primary.cateory_one_title} />
-                </div>
-                <WinnerCategory items={slice.primary.categoryone} linkKey="learn_more" />
-              </div>
+              <Category title={slice.primary.cateory_one_title} items={slice.primary.categoryone} linkKey="learn_more" />
 
               {/* Second last section */}
-              <div className="mt-10 xl:mt-17.5">
-                <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
-                  <PrismicRichText field={slice.primary.category_two_title} />
-                </div>
-                <WinnerCategory items={slice.primary.category_two} linkKey="link" />
-              </div>
+              <Category className="mt-10 xl:mt-17.5" title={slice.primary.category_two_title} items={slice.primary.category_two} linkKey="link" />
               {/* People's choice award section */}
-              <div className="mt-10 xl:mt-17.5">
-                <div className="font-raleway text-lg md:text-xl lg:text-[25px] uppercase text-gold-ink mb-5">
-                  <PrismicRichText field={slice.primary.category_three_title} />
-                </div>
-                <WinnerCategory items={slice.primary.category_three} linkKey="link" />
-              </div>
+              <Category className="mt-10 xl:mt-17.5" title={slice.primary.category_three_title} items={slice.primary.category_three} linkKey="link" />
             </div>
           </section>
         </section>
