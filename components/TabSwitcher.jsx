@@ -103,7 +103,7 @@ export default function TabSwitcher({ panels }) {
           onClick={() => select(i)}
           className={`cursor-pointer rounded-full px-5 py-2 font-raleway text-sm md:text-base font-medium transition-colors ${
             i === active
-              ? "bg-[#A59653] text-[#FEFFF4]"
+              ? "bg-[#A59653] text-black"
               : "text-[#263B33] hover:bg-[#A59653]/15"
           }`}
         >
