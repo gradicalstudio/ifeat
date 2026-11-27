@@ -1,3 +1,4 @@
+import { preconnect } from "react-dom";
 import { Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -21,6 +22,8 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // The hero image comes from Prismic's image server; open the connection early
+  preconnect("https://images.prismic.io");
   return (
     <html
       lang="en"

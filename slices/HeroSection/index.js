@@ -3,9 +3,26 @@ import CountdownTimer from "@/components/CountDown";
 import PrimaryButton from "@/components/PrimaryButton";
 import SecondaryButton from "@/components/SecondaryButton";
 import { isFilled } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import Image from "next/image";
 import { PrismicRichText } from "@prismicio/react";
 import Heading from "@/components/Heading";
+
+// next/image (not PrismicNextImage) so the hero is served from our own domain through
+// Next image optimization. That skips the extra connection to Prismic's image server,
+// which is what held back Largest Contentful Paint on phones.
+const HeroImage = ({ field, className }) =>
+  isFilled.image(field) ? (
+    <Image
+      src={field.url}
+      alt={field.alt ?? ""}
+      width={field.dimensions.width}
+      height={field.dimensions.height}
+      sizes="(min-width: 1540px) 1540px, 100vw"
+      preload
+      fetchPriority="high"
+      className={className}
+    />
+  ) : null;
 
 /**
  * @typedef {import("@prismicio/client").Content.HeroSectionSlice} HeroSectionSlice
@@ -42,7 +59,7 @@ const HeroSection = ({ slice, context }) => {
     >
       <div className={`hidden lg:block relative ${desktopBox} w-full  `}>
         <div className="abolute w-full  h-full ">
-          <PrismicNextImage
+          <HeroImage
             field={slice.primary.hero_image}
             className=" lg:object-bottom-left xl:object-left object-cover w-full h-full rounded-xl "
           />
@@ -93,7 +110,7 @@ const HeroSection = ({ slice, context }) => {
       {/* singleButton on phones: as tall as the text needs (no fixed height), so no empty space below the button */}
       <div className={`w-full lg:hidden relative ${mobileBox}`}>
         <div className="w-full h-full absolute inset-0">
-          <PrismicNextImage
+          <HeroImage
             field={slice.primary.hero_image}
             className=" object-center md:object-bottom-left object-cover  w-full h-full rounded-xl "
           />
